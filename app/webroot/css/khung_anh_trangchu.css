@@ -1,0 +1,101 @@
+/* CSS Document */
+/* view*/
+table.photo_list_1 tr td:hover ,table.photo_list_2 tr td:hover ,table.photo_list_3 tr td:hover{
+opacity:1;
+filter:alpha(opacity=60); /* For IE8 and earlier */
+-webkit-transition: all 0.5s ease;
+-moz-transition: all 0.5s ease;
+-ms-transition: all 0.5s ease;
+-o-transition: all 0.5s ease;
+transition: all 0.5s ease;
+}
+table.photo_list_1 tr td ,table.photo_list_2 tr td ,table.photo_list_3 tr td{
+opacity:0.7;
+filter:alpha(opacity=70); /* For IE8 and earlier */
+}
+/* table photo list 1*/
+table.photo_list_1{
+	margin:auto;
+	width:1200px;
+}
+table.photo_list_1 .anh_ngang{
+	width:880px;
+	height:300px;
+}
+table.photo_list_1 .anh_dung{
+	width:300px;
+	height:620px;
+}
+table.photo_list_1 .anh_vuong{
+	width:300px;
+	height:300px;
+}
+table.photo_list_1 .anh_ngang_pt ,table.photo_list_1 .anh_dung_pt,table.photo_list_1 .anh_vuong_pt{
+	border-radius:5px;
+	box-shadow: 5px 3px 5px #ccc;
+	display:block;
+    background-repeat: no-repeat;
+	background-position:center;
+}
+table.photo_list_1 .anh_ngang_pt{
+	width:880px;
+	height:300px;
+}
+table.photo_list_1 .anh_dung_pt{
+	width:300px;
+	height:620px;
+}
+table.photo_list_1 .anh_vuong_pt{
+	width:300px;
+	height:300px;
+}
+
+/* table photo list 2*/
+table.photo_list_2{
+	margin:auto;
+	width:1200px;
+}
+table.photo_list_2 .anh_vuong{
+	width:180px;
+	height:180px;
+}
+table.photo_list_2 .anh_ngang{
+	width:1000px;
+	height:580px;
+}
+table.photo_list_2 .anh_ngang_pt ,table.photo_list_2 .anh_vuong_pt{
+	border-radius:5px;
+	box-shadow: 5px 3px 5px #ccc;
+	display:block;
+    background-repeat: no-repeat;
+	background-position:center;
+}
+table.photo_list_2 .anh_ngang_pt{
+	width:1000px;
+	height:580px;
+}
+table.photo_list_2 .anh_vuong_pt{
+	width:180px;
+	height:180px;
+}
+
+/* table photo list 3*/
+table.photo_list_3{
+	margin:auto;
+	width:1200px;
+}
+table.photo_list_3 .anh_ngang{
+	width:1200px;
+	height:580px;
+}
+table.photo_list_3 .anh_ngang_pt{
+	border-radius:5px;
+	box-shadow: 5px 3px 5px #ccc;
+	display:block;
+    background-repeat: no-repeat;
+	background-position:center;
+}
+table.photo_list_3 .anh_ngang_pt{
+	width:1200px;
+	height:580px;
+}

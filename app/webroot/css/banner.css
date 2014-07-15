@@ -1,0 +1,39 @@
+/* PHAN BANNER*/
+table.banner_tool{
+	margin:auto;
+	width:1000px;
+}
+
+table.khung{
+	width:100%;
+}
+table tr.banner{
+	height:50px;
+	background-color:#222222;
+}
+table tr.footer{
+	height:80px;
+}
+table.menu_banner ,table.user{
+	height:50px;
+	width:400px;
+	font-weight:bold;
+	color:#CCCCCC;
+}
+table.search{
+	width:300px;
+}
+table.search tr td.text_search{
+	width:90%;
+}
+table.user{
+	width:150px;
+	margin-right:10px;
+}
+table.user tr td.sign_up{
+	width:80%;
+}
+table.menu_banner tr td:hover , table.user tr td:hover {
+	background:#333333;
+	color:#FFFFFF;
+}

@@ -1,0 +1,52 @@
+/* like and comment css */
+
+	table.ca-icon{
+		width:120px;
+		opacity:0;
+		filter:alpha(opacity=60); /* For IE8 and earlier */
+	}
+	.ca-comment , .ca-like{
+		font-size:10px;
+		margin:auto;
+		color:#FFFFFF
+	}
+	.ca-icon tr td span img{
+		width:20px;
+		height:20px;
+		margin: 5px auto;
+		transition: all 400ms linear;
+	}
+	.ca-icon tr td{
+		width:60px;
+		height:60px;
+	}
+	.ca-icon tr td span.vien-icon{
+		text-align:center;
+		transition: all 400ms linear;
+	}
+	.ca-icon tr td:hover .vien-icon{
+		width:50px;
+		height:50px;
+		transition: all 400ms linear;
+		border-radius:60px;
+		border: 5px solid #333333;
+		box-shadow:0px 0px 0px #fff;
+	}
+	table.ca-icon tr td span.vien-icon{
+		width:40px;
+		height:40px;
+		margin:auto;
+		border-radius:50px;
+		display:block;
+		border: 5px solid #f6f6f6;
+	}
+	.photo_list_1 tr td:hover .ca-icon{
+		display:block;
+		opacity:1;
+		filter:alpha(opacity=60); /* For IE8 and earlier */
+		-webkit-transition: all 2s ease;
+		-moz-transition: all 2s ease;
+		-ms-transition: all 2s ease;
+		-o-transition: all 2s ease;
+		transition: all 2s ease;
+	}
