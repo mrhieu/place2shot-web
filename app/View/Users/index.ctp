@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="css/profile.css" />
+<?php echo $this->html->css("profile"); ?>
 <title>Profile Page</title>
 </head>
 
@@ -11,7 +11,7 @@
     	<div id="header">
         	<div id="top_header">
             	<div class="img_acc">
-                	<span class="acc_img" style="background-image:url(img/icon/avar.png);display:block;"></span>
+                	<span class="acc_img" style="background-image:url(<?php echo $this->webroot; ?>img/icon/avar.png);display:block;"></span>
                 </div>
                 
                 <div class="info">
@@ -27,11 +27,11 @@
                     
                     <div class="bonus">
                     	<button class="follow" type="button">FOLLOW</button>
-                        <button class="connect" style="background-image:url(img/icon/fb_icon.jpg);" type="button"></button>
-                        <button class="connect" style="background-image:url(img/icon/twitter.png);" type="button"></button>
-                        <button class="connect" style="background-image:url(img/icon/pinterest.png);" type="button"></button>
-                        <button class="connect" style="background-image:url(img/icon/google-plus.png);"type="button"></button>
-                        <button class="connect" style="background-image:url(img/icon/mail.png);" type="button"></button>
+                        <button class="connect" style="background-image:url(<?php echo $this->webroot; ?>img/icon/fb_icon.jpg);" type="button"></button>
+                        <button class="connect" style="background-image:url(<?php echo $this->webroot; ?>img/icon/twitter.png);" type="button"></button>
+                        <button class="connect" style="background-image:url(<?php echo $this->webroot; ?>img/icon/pinterest.png);" type="button"></button>
+                        <button class="connect" style="background-image:url(<?php echo $this->webroot; ?>img/icon/google-plus.png);"type="button"></button>
+                        <button class="connect" style="background-image:url(<?php echo $this->webroot; ?>img/icon/mail.png);" type="button"></button>
                     </div>
                 </div>
             </div>
@@ -59,15 +59,15 @@
         </div>
     	
         <div id="content">
-        	<span class="image" style="background-image:url(img/Image/img_site.jpg);"></span>
-            <span class="image" style="background-image:url(img/Image/img_site.jpg);"></span>
-            <span class="image" style="background-image:url(img/Image/img_site.jpg);"></span>
-            <span class="image" style="background-image:url(img/Image/img_site.jpg);"></span>
+        	<span class="image" style="background-image:url(<?php echo $this->webroot; ?>img/Image/img_site.jpg);"></span>
+            <span class="image" style="background-image:url(<?php echo $this->webroot; ?>img/Image/img_site.jpg);"></span>
+            <span class="image" style="background-image:url(<?php echo $this->webroot; ?>img/Image/img_site.jpg);"></span>
+            <span class="image" style="background-image:url(<?php echo $this->webroot; ?>img/Image/img_site.jpg);"></span>
             
-            <span class="image" style="background-image:url(img/Image/img_site.jpg);"></span>
-            <span class="image" style="background-image:url(img/Image/img_site.jpg);"></span>
-            <span class="image" style="background-image:url(img/Image/img_site.jpg);"></span>
-            <span class="image" style="background-image:url(img/Image/img_site.jpg);"></span>
+            <span class="image" style="background-image:url(<?php echo $this->webroot; ?>img/Image/img_site.jpg);"></span>
+            <span class="image" style="background-image:url(<?php echo $this->webroot; ?>img/Image/img_site.jpg);"></span>
+            <span class="image" style="background-image:url(<?php echo $this->webroot; ?>img/Image/img_site.jpg);"></span>
+            <span class="image" style="background-image:url(<?php echo $this->webroot; ?>img/Image/img_site.jpg);"></span>
             
         </div>
         
