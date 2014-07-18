@@ -24,51 +24,74 @@
                         <p class="detail">Detail2</p>
                         <p class="detail">Detail3</p>
                     </div>
-                    
-                    <div class="bonus">
-                    	<button class="follow" type="button">FOLLOW</button>
-                        <button class="connect" style="background-image:url(<?php echo $this->webroot; ?>img/icon/fb_icon.jpg);" type="button"></button>
-                        <button class="connect" style="background-image:url(<?php echo $this->webroot; ?>img/icon/twitter.png);" type="button"></button>
-                        <button class="connect" style="background-image:url(<?php echo $this->webroot; ?>img/icon/pinterest.png);" type="button"></button>
-                        <button class="connect" style="background-image:url(<?php echo $this->webroot; ?>img/icon/google-plus.png);"type="button"></button>
-                        <button class="connect" style="background-image:url(<?php echo $this->webroot; ?>img/icon/mail.png);" type="button"></button>
-                    </div>
+						<?php
+							echo $this->Form->end(array('div'=>'bonus','class'=>'follow','label'=>'FOLLOW'));
+							echo $this->Form->end(array('div'=>'bonus','class'=>'connect1','label'=>''));
+							echo $this->Form->end(array('div'=>'bonus','class'=>'connect2','label'=>''));
+							echo $this->Form->end(array('div'=>'bonus','class'=>'connect3','label'=>''));
+							echo $this->Form->end(array('div'=>'bonus','class'=>'connect4','label'=>''));
+							echo $this->Form->end(array('div'=>'bonus','class'=>'connect5','label'=>''));
+						?>
+                  
                 </div>
             </div>
             
             <div id="bottom_header">
-            	<div class="button">
-                	<button class="style_bt" type="button"><p class="text">ABOUT</p>
-                    </button>
-                    <button class="style_bt" type="button"><p class="text">FOLLOW</p>
-                    </button>
-                    <button class="style_bt" type="button"><p class="text">PHOTOS</p>
-                    </button>
-                    <button class="style_bt" type="button"><p class="text">SETS</p>
-                    </button>
-                    <button class="style_bt" type="button"><p class="text">STORIES</p>
-                    </button>
-                    <button class="style_bt" type="button"><p class="text">FAVORITES</p>
-                    </button>
-                     <button class="style_bt" type="button"><p class="text">STORE</p>
-                    </button>
-                    
-                    
-                </div>
+			
+				<?php
+					echo $this->Form->end(array('div'=>'button','class'=>'style_bt','label'=>'ABOUT'));
+					echo $this->Form->end(array('div'=>'button','class'=>'style_bt','label'=>'FOLLOW'));
+					echo $this->Form->end(array('div'=>'button','class'=>'style_bt','label'=>'PHOTOS'));
+					echo $this->Form->end(array('div'=>'button','class'=>'style_bt','label'=>'SETS'));
+					echo $this->Form->end(array('div'=>'button','class'=>'style_bt','label'=>'STORIES'));
+					echo $this->Form->end(array('div'=>'button','class'=>'style_bt','label'=>'STORE'));
+				?>
             </div>
         </div>
     	
         <div id="content">
-        	<span class="image" style="background-image:url(<?php echo $this->webroot; ?>img/Image/img_site.jpg);"></span>
-            <span class="image" style="background-image:url(<?php echo $this->webroot; ?>img/Image/img_site.jpg);"></span>
-            <span class="image" style="background-image:url(<?php echo $this->webroot; ?>img/Image/img_site.jpg);"></span>
-            <span class="image" style="background-image:url(<?php echo $this->webroot; ?>img/Image/img_site.jpg);"></span>
-            
-            <span class="image" style="background-image:url(<?php echo $this->webroot; ?>img/Image/img_site.jpg);"></span>
-            <span class="image" style="background-image:url(<?php echo $this->webroot; ?>img/Image/img_site.jpg);"></span>
-            <span class="image" style="background-image:url(<?php echo $this->webroot; ?>img/Image/img_site.jpg);"></span>
-            <span class="image" style="background-image:url(<?php echo $this->webroot; ?>img/Image/img_site.jpg);"></span>
-            
+			<?php
+				echo $this->Html->link(
+					$this->Html->image("Image/img_site.jpg"),
+					"view",
+					array('class' => 'image',"alt" => "Brownies",'escape' => false)
+				);
+				echo $this->Html->link(
+					$this->Html->image("Image/img_site.jpg"),
+					"view",
+					array('class' => 'image',"alt" => "Brownies",'escape' => false)
+				);
+				echo $this->Html->link(
+					$this->Html->image("Image/img_site.jpg"),
+					"view",
+					array('class' => 'image',"alt" => "Brownies",'escape' => false)
+				);
+				echo $this->Html->link(
+					$this->Html->image("Image/img_site.jpg"),
+					"view",
+					array('class' => 'image',"alt" => "Brownies",'escape' => false)
+				);
+				echo $this->Html->link(
+					$this->Html->image("Image/img_site.jpg"),
+					"view",
+					array('class' => 'image',"alt" => "Brownies",'escape' => false)
+				);
+				echo $this->Html->link(
+					$this->Html->image("Image/img_site.jpg"),
+					"view",
+					array('class' => 'image',"alt" => "Brownies",'escape' => false)
+				);
+				echo $this->Html->link(
+					$this->Html->image("Image/img_site.jpg"),
+					"view",
+					array('class' => 'image',"alt" => "Brownies",'escape' => false)
+				);
+				echo $this->Html->link(
+					$this->Html->image("Image/img_site.jpg"),
+					"view",
+					array('class' => 'image',"alt" => "Brownies",'escape' => false)
+				);
+			?>
         </div>
         
         <div id="footer">

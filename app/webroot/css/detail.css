@@ -24,22 +24,90 @@ body {
 	padding-right:50px;
 	padding-top:20px;
 	}
-#style1{
-	float:right;}
-	#style2{
+	#img{
+		float:left;
+		}
+		.img_acc{
+		float:left;
+		width:50px;
+		height:50px;
+		background-position:center;
+		background-repeat:no-repeat;
+		background-size:50px 50px;
+		margin-right:20px;
+		}
+	#info{
+		float:left;
+		margin-left:5px;
+		margin-top:13px;
+		}
+		.name{color:blue;text-decoration: none;}
+		.name:link {font-size: 1em; }
+		.name:hover { text-decoration: none; font-size: 2em; }
+#group1,#group2,#group3{
+	float:right;
+	margin-right:15px;
+}
+	.style2,.style3,.style1_button,.style2_button,.style3_button,.style4_button,.style5_button,.style6_button{
 	float:right;
 	}
-	#style3{
-	float:right;
-	margin-left:10px;}
-#img{
-	float:left;
-	}
-#info{
-	float:left;
-	margin-left:5px;
-	margin-top:13px;
-	}
+		.style1_button, .style2_button{
+			outline:none;
+			background-repeat:no-repeat;
+			background-position:center;
+			width:30px;
+			height:24px;
+			background-color:#262626;
+			border:none;
+			
+		}
+			.style1_button{
+				border-top-right-radius:4px;
+				border-top-left-radius:4px;
+			}
+			.style2_button{
+				border-bottom-right-radius:4px;
+				border-bottom-left-radius:4px;
+				margin-top:2px;
+			}
+			.style3_button, .style4_button{
+				width:40px;
+				height:50px;
+				background-repeat:no-repeat;
+				background-position:center;
+				background-color:#262626;
+				border:none;
+				outline:none;
+			}
+			.style3_button{
+				border-top-right-radius: 4px;
+				border-bottom-right-radius: 4px;
+			}
+			.style4_button{
+				border-top-left-radius: 4px;
+				border-bottom-left-radius: 4px;
+				margin-right:3px;
+			}
+			.style5_button, .style6_button,.style7_button,.style8_button{
+				outline:none;
+				height:50px;
+				width:50px;
+				margin-right:20px;
+				background-color:#262626;
+				background-repeat:no-repeat;
+				background-position:center;
+				border-radius:6px;
+				border:none;
+			}
+				.style1_button:hover,.style2_button:hover, .style2_button:focus,
+				.style3_button:hover,.style3_button:focus,.style4_button:hover,
+				.style5_button:hover,.style6_button:focus,.style7_button:hover,.style8_button:hover,
+				.style4_button:focus,.style5_button:hover,{
+					background-color:#333333;	
+					}
+				.style6_button:focus{background-color:#02adea;}
+				.style5_button:focus{background-color:#f6415a;}
+/* 
 .style1_button{
 	outline:none;
 	height:50px;
@@ -56,7 +124,10 @@ body {
 	}	
 	.style1_button:focus{
 		background-color:#02adea;}
-.style2_button{
+.style2{
+float:right;}
+.style2_button,.style3_button{
+	float:right;
 	width:40px;
 	height:50px;
 	background-repeat:no-repeat;
@@ -66,18 +137,6 @@ body {
 	border-bottom-left-radius:4px;
 	border:none;
 	outline:none;
-	}
-.style3_button{
-	outline:none;
-	background-repeat:no-repeat;
-	background-position:center;
-	width:40px;
-	height:50px;
-	background-color:#262626;
-	border-top-right-radius:4px;
-	border-bottom-right-radius:4px;
-	border:none;
-	margin-left:0.1px;
 	}
 .style4_button{
 	outline:none;

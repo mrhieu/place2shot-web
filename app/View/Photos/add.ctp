@@ -4,8 +4,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php echo $this->Html->css("banner.css"); ?>
 <?php echo $this->Html->css("upload.css"); ?>
-<script <?php echo $this->html->js("jpegmeta.js");?>></script>
-<script <?php echo $this->html->js("demo.js"); ?>></script>
+<script <?php echo $this->html->javascript("jpegmeta.js");?>></script>
+<script <?php echo $this->html->javascript("demo.js"); ?>></script>
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&language=vi"></script>
 <title>Untitled Document</title>
 <style type="text/css">
