@@ -53,42 +53,42 @@
 			<?php
 				echo $this->Html->link(
 					$this->Html->image("Image/img_site.jpg"),
-					"view",
+					array('controller'=>'photos','controller'=>'photos','action'=>'view'),
 					array('class' => 'image',"alt" => "Brownies",'escape' => false)
 				);
 				echo $this->Html->link(
 					$this->Html->image("Image/img_site.jpg"),
-					"view",
+					array('controller'=>'photos','action'=>'view'),
 					array('class' => 'image',"alt" => "Brownies",'escape' => false)
 				);
 				echo $this->Html->link(
 					$this->Html->image("Image/img_site.jpg"),
-					"view",
+					array('controller'=>'photos','action'=>'view'),
 					array('class' => 'image',"alt" => "Brownies",'escape' => false)
 				);
 				echo $this->Html->link(
 					$this->Html->image("Image/img_site.jpg"),
-					"view",
+					array('controller'=>'photos','action'=>'view'),
 					array('class' => 'image',"alt" => "Brownies",'escape' => false)
 				);
 				echo $this->Html->link(
 					$this->Html->image("Image/img_site.jpg"),
-					"view",
+					array('controller'=>'photos','action'=>'view'),
 					array('class' => 'image',"alt" => "Brownies",'escape' => false)
 				);
 				echo $this->Html->link(
 					$this->Html->image("Image/img_site.jpg"),
-					"view",
+					array('controller'=>'photos','action'=>'view'),
 					array('class' => 'image',"alt" => "Brownies",'escape' => false)
 				);
 				echo $this->Html->link(
 					$this->Html->image("Image/img_site.jpg"),
-					"view",
+					array('controller'=>'photos','action'=>'view'),
 					array('class' => 'image',"alt" => "Brownies",'escape' => false)
 				);
 				echo $this->Html->link(
 					$this->Html->image("Image/img_site.jpg"),
-					"view",
+					array('controller'=>'photos','action'=>'view'),
 					array('class' => 'image',"alt" => "Brownies",'escape' => false)
 				);
 			?>

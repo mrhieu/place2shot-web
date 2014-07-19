@@ -16,5 +16,7 @@
 		function detail(){
 		
 		}
+		function view(){}
+		
 	}
 ?>
