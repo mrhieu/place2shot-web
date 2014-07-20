@@ -1,65 +1,132 @@
 <?php
 /**
  *
+ * PHP versions 4 and 5
  *
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
  * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
  * @link          http://cakephp.org CakePHP(tm) Project
- * @package       app.View.Layouts
+ * @package       cake
+ * @subpackage    cake.cake.libs.view.templates.layouts
  * @since         CakePHP(tm) v 0.10.0.1076
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-
-$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
-$cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 ?>
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<title>
-		<?php echo $cakeDescription ?>:
+		<?php __('CakePHP: the rapid development php framework:'); ?>
 		<?php echo $title_for_layout; ?>
 	</title>
-	<?php
-		echo $this->Html->meta('icon');
+	<?=$this->Html->charset()?>
+	<?= $this->Html->meta('message.ico', 'message.ico', array('type' => 'icon'))?>
+	<?=$this->fetch('meta')?>
 
-		echo $this->Html->css('cake.generic');
+	<?=$this->Html->css(array(
+		'cake.generic',
+		'bootstrap/bootstrap',
+		'general'
+	))?>
+	<?=$this->fetch('css')?>
 
-		echo $this->fetch('meta');
-		echo $this->fetch('css');
-		echo $this->fetch('script');
-	?>
+	<?=$this->Html->script(array(
+		'jquery/jquery-1.9.1',
+		'jquery/jquery-ui-1.10.3.custom.min',
+		'jquery/general',
+		'bootstrap/bootstrap',
+		'jquery/jquery.cluetip/jquery.cluetip.min',                             // complex tooltips
+	))?>
+    <style>
+    	#header{
+    		background: #222;
+    		height: 30px;
+    	}
+    	.avata-user{
+    		height: 100px;
+    		width: 100px;
+    		background: #000;
+    		border: 1px solid #CCC;
+    	}
+    	.profile{
+    		display: inline-table;
+    		float: left;
+    	}
+    	#user-nav ul li{
+    		padding-bottom: 10px;
+    	}
+    </style>
 </head>
 <body>
 	<div id="container">
 		<div id="header">
-			<h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>
-		</div>
+			<div class="user-nav">
+				
+						
+
+				<?php if($logged_in):?>
+		            <ul>
+		            	<li><?php echo $this->Html->link('Logout', array('controller'=>'users','action'=>'logout'));?> </li>
+		            	<li><?php echo $this->Html->link('Upload', array('controller'=>'photos','action'=>'add'));?> </li>
+		      			<li>
+		      				<span><?php  echo $this->Html->image($current_user['avata'], array('alt' => 'Gallery Image', 'height'=>30, 'width'=>20));?></span>
+		      				<strong><?php echo $this->Html->link($current_user['name'], array('controller'=>'users','action' => 'view', $current_user['id'])); ?></strong> 	
+		      			</li>
+		                
+		            </ul>
+		                
+		                
+		        <?php else: ?>
+		            <ul>
+		                <li><?php echo $this->Html->link('Register', array('controller'=>'users','action'=>'add'));?> </li>
+		                <li><?php echo $this->Html->link('Upload', array('controller'=>'photos','action'=>'add'));?> </li>
+		                <li><?php echo $this->Html->link('Login', array('controller'=>'users','action'=>'login'));?> </li>
+		            </ul>
+		        <?php endif; ?>
+		    </div>
+
+			<div class="profile">
+				<div class="right">
+		        	<ul>
+		        		<li> <?php echo Buy ?> </li>
+						<li> <?php echo Discoverry ?> </li>
+		        		<li>
+						<?php echo $this->Html->link('Home', array('controller'=>'photos','action'=>'index'));?>  
+						</li>
+					
+				</div>
+
+				
+			</div>
+	            
+    	</div>
+    
 		<div id="content">
+			
+       		<?php echo $this->Session->flash(); ?>
+			<?php echo $this->Session->flash('auth'); ?>
+				
+            
+			<?php echo $content_for_layout; ?>
 
-			<?php echo $this->Session->flash(); ?>
-
-			<?php echo $this->fetch('content'); ?>
 		</div>
+		
+
 		<div id="footer">
 			<?php echo $this->Html->link(
-					$this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')),
+					$this->Html->image('cake.power.gif', array('alt'=> __('CakePHP: the rapid development php framework', true), 'border' => '0')),
 					'http://www.cakephp.org/',
-					array('target' => '_blank', 'escape' => false, 'id' => 'cake-powered')
+					array('target' => '_blank', 'escape' => false)
 				);
 			?>
-			<p>
-				<?php echo $cakeVersion; ?>
-			</p>
 		</div>
 	</div>
-	<?php //echo $this->element('sql_dump'); ?>
+	<?php echo $this->element('sql_dump'); ?>
 </body>
 </html>

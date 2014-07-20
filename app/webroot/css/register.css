@@ -1,0 +1,49 @@
+table.profile{
+	margin:50px auto;
+	width:700px;
+	font-weight:bold;
+	color:#999999;
+	font-size:20px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+table.profile tr td.for_got_pw{
+	 text-align:right;
+}
+table.profile tr td.for_got_pw a{
+	 text-decoration:none;
+	 color:#00CCCC;
+}
+table.profile tr td{
+	text-align:center;
+	width:350px;
+	height:80px;
+}
+table.profile tr td.hr_class{
+	width:700px;
+	height:5px;
+}
+
+table.profile tr td input, table.profile tr td select{
+	width:300px;
+	height:40px;
+	font-size:24px;
+	color:#999999;
+	border:solid;
+	border-color:#CCCCCC;
+	border-radius:5px;
+	border-bottom-width:1px;
+}
+table.profile tr td.submit input{
+	background-color:#41CB56;
+	border-color:#41CB56;
+	color:#FFFFFF;
+}
+div.profile_border{
+	width:900px;
+	height:480px;
+	border:solid #CCCCCC;
+	margin: 50px auto;
+}
+hr{
+	color:#999999;
+}

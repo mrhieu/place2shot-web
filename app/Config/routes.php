@@ -24,7 +24,8 @@
  * its action called 'display', and we pass a param to select the view file
  * to use (in this case, /app/View/Pages/home.ctp)...
  */
-	Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
+	Router::parseExtensions('json', 'xml');
+	Router::connect('/', array('controller' => 'photos', 'action' =>  'index'));
 /**
  * ...and connect the rest of 'Pages' controller's URLs.
  */
@@ -41,3 +42,10 @@
  * the built-in default routes.
  */
 	require CAKE . 'Config' . DS . 'routes.php';
+	Router::connect('/users', array('plugin' => 'users', 'controller' => 'users'));
+Router::connect('/users/index/*', array('plugin' => 'users', 'controller' => 'users'));
+Router::connect('/users/:action/*', array('plugin' => 'users', 'controller' => 'users'));
+Router::connect('/users/users/:action/*', array('plugin' => 'users', 'controller' => 'users'));
+Router::connect('/login', array('plugin' => 'users', 'controller' => 'users', 'action' => 'login'));
+Router::connect('/logout', array('plugin' => 'users', 'controller' => 'users', 'action' => 'logout'));
+Router::connect('/register', array('plugin' => 'users', 'controller' => 'users', 'action' => 'add'));

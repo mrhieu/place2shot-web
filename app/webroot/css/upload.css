@@ -1,0 +1,48 @@
+/* upload  */
+body{
+	font-family:Arial, Helvetica, sans-serif;
+}
+table.upload_button{
+	width:500px;
+	text-align:center;
+	margin: 50px auto;
+}
+table.upload_button tr td {
+	height:50px
+}
+table.upload_button tr td.title{
+	font-size:24px;
+	font-weight:bolder;
+	color:#00FF99;
+}
+table.upload_button tr td.text_other{
+	color:#999999;
+}
+/* image profile*/
+table.image_profile{
+	width:1200px;
+	text-align:justify;
+	margin:auto;
+}
+table.image_profile tr td{
+	width:400px;
+}
+/*basic*/
+table.image_profile tr td.basic_title{
+	height:20px;
+}
+/*exif*/
+
+table.exif{
+	width:400px;
+	margin:auto;
+}
+/*display image upload*/
+table.display-image{
+	width:1000px;
+	margin:auto;
+	text-align:center;
+}
+table.display-image tr td.image_upload{
+	height:450px;
+}

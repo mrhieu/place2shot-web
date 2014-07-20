@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	margin:0px;
+	padding:0px;
+	}
+#wrapper{
+	width:100%;
+	}
+#header{
+	}
+#content{
+		width:100%;
+		height:auto;
+		text-align:center;
+}
+
+	.img{
+		background-position: center;
+		background-repeat:no-repeat;
+		width:auto;
+		height:auto;
+		}
+	
+#footer{}

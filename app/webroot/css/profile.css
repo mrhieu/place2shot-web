@@ -1,0 +1,177 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	margin:0px;
+	padding:0px;
+	}
+#wrapper{
+	width:100%;
+	min-height:800px;
+	margin:0px;
+	padding:0px;
+	}
+#header{
+	width:100%;
+	height:500px;
+	background:url(../img/Image/1.jpg);
+	background-position:center;
+	background-repeat:no-repeat;
+	display:block;
+	background-size:100% 500px;
+	}
+#content{
+	width:1200px;
+	margin:40px auto;
+	}
+#top_header{
+	padding-top:350px;
+	margin-left:100px;
+	width:1000px;
+	height:110px;
+	}
+#bottom_header{
+	margin-left:100px;
+	width:1000px;
+	height:50px;
+	}
+.img_acc{
+	float:left;
+	}
+.info{
+	float:left;
+	margin-left:20px;
+	width:300px;
+	}
+.acc_img{
+		float:left;
+		background-position:center;
+		width:100px;
+		height:100px;
+		background-repeat:no-repeat;
+		background-size:100px 100px;
+		}
+.name_acc{
+	color:#FFF;
+	font-size:2em;}
+.details{
+	margin-top:4px;
+	}
+.detail{
+	color:#FFF;
+	float:left;
+	margin-right:10px;
+	}
+.bonus{
+	margin-top:33px;
+	}
+.follow{
+	float:left;
+	margin-right:5px;
+	background-color:#bfbfbe;
+	text-shadow:#009;
+	width:90px;
+	height:30px;
+	opacity:0.7;
+	border:none;
+	outline:none;
+	cursor:pointer;
+	border-radius:4px 4px;
+	transition: all 0.5s ease 0s;
+	-webkit-transition: all 0.5s ease 0s;
+	-moz-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+	}
+.connect1,.connect2,.connect3,.connect4,.connect5{
+	float:left;
+	border:none;outline:none;
+	margin-right:1px;
+	background-color:#bfbfbe;
+	text-shadow:#009;
+	width:30px;
+	height:30px;
+	cursor:pointer;
+	display:block;
+	background: transparent;
+	background-repeat:no-repeat;
+	background-position:center;	
+	transition: all 0.5s ease 0s;
+	-webkit-transition: all 0.5s ease 0s;
+	-moz-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+	}
+.connect1{
+background-image:url(../img/icon/fb_icon.jpg);
+}
+.connect2{
+background-image:url(../img/icon/twitter.png);
+}	
+.connect3{
+background-image:url(../img/icon/pinterest.png);
+}	
+.connect4{
+background-image:url(../img/icon/google-plus.png);
+}	
+.connect5{
+background-image:url(../img/icon/mail.png);
+}		
+.follow:hover,.follow:focus {
+	background-color:#3CF;
+	transition: all 0.5s ease 0s;
+	-webkit-transition: all 0.5s ease 0s;
+	-moz-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+	}
+.connect1:hover, .connect1:focus,.connect2:hover, .connect2:focus,.connect3:hover, .connect3:focus,.connect4:hover, .connect44:focus,
+.connect5:hover, .connect5:focus{
+	background-color:#999;
+	opacity:0.7;}
+.style_bt{
+	height:30px;
+	min-width:85px;
+	float:left;
+	margin-right:30px;
+	width:30px;
+	height:30px;
+	text-shadow:#FFF;
+	background: transparent;
+	border: none !important;
+	outline:none;
+	cursor:pointer;
+	border-radius:4px 4px;
+	color:#FFF;
+	text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+	text-transform: uppercase;
+	text-align: center;
+	text-decoration: none;
+	font: 15px Helvetica, Arial, sans-serif;
+	
+	transition: all 0.5s ease 0s;
+	-webkit-transition: all 0.5s ease 0s;
+	-moz-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+	}
+.style_bt:hover, .style_bt:focus{
+	background-color:#bfbfbe;
+	opacity:0.7;
+	border:none;
+	}
+.style_bt value{
+	color:#FFF;
+	font-size:1.1em;
+	text-shadow:#666;
+	opacity:1;
+}
+.image img{
+float:left;
+	margin-left:20px;
+	margin-top:20px;
+	margin-bottom:20px;
+	width:280px;
+	height:280px;
+	width:280px;
+	height:280px;
+	background-position:center;
+	background-repeat:no-repeat;
+	display:block;
+	background-size:280px 280px;
+}	

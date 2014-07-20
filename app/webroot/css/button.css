@@ -1,0 +1,26 @@
+*{margin:0px;
+padding:0px;}
+.submit{
+margin-left:200px;
+margin-top:100px;
+}
+.sub1{
+
+width:50px;
+height:50px;
+
+display:block;
+background-image:url(../img/icon/like-icon.png);
+background-position:center;
+background-repeat:no-repeat;
+background-size:50px 50px;
+}
+.sub2, .sub3 ,.sub4,.sub5{
+width:50px;
+height:50px;
+display:block;
+background-image:url(../img/icon/mail.png);
+background-position:center;
+background-repeat:no-repeat;
+background-size:50px 50px;
+}

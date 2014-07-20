@@ -13,7 +13,8 @@
  * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  * @link          http://cakephp.org CakePHP(tm) Project
  * @package       app.webroot.css
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ * @since         CakePHP(tm)
+ * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
 * {
@@ -30,13 +31,13 @@ body {
 	margin: 0;
 }
 a {
-	color: #003d4c;
-	text-decoration: underline;
+	color: #FFF;
+	text-decoration: none;
 	font-weight: bold;
 }
 a:hover {
-	color: #367889;
-	text-decoration:none;
+	color: #FFF;
+	text-decoration: none;
 }
 a img {
 	border:none;
@@ -51,7 +52,7 @@ h1 {
 	font-size: 100%;
 }
 h2 {
-	background:#fff;
+	background: none;
 	color: #e32;
 	font-family:'Gill Sans','lucida grande', helvetica, arial, sans-serif;
 	font-size: 190%;
@@ -78,7 +79,8 @@ p {
 }
 
 #header{
-	padding: 10px 20px;
+	padding: 20px 20px;
+	
 }
 #header h1 {
 	line-height:20px;
@@ -95,45 +97,25 @@ p {
 #header h1 a:hover {
 	color: #fff;
 	background: #003d4c;
-	text-decoration: underline;
+	text-decoration: none;
 }
 #content{
 	background: #fff;
-	clear: both;
 	color: #333;
 	padding: 10px 20px 40px 20px;
-	overflow: auto;
 }
 #footer {
 	clear: both;
 	padding: 6px 10px;
-}
-#header a, #footer a {
-	color: #fff;
-}
-#cake-powered {
-	float: right;
+	text-align: right;
 }
 
 /** containers **/
 div.form,
 div.index,
 div.view {
-	float:right;
-	width:76%;
-	border-left:1px solid #666;
-	padding:10px 2%;
+	/*padding:15px 2%;*/
 }
-div.actions {
-	float:left;
-	width:16%;
-	padding:10px 1.5%;
-}
-div.actions h3 {
-	padding-top:0;
-	color:#777;
-}
-
 
 /** Tables **/
 table {
@@ -146,7 +128,7 @@ table {
 th {
 	border:0;
 	border-bottom:2px solid #555;
-	text-align: left;
+	text-align: center;
 	padding:4px;
 }
 th a {
@@ -162,7 +144,7 @@ th a.desc:after {
 }
 table tr td {
 	padding: 6px;
-	text-align: left;
+	text-align: center;
 	vertical-align: top;
 	border-bottom:1px solid #ddd;
 }
@@ -208,7 +190,6 @@ table td.actions a {
 .paging > span {
 	display: inline-block;
 	border: 1px solid #ccc;
-	border-left: 0;
 }
 .paging > span:hover {
 	background: #efefef;
@@ -236,26 +217,12 @@ table td.actions a {
 }
 
 /** Scaffold View **/
-dl {
-	line-height: 2em;
-	margin: 0em 0em;
-	width: 60%;
-}
+/*dl {
+	width: 30%;
+}*/
 dl dd:nth-child(4n+2),
 dl dt:nth-child(4n+1) {
 	background: #f4f4f4;
-}
-
-dt {
-	font-weight: bold;
-	padding-left: 4px;
-	vertical-align: top;
-	width: 10em;
-}
-dd {
-	margin-left: 10em;
-	margin-top: -2em;
-	vertical-align: top;
 }
 
 /** Forms **/
@@ -264,6 +231,7 @@ form {
 	margin-right: 20px;
 	padding: 0;
 	width: 95%;
+	float: left;
 }
 fieldset {
 	border: none;
@@ -271,7 +239,7 @@ fieldset {
 	padding: 16px 10px;
 }
 fieldset legend {
-	color: #e32;
+	color: #5F74F2;
 	font-size: 160%;
 	font-weight: bold;
 }
@@ -289,7 +257,6 @@ fieldset fieldset div {
 }
 form div {
 	clear: both;
-	margin-bottom: 1em;
 	padding: .5em;
 	vertical-align: text-top;
 }
@@ -314,12 +281,10 @@ label {
 	font-size: 110%;
 	margin-bottom:3px;
 }
-input, textarea {
-	clear: both;
-	font-size: 140%;
-	font-family: "frutiger linotype", "lucida grande", "verdana", sans-serif;
+#PostText {
+/*	font-family: "frutiger linotype", "lucida grande", "verdana", sans-serif;*/
 	padding: 1%;
-	width:98%;
+	width: 35%;
 }
 select {
 	clear: both;
@@ -339,8 +304,8 @@ input[type=checkbox] {
 	margin: 0px 6px 7px 2px;
 	width: auto;
 }
-div.checkbox label {
-	display: inline;
+div.checkbox {
+	margin-left: 10px;
 }
 input[type=radio] {
 	float:left;
@@ -355,21 +320,18 @@ input[type=radio] {
 }
 input[type=submit] {
 	display: inline;
-	font-size: 110%;
 	width: auto;
 }
 form .submit input[type=submit] {
-	background:#62af56;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#76BF6B), to(#3B8230));
-	background-image: -webkit-linear-gradient(top, #76BF6B, #3B8230);
-	background-image: -moz-linear-gradient(top, #76BF6B, #3B8230);
-	border-color: #2d6324;
-	color: #fff;
-	text-shadow: rgba(0, 0, 0, 0.5) 0px -1px 0px;
-	padding: 8px 10px;
+	background-color: #5BB75B;
+	background-image: linear-gradient(to bottom, #62C462, #51A351);
+	background-repeat: repeat-x;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	color: #FFFFFF;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25)
 }
 form .submit input[type=submit]:hover {
-	background: #5BA150;
+	background: #5EB15E;
 }
 /* Form errors */
 form .error {
@@ -404,7 +366,7 @@ form .error-message {
 .message {
 	clear: both;
 	color: #fff;
-	font-size: 140%;
+	font-size: 300%;
 	font-weight: bold;
 	margin: 0 0 1em 0;
 	padding: 5px;
@@ -501,6 +463,8 @@ p.error em {
 	list-style-type: none;
 	white-space: nowrap;
 	padding: 0;
+	display: inline-table;;
+	
 }
 .actions ul li a {
 	font-weight: normal;
@@ -510,8 +474,7 @@ p.error em {
 
 /* Buttons and button links */
 input[type=submit],
-.actions ul li a,
-.actions a {
+.actions ul li 	{
 	font-weight:normal;
 	padding: 4px 8px;
 	background: #dcdcdc;
@@ -534,29 +497,7 @@ input[type=submit],
 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0px 1px 1px rgba(0, 0, 0, 0.2);
 	-webkit-user-select: none;
 	user-select: none;
-}
-.actions ul li a:hover,
-.actions a:hover {
-	background: #ededed;
-	border-color: #acacac;
-	text-decoration: none;
-}
-input[type=submit]:active,
-.actions ul li a:active,
-.actions a:active {
-	background: #eee;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#dfdfdf), to(#eee));
-	background-image: -webkit-linear-gradient(top, #dfdfdf, #eee);
-	background-image: -moz-linear-gradient(top, #dfdfdf, #eee);
-	background-image: -ms-linear-gradient(top, #dfdfdf, #eee);
-	background-image: -o-linear-gradient(top, #dfdfdf, #eee);
-	background-image: linear-gradient(top, #dfdfdf, #eee);
-	text-shadow: #eee 0px 1px 0px;
-	-moz-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3);
-	-webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3);
-	box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3);
-	border-color: #aaa;
-	text-decoration: none;
+	
 }
 
 /** Related **/
@@ -741,4 +682,26 @@ pre {
 /** Elements **/
 #url-rewriting-warning {
 	display:none;
+}
+#header ul li{
+	
+	float: right;
+	height: 30px;
+	width: auto;
+	text-align:center;
+	margin-left: 10px;
+	margin-right: 10px;
+	
+		
+}
+#header ul li a{
+	color: #6E7C83;
+  	text-decoration: none;
+	
+}
+#header ul li a:hover{
+	background: #CCC;	
+}
+.clear{
+	clear: both;
 }
