@@ -1,102 +1,80 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<?php echo $this->html->css("profile"); ?>
-<title>Profile Page</title>
-</head>
+<div class="actions" >
+		<ul >
+	    		<li><?php echo $this->Html->link(__('Home', true), array("controller" => "photos", "action" => "index")); ?> </li>
+	    	<?php if($current_user['roles' ] == 'admin'): ?>
+	    		<li><?php echo $this->Html->link(__('New User', true), array('controller' => 'users', 'action' => 'add')); ?> </li>
+	        	<li><?php echo $this->Html->link(__('List Users', true), array('controller' => 'users', 'action' => 'index')); ?> </li>
+	        <?php endif; ?>
+	        	<li><?php echo $this->Html->link(__('List Galleries', true), array('controller' => 'galleries', 'action' => 'index')); ?> </li>
+				<li><?php echo $this->Html->link(__('New Gallery', true), array('controller' => 'galleries', 'action' => 'add')); ?> </li>
+				<li><?php echo $this->Html->link(__('New Photo', true), array('action' => 'add')); ?></li>
+				
+				
+		</ul>
+</div> 
 
-<body>
-	<div id="wrapper">
-    	<div id="header">
-        	<div id="top_header">
-            	<div class="img_acc">
-                	<span class="acc_img" style="background-image:url(<?php echo $this->webroot; ?>img/icon/avar.png);display:block;"></span>
-                </div>
-                
-                <div class="info">
-                	<div class="name">
-                    	<p class="name_acc">Name Acc</p>
-                    </div>
-                    
-                    <div class="details">
-    					<p class="detail">Detail1</p>
-                        <p class="detail">Detail2</p>
-                        <p class="detail">Detail3</p>
-                    </div>
-						<?php
-							echo $this->Form->end(array('div'=>'bonus','class'=>'follow','label'=>'FOLLOW'));
-							echo $this->Form->end(array('div'=>'bonus','class'=>'connect1','label'=>''));
-							echo $this->Form->end(array('div'=>'bonus','class'=>'connect2','label'=>''));
-							echo $this->Form->end(array('div'=>'bonus','class'=>'connect3','label'=>''));
-							echo $this->Form->end(array('div'=>'bonus','class'=>'connect4','label'=>''));
-							echo $this->Form->end(array('div'=>'bonus','class'=>'connect5','label'=>''));
-						?>
-                  
-                </div>
-            </div>
-            
-            <div id="bottom_header">
-			
-				<?php
-					echo $this->Form->end(array('div'=>'button','class'=>'style_bt','label'=>'ABOUT'));
-					echo $this->Form->end(array('div'=>'button','class'=>'style_bt','label'=>'FOLLOW'));
-					echo $this->Form->end(array('div'=>'button','class'=>'style_bt','label'=>'PHOTOS'));
-					echo $this->Form->end(array('div'=>'button','class'=>'style_bt','label'=>'SETS'));
-					echo $this->Form->end(array('div'=>'button','class'=>'style_bt','label'=>'STORIES'));
-					echo $this->Form->end(array('div'=>'button','class'=>'style_bt','label'=>'STORE'));
-				?>
-            </div>
-        </div>
-    	
-        <div id="content">
-			<?php
-				echo $this->Html->link(
-					$this->Html->image("Image/img_site.jpg"),
-					array('controller'=>'photos','controller'=>'photos','action'=>'view'),
-					array('class' => 'image',"alt" => "Brownies",'escape' => false)
-				);
-				echo $this->Html->link(
-					$this->Html->image("Image/img_site.jpg"),
-					array('controller'=>'photos','action'=>'view'),
-					array('class' => 'image',"alt" => "Brownies",'escape' => false)
-				);
-				echo $this->Html->link(
-					$this->Html->image("Image/img_site.jpg"),
-					array('controller'=>'photos','action'=>'view'),
-					array('class' => 'image',"alt" => "Brownies",'escape' => false)
-				);
-				echo $this->Html->link(
-					$this->Html->image("Image/img_site.jpg"),
-					array('controller'=>'photos','action'=>'view'),
-					array('class' => 'image',"alt" => "Brownies",'escape' => false)
-				);
-				echo $this->Html->link(
-					$this->Html->image("Image/img_site.jpg"),
-					array('controller'=>'photos','action'=>'view'),
-					array('class' => 'image',"alt" => "Brownies",'escape' => false)
-				);
-				echo $this->Html->link(
-					$this->Html->image("Image/img_site.jpg"),
-					array('controller'=>'photos','action'=>'view'),
-					array('class' => 'image',"alt" => "Brownies",'escape' => false)
-				);
-				echo $this->Html->link(
-					$this->Html->image("Image/img_site.jpg"),
-					array('controller'=>'photos','action'=>'view'),
-					array('class' => 'image',"alt" => "Brownies",'escape' => false)
-				);
-				echo $this->Html->link(
-					$this->Html->image("Image/img_site.jpg"),
-					array('controller'=>'photos','action'=>'view'),
-					array('class' => 'image',"alt" => "Brownies",'escape' => false)
-				);
+<div class="users index">
+	<div>
+		<ul>
+			<li> </li>
+			<li><h2><?= __d('User', 'Users')?></h2></li>
+			<li><?= $this->Html->link(__d('User', 'New User'), array('controller' => 'users', 'action' => 'add'), array('class' => 'btn btn-primary btn-mini'))?></li>
+		</ul>
+	</div>
+	<table cellpadding="0" cellspacing="0">
+	<tr>
+			<th><?= $this->Paginator->sort('id', __d('User', 'Id'))?></th>
+			<th><?= $this->Paginator->sort('username', __d('User', 'Username'))?></th>
+			<th><?= $this->Paginator->sort('name', __d('User', 'Name'))?></th>
+			<th><?= $this->Paginator->sort('password', __d('User', 'Password'))?></th>
+			<th><?= $this->Paginator->sort('avata', __d('User', 'Avata'))?></th>
+			<th><?= $this->Paginator->sort('email', __d('User', 'Email'))?></th>
+			<th><?= $this->Paginator->sort('gender', __d('User', 'Gender'))?></th>
+			<th><?= $this->Paginator->sort('created', __d('User', 'Created'))?></th>
+			<th><?= $this->Paginator->sort('modified', __d('User', 'Modified'))?></th>
+			<th class="actions"><?= __('Actions')?></th>
+	</tr>
+	<?php foreach ($users as $user): ?>
+	<tr>
+		<td><?= h($user['User']['id'])?>&nbsp;</td>
+		<td><?= $this->Html->link($user['User']['name'], array('action' => 'view', $user['User']['id']))?>&nbsp;</td>
+		<td><?= h($user['User']['name'])?>&nbsp;</td>
+		<td><?= h($user['User']['password'])?>&nbsp;</td>
+		<td><?= $this->Html->image($user['User']['avata'], array('alt' => 'Cakephp'))?></td>
+		<td><?= h($user['User']['email'])?>&nbsp;</td>
+		<td><?= h($user['User']['gender'])?>&nbsp;</td>
+		<td><?= h($user['User']['created'])?>&nbsp;</td>
+		<td><?= h($user['User']['modified'])?>&nbsp;</td>
+		<td class="actions">
+			<?= 
+				$this->Html->link(
+					__('Edit'),
+					array('action' => 'edit', $user['User']['id']),
+					array('class' => 'btn btn-success btn-small')	
+				)
 			?>
-        </div>
-        
-        <div id="footer">
-        
-        </div>
-    </div>
-</body>
-</html>
+			<?= 
+				$this->Form->postLink(
+					__('Delete'), array('action' => 'delete', $user['User']['id']),
+					array('class' => 'btn btn-danger btn-small'),
+					__('Are you sure you want to delete # %s?', $user['User']['id'])
+				)
+			?>
+		</td>
+	</tr>
+<?php endforeach;?>
+	</table>
+	<p>
+	<?php
+	echo $this->Paginator->counter(array(
+	'format' => __('Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}')
+	));
+	?>	</p>
+	<div class="paging">
+	<?php
+		echo $this->Paginator->prev('< ' . __('previous'), array(), null, array('class' => 'prev disabled'));
+		echo $this->Paginator->numbers(array('separator' => ''));
+		echo $this->Paginator->next(__('next') . ' >', array(), null, array('class' => 'next disabled'));
+	?>
+	</div>
+</div>

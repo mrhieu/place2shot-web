@@ -31,5 +31,31 @@ App::uses('Controller', 'Controller');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
-	public $components = array('DebugKit.Toolbar');
+	public $components = array(
+		'Session',
+		'Auth' => array(
+				'loginRedirect' => array('controller'=>'photos','action'=>'index'),	
+				'logoutRedirect' => array('controller'=>'pages','action'=>'home'),
+				'authError' => 'You can not access that page.',
+				'loginError' => 'Incorrect username/password combination.',
+				'authorize' => array('Controller'),
+				) 
+			
+		);
+	
+	function beforeFilter(){
+		$this->Auth->allow('index','view');
+
+		// $this->set('admin', $this->_isAdmin());
+		 $this->set('logged_in', $this->Auth->loggedIn());
+	     $this->set('current_user', $this->Auth->user());
+	     
+	}
+	
+	public function isAuthorized($user){
+		return true;
+	}
+
+	
+		
 }
