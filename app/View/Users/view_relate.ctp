@@ -26,7 +26,9 @@
 			}
 		?>
 		<tr<?php echo $class;?>>
+       		<?php if($current_user['roles' ] == 'admin'): ?>
 				<td><?php echo $photo['id'];?></td>
+            <?php endif; ?>
             <?php if($current_user['roles' ] == 'admin'): ?>
 				<td><?php echo $photo['user_id'];?></td>
             <?php endif; ?>
