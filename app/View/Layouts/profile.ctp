@@ -52,47 +52,21 @@
     	
         <div id="content">
 			<?php
-				echo $this->Html->link(
-					$this->Html->image("Image/img_site.jpg"),
+				$i = 0;
+				foreach ($user['Photo'] as $photo):
+					$class = null;
+					if ($i++ % 2 == 0) {
+						$class = ' class="altrow"';
+					}
+				
+						echo $this->Html->link(
+					$this->Html->image('uploads/images'.'/'.$photo['img_file'], array('alt' => 'Gallery Image')),
 					array('controller'=>'photos','action'=>'view'),
 					array('class' => 'image',"alt" => "Brownies",'escape' => false)
 				);
-				echo $this->Html->link(
-					$this->Html->image("Image/img_site.jpg"),
-					array('controller'=>'photos','action'=>'view'),
-					array('class' => 'image',"alt" => "Brownies",'escape' => false)
-				);
-				echo $this->Html->link(
-					$this->Html->image("Image/img_site.jpg"),
-					array('controller'=>'photos','action'=>'view'),
-					array('class' => 'image',"alt" => "Brownies",'escape' => false)
-				);
-				echo $this->Html->link(
-					$this->Html->image("Image/img_site.jpg"),
-					array('controller'=>'photos','action'=>'view'),
-					array('class' => 'image',"alt" => "Brownies",'escape' => false)
-				);
-				echo $this->Html->link(
-					$this->Html->image("Image/img_site.jpg"),
-					array('controller'=>'photos','action'=>'view'),
-					array('class' => 'image',"alt" => "Brownies",'escape' => false)
-				);
-				echo $this->Html->link(
-					$this->Html->image("Image/img_site.jpg"),
-					array('controller'=>'photos','action'=>'view'),
-					array('class' => 'image',"alt" => "Brownies",'escape' => false)
-				);
-				echo $this->Html->link(
-					$this->Html->image("Image/img_site.jpg"),
-					array('controller'=>'photos','action'=>'view'),
-					array('class' => 'image',"alt" => "Brownies",'escape' => false)
-				);
-				echo $this->Html->link(
-					$this->Html->image("Image/img_site.jpg"),
-					array('controller'=>'photos','action'=>'view'),
-					array('class' => 'image',"alt" => "Brownies",'escape' => false)
-				);
-			?>
+			endforeach; ?>
+		
+			
         </div>
         
         <div id="footer">
