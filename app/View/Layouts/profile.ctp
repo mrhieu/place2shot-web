@@ -11,7 +11,7 @@
     	<div id="header">
         	<div id="top_header">
             	<div class="img_acc">
-                	<span class="acc_img" style="background-image:url(<?php echo $this->webroot; ?>img/icon/<?php echo $current_user['avata']?> );display:block;">
+                	<span class="acc_img" style="background-image:url(<?php echo $this->webroot; ?>img/uploads/avatas/thumb/small/<?php echo $current_user['avata']?> );display:block;">
                     </span>
                 </div>
                 

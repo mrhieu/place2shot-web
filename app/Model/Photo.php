@@ -67,13 +67,15 @@ class Photo extends AppModel {
 	var $actsAs = array(
     'MeioUpload' => array(
 		'img_file' => array(
-            'dir' => 'img',
+            'dir' => 'img/uploads/images',
             'create_directory' => false,
             'allowed_mime' => array('image/jpeg', 'image/pjpeg', 'image/png'),
             'allowed_ext' => array('.jpg', '.jpeg', '.png'),
 			'zoomCrop' => true,
             'thumbsizes' => array(
-            'normal' => array('width' => 400, 'height' => 300),
+            //'normal' => array('width' => 400, 'height' => 300),
+			'small' => array('width' => 80, 'height' => 80,'maxDimension' => '', 'zoomCrop' => true),
+    		'large'  => array('width' => 800, 'height' => 600,'maxDimension' => '', 'zoomCrop' => true)
 				),
 			'default' => 'default.jpg'
 			

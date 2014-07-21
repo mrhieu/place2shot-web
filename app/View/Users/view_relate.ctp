@@ -31,7 +31,7 @@
 				<td><?php echo $photo['user_id'];?></td>
             <?php endif; ?>
 				<td><?php echo $photo['title'];?></td>
-	            <td><?php echo $this->Html->image($photo['img_file'], array('alt' => 'Gallery Image'))?></td>
+	            <td><?php echo $this->Html->image('uploads/images/thumb/small'.'/'.$photo['img_file'], array('alt' => 'Gallery Image'))?></td>
 				<td><?php echo $photo['description'];?></td>
 				<td><?php echo $photo['created'];?></td>
 				<td><?php echo $photo['modified'];?></td>

@@ -45,7 +45,7 @@
 			<?= $this->Html->link($photo['Gallery']['name'], array('controller' => 'galleries', 'action' => 'view', $photo['Gallery']['id']))?>
 		</td>
 		<td><?= h($photo['Photo']['title'])?>&nbsp;</td>
-		<td><?= $this->Html->image($photo['Photo']['img_file'], array('alt' => 'Cakephp'))?></td>
+		<td><?= $this->Html->image('uploads/images/thumb/small' . '/' . $photo['Photo']['img_file'], array('alt' => 'Cakephp'))?></td>
 		<td><?= h($photo['Photo']['description'])?>&nbsp;</td>
 		<td><?= h($photo['Photo']['created'])?>&nbsp;</td>
 		<td><?= h($photo['Photo']['modified'])?>&nbsp;</td>

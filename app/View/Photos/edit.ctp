@@ -1,6 +1,6 @@
 <?= $this->element('ajax_calendar')?>	
 
-<div class="posts form hero-unit" style="width: 300px; margin-right: auto ; margin-left: auto;" >
+<div class="posts form hero-unit" style="width: 300px; margin-right: auto ; margin-left: auto; height: 500px;" >
 	<?= $this->Form->create('Photo',array('type' => 'file'))?>
 		<fieldset>
 			<legend><?= __d('Photo', 'Edit Photo')?></legend>

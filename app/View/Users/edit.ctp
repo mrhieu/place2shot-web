@@ -1,4 +1,4 @@
-<div class="users form hero-unit" style="width: 400px; margin-right: auto ; margin-left: auto; height: 600px">
+<div class="users form hero-unit" style="width: 400px; margin-right: auto ; margin-left: auto; height: 650px">
 <?= $this->Form->create('User',array('type' => 'file'))?>
 	<fieldset>
 		<legend><?= __d('User', 'Upgrade')?></legend>

@@ -4,7 +4,7 @@
 			
 			<dt><?= __d('Photo', 'Image')?></dt>
 			<dd>
-				<?= $this->Html->image($photo['Photo']['img_file'], array('alt' => 'Cakephp', 'height' => 300, 'width' => 800))?>
+				<?= $this->Html->image('uploads/images/thumb/large' . '/' . $photo['Photo']['img_file'], array('alt' => 'Cakephp', 'height' => 300, 'width' => 800))?>
 				&nbsp;
 			</dd>
 		<?php if($current_user['roles' ] == 'admin'): ?>

@@ -40,7 +40,7 @@
 		<td><?= $this->Html->link($user['User']['name'], array('action' => 'view', $user['User']['id']))?>&nbsp;</td>
 		<td><?= h($user['User']['name'])?>&nbsp;</td>
 		<td><?= h($user['User']['password'])?>&nbsp;</td>
-		<td><?= $this->Html->image($user['User']['avata'], array('alt' => 'Cakephp'))?></td>
+		<td><?= $this->Html->image('uploads/avatas/thumb/small'.'/'.$user['User']['avata'], array('alt' => 'Cakephp'))?></td>
 		<td><?= h($user['User']['email'])?>&nbsp;</td>
 		<td><?= h($user['User']['gender'])?>&nbsp;</td>
 		<td><?= h($user['User']['created'])?>&nbsp;</td>

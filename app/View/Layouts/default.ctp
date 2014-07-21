@@ -75,7 +75,7 @@
 		            	<li><?php echo $this->Html->link('Logout', array('controller'=>'users','action'=>'logout'));?> </li>
 		            	<li><?php echo $this->Html->link('Upload', array('controller'=>'photos','action'=>'add'));?> </li>
 		      			<li>
-		      				<span><?php  echo $this->Html->image($current_user['avata'], array('alt' => 'Gallery Image', 'height'=>30, 'width'=>20));?></span>
+		      				<span><?php  echo $this->Html->image('uploads/avatas/thumb/small'.'/'.$current_user['avata'], array('alt' => 'Gallery Image', 'height'=>30, 'width'=>20));?></span>
 		      				<strong><?php echo $this->Html->link($current_user['name'], array('controller'=>'users','action' => 'view', $current_user['id'])); ?></strong> 	
 		      			</li>
 		                

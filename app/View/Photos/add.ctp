@@ -1,9 +1,16 @@
 <?=$this->element('ajax_calendar')?>
 
-<div class="posts form hero-unit" style="width: 300px; margin-right: auto ; margin-left: auto; height: 500px;" >
+<div class="posts form hero-unit" style="width: 300px; margin-right: auto ; margin-left: auto; height: 400px;" >
 	<?=$this->Form->create('Photo', array('type' => 'file'))?>
 		<fieldset>
 			<legend><?= __d('Photo', 'Upload')?></legend>
+			<?= $this->Form->input('user_id', array(
+				'label' => __d('Photo', 'User'),
+				'autocomplete' => 'off',
+				'value' => $current_user,
+				'type' => 'hidden'
+				)
+			)?>
 			<?= $this->Form->input('gallery_id', array(
 				'label' => __d('Photo', 'Gallery'),
 				'autocomplete' => 'off'
