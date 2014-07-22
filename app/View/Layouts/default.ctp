@@ -44,9 +44,20 @@
 		'jquery/jquery.cluetip/jquery.cluetip.min',                             // complex tooltips
 	))?>
     <style>
+	#container,header,content,footer{
+	width:100%;
+	}
     	#header{
-    		background: #222;
-    		height: 30px;
+		position: relative;
+    		background: #222222;
+    		height: 30px;			
+			-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+				box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+				transition: background-color 0.1s ease-out;
+				-webkit-transition: background-color 0.1s ease-out;
+				-ms-transition: background-color 0.1s ease-out;
+				-moz-transition: background-color 0.1s ease-out;
+				-o-transition: background-color 0.1s ease-out;
     	}
 		.logo img{
 			height:20px;

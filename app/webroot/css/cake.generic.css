@@ -79,7 +79,7 @@ p {
 }
 
 #header{
-	padding: 20px 20px;
+	padding: 20px 50px;
 	
 }
 #header h1 {
@@ -102,7 +102,6 @@ p {
 #content{
 	background: #fff;
 	color: #333;
-	padding: 10px 20px 40px 20px;
 }
 #footer {
 	clear: both;

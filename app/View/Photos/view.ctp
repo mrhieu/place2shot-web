@@ -1,4 +1,46 @@
-<div class="Photos view">
+<style>
+#user_info{
+background-color:#222222;
+width:100%;
+height:100px;
+}
+#photo{
+	text-align:center;
+	margin-top:20px;}
+img{
+	max-width:1100px;
+	height:auto;
+	background-repeat:no-repeat;
+}
+</style>
+<div id="user_info">
+	<div class="acc">
+	
+	</div>
+	
+	<div class="other_info">
+	
+	</div>
+	
+</div>
+
+<div id="photo">
+	<?php
+		echo $this->html->image('uploads/images'.'/'.$photo['Photo']['img_file'],array('class'=>'image'));
+	?>
+</div>
+
+
+<div id="comment">
+
+</div>
+
+
+
+
+
+
+<!--div class="Photos view">
 <h2><?= __d('Photo', 'Photo')?></h2>
 	<dl class="dl-horizontal">
 			
@@ -43,7 +85,7 @@
 	</dl>
 </div>
 
-
+-->
 
 <!-- <div class="photos view">
 <h2>Photo</h2>

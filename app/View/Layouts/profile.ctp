@@ -61,7 +61,7 @@
 				
 						echo $this->Html->link(
 					$this->Html->image('uploads/images'.'/'.$photo['img_file'], array('alt' => 'Gallery Image')),
-					array('controller'=>'photos','action'=>'view'),
+					array('controller'=>'photos','action'=>'view',$photo['id']),
 					array('class' => 'image',"alt" => "Brownies",'escape' => false)
 				);
 			endforeach; ?>
