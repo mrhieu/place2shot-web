@@ -48,11 +48,20 @@
     		background: #222;
     		height: 30px;
     	}
+		.logo img{
+			height:20px;
+			width:140px;
+			background-position:center;
+			background-repeat:no-repeat;
+			display:block;
+			background-size:100% 100%;
+		}
     	.avata-user{
     		height: 100px;
     		width: 100px;
     		background: #000;
     		border: 1px solid #CCC;
+			margin-top:10px;
     	}
     	.profile{
     		display: inline-table;
@@ -97,7 +106,14 @@
 		        		<li> <?php echo Buy ?> </li>
 						<li> <?php echo Discoverry ?> </li>
 		        		<li>
-						<?php echo $this->Html->link('Home', array('controller'=>'photos','action'=>'index'));?>  
+						
+						<?php
+							echo $this->Html->link(
+								$this->Html->image('icon/logo.png', array('alt' => 'Gallery Image')),
+								array('controller'=>'photos','action'=>'index'),
+								array('class' => 'logo',"alt" => "Brownies",'escape' => false)
+							);
+						?>
 						</li>
 					
 				</div>
