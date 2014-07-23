@@ -50,7 +50,7 @@
     	#header{
 		position: relative;
     		background: #222222;
-    		height: 30px;			
+    		height: 50px;			
 			-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.25);
 				box-shadow: 0 1px 3px rgba(0,0,0,0.25);
 				transition: background-color 0.1s ease-out;
@@ -60,12 +60,17 @@
 				-o-transition: background-color 0.1s ease-out;
     	}
 		.logo img{
-			height:20px;
+			height:50px;
 			width:140px;
 			background-position:center;
 			background-repeat:no-repeat;
 			display:block;
 			background-size:100% 100%;
+		}
+		.logo img:hover{
+		background-color:#303030;
+		width:140px;
+		height:50px;
 		}
     	.avata-user{
     		height: 100px;
@@ -73,14 +78,57 @@
     		background: #000;
     		border: 1px solid #CCC;
 			margin-top:10px;
+			
     	}
     	.profile{
     		display: inline-table;
     		float: left;
+			
     	}
-    	#user-nav ul li{
-    		padding-bottom: 10px;
-    	}
+		.user-nav{
+			float:right;
+		}
+			.user-nav ul{
+				position: relative;
+				float: left;
+				display: block;
+				top: 0;
+				font-size: 0;
+			}
+			.user-nav ul li{
+				display: inline-block;
+				vertical-align: top;
+				height: 100%;
+				line-height: 50px;
+				font-size: 14px;
+			}
+			.user-nav ul li a{
+				display: block;
+				height: 100%;
+				padding: 0 13px;
+				font-weight: 400;
+				letter-spacing: 0.025em;
+				white-space: nowrap;
+			}
+			.user-nav ul li a:hover{
+			background-color:yellow;
+			height:50px;
+			max-width:50px;
+			}
+			.avar{
+			float:left;
+			margin-top:15px;
+			margin-right:5px;
+			}
+				.user-nav ul li a strong{
+					font-size: 14px;
+					display: block;
+					font-weight: inherit;
+					height: 50px;
+					max-width: 100px;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					}
     </style>
 </head>
 <body>
@@ -92,10 +140,10 @@
 
 				<?php if($logged_in):?>
 		            <ul>
-		            	<li><?php echo $this->Html->link('Logout', array('controller'=>'users','action'=>'logout'));?> </li>
-		            	<li><?php echo $this->Html->link('Upload', array('controller'=>'photos','action'=>'add'));?> </li>
-		      			<li>
-		      				<span><?php  echo $this->Html->image('uploads/avatas/thumb/small'.'/'.$current_user['avata'], array('alt' => 'Gallery Image', 'height'=>30, 'width'=>20));?></span>
+		            	<li class="logout"><?php echo $this->Html->link('Logout', array('controller'=>'users','action'=>'logout'));?> </li>
+		            	<li class="upload"><?php echo $this->Html->link('Upload', array('controller'=>'photos','action'=>'add'));?> </li>
+		      			<li class="info">
+		      				<span class="avar"><?php  echo $this->Html->image('uploads/avatas/thumb/small'.'/'.$current_user['avata'], array('alt' => 'Gallery Image', 'height'=>30, 'width'=>20));?></span>
 		      				<strong><?php echo $this->Html->link($current_user['name'], array('controller'=>'users','action' => 'view', $current_user['id'])); ?></strong> 	
 		      			</li>
 		                

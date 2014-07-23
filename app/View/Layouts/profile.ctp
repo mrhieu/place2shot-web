@@ -62,7 +62,7 @@
 						echo $this->Html->link(
 					$this->Html->image('uploads/images'.'/'.$photo['img_file'], array('alt' => 'Gallery Image')),
 					array('controller'=>'photos','action'=>'view',$photo['id']),
-					array('class' => 'image',"alt" => "Brownies",'escape' => false)
+					array('class' => 'image','target'=>'_blank', 'escape'=>false)
 				);
 			endforeach; ?>
 		
@@ -70,7 +70,12 @@
         </div>
         
         <div id="footer">
-        
+		<script type="text/javascript" language="javascript" >
+			function pop() {
+			window.open("legend.php","Homepage","resizable=no,status=no,scrollbars=no,height=6000,width=1000,left=0,top=100,menubar=no,addressbar=no");
+		}
+
+</script>
         </div>
     </div>
 </body>
