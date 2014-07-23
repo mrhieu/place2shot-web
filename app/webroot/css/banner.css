@@ -37,3 +37,23 @@ table.menu_banner tr td:hover , table.user tr td:hover {
 	background:#333333;
 	color:#FFFFFF;
 }
+#search_text{
+	width:270px;
+	height:30px;
+	border:0px;
+	background:#ffffff;
+	font-size:18px;
+	border-top-left-radius:3px;
+	border-bottom-left-radius:3px;
+}
+#search_submit{
+	border:#00afdd 2px solid;
+	height:30px;
+	background:#D83C3C;
+	border:none;
+	font-weight:bold;
+	color:#FFFFFF;
+	padding:5px;
+	border-top-right-radius:3px;
+	border-bottom-right-radius:3px;
+}

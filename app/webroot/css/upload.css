@@ -1,22 +1,8 @@
 /* upload  */
 body{
 	font-family:Arial, Helvetica, sans-serif;
-}
-table.upload_button{
-	width:500px;
-	text-align:center;
-	margin: 50px auto;
-}
-table.upload_button tr td {
-	height:50px
-}
-table.upload_button tr td.title{
-	font-size:24px;
-	font-weight:bolder;
-	color:#00FF99;
-}
-table.upload_button tr td.text_other{
 	color:#999999;
+	font-size:15px;
 }
 /* image profile*/
 table.image_profile{
@@ -24,12 +10,37 @@ table.image_profile{
 	text-align:justify;
 	margin:auto;
 }
-table.image_profile tr td{
-	width:400px;
-}
-/*basic*/
 table.image_profile tr td.basic_title{
+	height:25px;
+}
+.title_prf{
+	font-weight:bold;
+	font-size:20px;
+	color:#0066FF;
+}
+.save_image input{
+	background:#666666;
+	cursor: pointer;
+	color:#FFFFFF;
+}
+#map{
+	width:400px;
+	height:200px;
+}
+.basic_decription textarea{
+	height:110px;
+	width:350px;
+}
+input{
+	border:none;
 	height:20px;
+	width:250px;
+	border-radius:5px;
+	color:#999999;
+	font-size:15px;
+}
+table.exif tr td{
+	height:30px;
 }
 /*exif*/
 
@@ -46,3 +57,68 @@ table.display-image{
 table.display-image tr td.image_upload{
 	height:450px;
 }
+/**/
+#view-photos{
+	background:url(../img/Image/3.jpg);
+	width:100%;
+	height:600px;
+	background-attachment: fixed;
+	background-position:center;
+	background-repeat:no-repeat;
+}
+#profile-photos{
+	background:#E5E5E5;
+	width:100%;
+	height:400px;
+	background-attachment: fixed;
+	background-position:center;
+	background-repeat:no-repeat;
+}
+#default_image , #thumbimage {
+	max-width:1200px;
+}
+#thumbimage{
+	display:none;
+}
+table.choose_and_remove{
+	width:350px;
+	margin:auto;
+}
+.Choicefile
+    {
+        display:block;
+        background:#0877D8;
+        border:1px solid #fff;
+        color:#fff;
+        width:150px;
+        text-align:center;
+        text-decoration:none;
+        cursor:pointer;
+        padding:5px 0px;
+		margin:auto;
+		border-radius:5px;
+    }
+    #uploadfile,.removeimg
+    {
+       display:none;
+    }
+    #thumbbox
+    {
+      position:relative;
+      width:100px;
+    }
+	.removeimg
+    {
+     	display:block;
+        background:#c4c4c4;
+        border:1px solid #fff;
+        color:#fff;
+        width:150px;
+        text-align:center;
+        text-decoration:none;
+        cursor:pointer;
+        padding:5px 0px;
+		border-radius:5px;
+		margin:auto;
+    }
+	
