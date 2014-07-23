@@ -33,7 +33,6 @@ class PhotosController extends AppController {
     return parent::isAuthorized($user);
 }
 	function index() {
-	$this->layout = 'index';
 		$this->Photo->recursive = 0;
 		$this->set('photos', $this->paginate());
 		

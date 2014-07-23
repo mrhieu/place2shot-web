@@ -98,3 +98,6 @@ table.photo_list_3 .anh_ngang_pt{
 	width:1200px;
 	height:580px;
 }
+.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}

@@ -1,9 +1,17 @@
 /* PHAN BANNER*/
 table.banner_tool{
 	margin:auto;
-	width:1000px;
+	width:1100px;
 }
-
+table.banner_tool tr td.menu_banner, table.banner_tool tr td.search{
+	width:400px;
+}
+td.logo img.logo {
+	height:50px;
+}
+td.discover img , td.upload img{
+	height:15px;
+}
 table.khung{
 	width:100%;
 }
@@ -20,6 +28,7 @@ table.menu_banner ,table.user{
 	font-weight:bold;
 	color:#CCCCCC;
 }
+
 table.search{
 	width:300px;
 }
@@ -27,14 +36,20 @@ table.search tr td.text_search{
 	width:90%;
 }
 table.user{
-	width:150px;
-	margin-right:10px;
+	width:300px;
 }
-table.user tr td.sign_up{
-	width:80%;
+table.user{
+	text-align:center;
+}
+table.menu_banner a, table.user a{
+	text-decoration:none;
+	color:#CCCCCC;
 }
 table.menu_banner tr td:hover , table.user tr td:hover {
 	background:#333333;
+	color:#FFFFFF;
+}
+table.menu_banner tr td:hover a, table.user tr td:hover a{
 	color:#FFFFFF;
 }
 #search_text{
@@ -46,7 +61,7 @@ table.menu_banner tr td:hover , table.user tr td:hover {
 	border-top-left-radius:3px;
 	border-bottom-left-radius:3px;
 }
-#search_submit{
+td.logo_search input{
 	border:#00afdd 2px solid;
 	height:30px;
 	background:#D83C3C;
