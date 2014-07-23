@@ -11,20 +11,21 @@
     	<div id="header">
         	<div id="top_header">
             	<div class="img_acc">
-                	<span class="acc_img" style="background-image:url(<?php echo $this->webroot; ?>img/uploads/avatas/thumb/small/<?php echo $current_user['avata']?> );display:block;">
+                	<span class="acc_img" style="background-image:url(<?php echo $this->webroot; ?>img/uploads/avatas/thumb/small/<?php echo $user['User']['avata']?> );display:block;">
                     </span>
                 </div>
                 
                 <div class="info">
                 	<div class="name">
-                    	<p class="name_acc"><?php echo $current_user['name']; ?></p>
+                    	<p class="name_acc"><?php echo $user['User']['name']; ?></p>
                     </div>
-                    
-                    <div class="details">
-    					<p class="detail"><?php echo $this->Html->link('Setting', array('controller'=>'users','action' => 'edit', $current_user['id'])); ?></p>
-                        <p class="detail"><?php echo $this->Html->link('Upload', array('controller'=>'photos','action' => 'add')); ?></p>
-                        <p class="detail"><?php echo $this->Html->link('Manage', array('controller'=>'users','action' => 'view_relate', $user['User']['id'])); ?></p>
-                    </div>
+                    <?php if ($current_user['roles'] == 'admin' || $current_user['id'] == $user['User']['id']): ?>
+                        <div class="details">
+                            <p class="detail"><?php echo $this->Html->link('Setting', array('controller'=>'users','action' => 'edit', $user['User']['id'])); ?></p>
+                            <p class="detail"><?php echo $this->Html->link('Upload', array('controller'=>'photos','action' => 'add')); ?></p>
+                            <p class="detail"><?php echo $this->Html->link('Manage', array('controller'=>'users','action' => 'view_relate', $user['User']['id'])); ?></p>
+                        </div>
+                    <?php endif; ?>
 						<?php
 							echo $this->Form->end(array('div'=>'bonus','class'=>'follow','label'=>'FOLLOW'));
 							echo $this->Form->end(array('div'=>'bonus','class'=>'connect1','label'=>''));
