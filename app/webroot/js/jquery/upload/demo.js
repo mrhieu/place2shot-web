@@ -33,7 +33,7 @@
 	    var props;
 	    var group;
 	    var prop;
-	    if (jpeg.gps && jpeg.gps.longitude) {
+		if (jpeg.gps && jpeg.gps.longitude) {
 		//set default
 		
 		document.getElementById("latitude").value="";
@@ -42,7 +42,6 @@
 		document.getElementById("longtitude").value=jpeg.gps.longitude;
 	    
 		}
-
 	    for (group in jpeg.metaGroups) {
                 if (jpeg.metaGroups.hasOwnProperty(group)) {
 		    groups.push(jpeg.metaGroups[group]);
@@ -100,20 +99,18 @@
 			}
 		}
 	    }
-		//
-	    
+		if(document.getElementById("latitude").value!=""&&document.getElementById("longtitude").value!="")
+			initialize();
 	}
 
 	dataurl_reader.onloadend = function() {
 	    $("thumbimage").src = this.result;
             display(atob(this.result.replace(/^.*?,/,'')), files[0]);
-			//initialize();
 	}
 
 	$("status").innerHTML = "";
 	$("thumbimage").src = "";
 	dataurl_reader.readAsDataURL(files[0]);
-	$("form_upload").reset();
     }
 
     window.onload = function() {

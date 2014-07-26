@@ -4,7 +4,7 @@
 		<div class="profile_border">
 		<table class="profile"  cellspacing="0" cellpadding="0">
 	  	<?php
-			echo $this->Form->create('form_register',array(
+			echo $this->Form->create('user',array(
 				'inputDefaults' => array(
 					'label' => false,
 					'div' => false
@@ -58,7 +58,7 @@
 				</td>
 				<td class="sex">
 				<?php
-					echo $this->Form->input('gender', array(
+					echo $this->Form->input('name', array(
 					'class'=>'sex',
 					'id'=>false,
 					'options' => array('male','female','other'),

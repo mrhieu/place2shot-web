@@ -100,7 +100,7 @@
 				  <tr>
 					<?php if($logged_in):?>
 						<?php echo '<td class="prfile">';?>
-								<?php  echo $this->Html->image('uploads/avatas/thumb/small'.'/'.$current_user['avata'], array('alt' => 'Gallery Image', 'height'=>30, 'width'=>20));?>
+								<?php  echo $this->Html->image('uploads/avatas/thumb/small'.'/'.$current_user['avata'], array('alt' => 'Gallery Image', 'height'=>30, 'width'=>30));?>
 								<?php echo $this->Html->link($current_user['name'], array('controller'=>'users','action' => 'view', $current_user['id'])); ?>
 						<?php echo '</td>';?>
 						<?php echo '<td class="logout">';?>

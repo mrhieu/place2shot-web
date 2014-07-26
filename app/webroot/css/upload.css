@@ -22,6 +22,8 @@ table.image_profile tr td.basic_title{
 	background:#666666;
 	cursor: pointer;
 	color:#FFFFFF;
+	width:120px;
+	border-radius:3px;
 }
 #map{
 	width:400px;
@@ -31,7 +33,7 @@ table.image_profile tr td.basic_title{
 	height:110px;
 	width:350px;
 }
-input{
+.basic_title input, #camera, #lens , #focal_length , #shutter_speed , #aperture , #iso , #taken  {
 	border:none;
 	height:20px;
 	width:250px;
@@ -77,9 +79,6 @@ table.display-image tr td.image_upload{
 #default_image , #thumbimage {
 	max-width:1200px;
 }
-#thumbimage{
-	display:none;
-}
 table.choose_and_remove{
 	width:350px;
 	margin:auto;
@@ -121,4 +120,3 @@ table.choose_and_remove{
 		border-radius:5px;
 		margin:auto;
     }
-	

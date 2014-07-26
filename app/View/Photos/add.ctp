@@ -1,150 +1,25 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html id="dropbox" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<?php echo $this->Html->css("banner.css"); ?>
+
 <?php echo $this->Html->css("upload.css"); ?>
-<?php echo $this->html->script("jpegmeta.js");?>
-<?php echo $this->html->script("demo.js"); ?>
-<?php echo $this->html->script("jquery.min.js"); ?>
-<?php echo $this->html->script("vn.eten.web.AjaxUploader.js"); ?>
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&language=vi"></script>
-<title>Untitled Document</title>
-<style type="text/css">
-/*	RESET CSS	*/
-*{
-	margin:0px;
-	padding:0px;
-}
+<?php echo $this->html->script("jquery/upload/jpegmeta.js");?>
+<?php echo $this->html->script("jquery/upload/demo.js"); ?>
+<?php echo $this->html->script("jquery/upload/jquery.min.js"); ?>
+<?php echo $this->html->script("jquery/upload/map.js"); ?>
+<?php echo $this->html->script("jquery/upload/choose_button.js"); ?>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 
-</style>
-    <script src="js/jquery.min.js" type="text/javascript"></script>
-    <script src="js/vn.eten.web.AjaxUploader.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        function readURL(input,thumbimage) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-                reader.onload = function (e) {
-                    $("#thumbimage").attr('src', e.target.result);
-                }
-                reader.readAsDataURL(input.files[0]);
-				$("#have_image").show();
-                $("#thumbimage").show();
-				$("#default_image").hide();
-            }
-            else {
-                $("#thumbimage").attr('src', input.value);
-                $("#thumbimage").show();
-            }
-            $('.filename').text($("#uploadfile").val());
-            $('.Choicefile').css('background', '#c4c4c4');
-			$('.removeimg').css('background', '#0877D8');
-            $('.Choicefile').css('cursor', 'default');
-            $(".Choicefile").unbind('click');
-            $(".removeimg").show();
-        }
-        $(document).ready(function () {
-            $(".Choicefile").bind('click', function () {
-                $("#uploadfile").click();
-                
-            });
-            $(".removeimg").click(function () {
-                $("#thumbimage").attr('src', '').hide();
-                $("#myfileupload").html('<input type="file" id="uploadfile" onchange="readURL(this);" />');
-                $(".removeimg").hide();
-				$("#have_image").hide();
-                $(".Choicefile").bind('click', function () {
-                    $("#uploadfile").click();
-                });
-                $('.Choicefile').css('background','#0877D8');
-                $('.Choicefile').css('cursor', 'pointer');
-                $(".filename").text("");
-            });
-        });
-
-var map;
-function initialize() {
-	var latitude=document.getElementById("latitude").value;
-	var longtitude=document.getElementById("longtitude").value;
-      var myLatlng = new google.maps.LatLng(latitude,longtitude);
-      var myOptions = {
-    zoom: 14,
-    center: myLatlng,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-}
-map = new google.maps.Map(document.getElementById("map"), myOptions); 
-  // Biến text chứa nội dung sẽ được hiển thị
-   var infowindow = new google.maps.InfoWindow(
-    {
-        size: new google.maps.Size(100,50),
-        position: myLatlng
-    });
-       infowindow.open(map);    
-    var marker = new google.maps.Marker({
-      position: myLatlng, 
-      map: map,
-      title:""
-  });
-}
-    </script>
-
-</head>
-
-<body>
-<table class="khung" cellspacing="0" cellpadding="0">
-  <tr class="banner">
-    <td>
-		<table class="banner_tool" cellspacing="0" cellpadding="0">
-		  <tr>
-			<td>
-				<table class="menu_banner"  cellspacing="0" cellpadding="0">
-				  <tr>
-					<td class="logo"><img src="images/logo.png"  /></td>
-					<td class="discover"><img src="images/discover.png"  />Discover</td>
-					<td class="buy"><img src="images/buy.png"  />Buy</td>
-					<td class="upload"><img src="images/upload.png"  />Upload</td>
-				  </tr>
-				</table>
-			</td>
-			<td >
-				<table class="search"  cellspacing="0" cellpadding="0">
-				<form class="search" action="#" method="post">
-				  <tr>
-					<td class="text_search"><input type="text" name="search"  /></td>
-					<td class="logo_search"><img src="images/search.png"  /></td>
-				  </tr>
-				</form>
-				</table>
-			</td>
-			<td>
-				<table class="user" width="200"  cellspacing="0" cellpadding="0">
-				  <tr>
-					<td class="sign_up"><img src="sign_up.png"  />Sign up</td>
-					<td class="chose"><img src="chose"  /></td>
-				  </tr>
-				</table>
-
-			</td>
-		  </tr>
-		</table>
-	</td>
-  </tr>
-<!-- main -->
-  <tr class="main">
-    <td>
-	<div id="status"></div> <!-- thẻ bắt buộc để lấy đc thông tin-->
+<div id="dropbox">
+  <div id="status"></div> <!--warring: not delete !-->
 	<div id="view-photos">
 		<table id="have_image"  class="display-image" cellspacing="10px" cellpadding="0">
 		  <tr>
 			<td class="image_upload" >
-			<img id="default_image" height="540" src="<?php echo $this->webroot; ?>img/image/winter-street-lights-portrait-beauty-girl.jpg"  />
-			<img id="thumbimage" height="540"   /></td>
+			<img id="thumbimage" height="540"  src="<?php echo $this->webroot; ?>img/image/winter-street-lights-portrait-beauty-girl.jpg" /></td>
 			</tr>
 		  <tr>
-			<td >
+			<td class="choose">
 				<div id="myfileupload">
 				<?php
-					echo $this->Form->create('form_upload',array(
+					echo $this->Form->create('Photo',array(
 						'inputDefaults' => array(
 							'label' => false,
 							'div' => false,
@@ -157,14 +32,14 @@ map = new google.maps.Map(document.getElementById("map"), myOptions);
 					echo $this->Form->input('img_file',array(
 						'type'=>'file',
 						'id'=>'uploadfile',
-						'onchange'=>'readURL(this);'
+							'onchange'=>'readURL(this);'
 					));
 				?>
 				</div>
-				 <table class="choose_and_remove" cellpadding="20px" cellspacing="0">
+				<table class="choose_and_remove" cellpadding="20px" cellspacing="0">
 				 	<tr>
 						<td class="choose"><a href="javascript:" class="Choicefile">Choose photos</a></td>
-						<td class="remove"><a class="removeimg" href="http://localhost/place2shot-web/photos/add" >cancel</a></td>
+						<td class="remove"><a class="removeimg" href="add" >cancel</a></td>
 					<p style="clear:both"></p>
 				 	</tr>
 				 </table>
@@ -272,7 +147,7 @@ map = new google.maps.Map(document.getElementById("map"), myOptions);
 				  </tr>
 				</table>
 			</td>
-			<td id="map" rowspan="2" onMouseover="if(document.getElementById('longtitude').value!='') initialize();">
+			<td id="map" rowspan="2" >
 				<img id="default_map" src="../img/images/map.jpg" width=373 height=210 />
 				<input name="data[form_upload][latitude]" id="latitude" style="display:none" type="text"/>
 				<input name="data[form_upload][longtitude]" id="longtitude" style="display:none" type="text"/>
@@ -296,12 +171,4 @@ map = new google.maps.Map(document.getElementById("map"), myOptions);
 		</table>
 	
 	</div>
-		
-	    </td>
-		  </tr>
-		  <tr class="footer">
-			<td>&nbsp;</td>
-		  </tr>
-		</table>
-</body>
-</html>
+</div>

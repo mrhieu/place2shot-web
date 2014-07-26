@@ -17,16 +17,10 @@ $count=$i;
 			/*
 			 *  Simple image gallery. Uses default settings
 			 */
-
-			$('.fancybox').fancybox();
-			$("#fancybox-manual-b").click(function() {
-				$.fancybox.open({
-					href : 'iframe.html',
-					type : 'iframe',
-					padding : 5
+			$('.like-icon').click(function() {
+				alert('ok');
 				});
-			});
-
+			$('.fancybox').fancybox();
 
 
 		});
@@ -43,7 +37,30 @@ while($i<$count){
 	  <table class="photo_list_3" border="0" cellspacing="20px" cellpadding="0">
           <tr>
             <td class="anh_ngang">
-				<span class="anh_ngang_pt" style="background-image:url(img/uploads/images/<?php if($i>=$count) echo $mang[$default[0]];else echo $mang[$i];?>);<?php if($i>=$count) $img_m='img/uploads/images/'.$mang[$default[0]];else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list3($img_m);?>"></span>
+			<a class="fancybox fancybox.iframe" href="http://localhost/place2shot-web/photos/detail">
+				<span class="anh_ngang_pt" style="background-image:url(img/uploads/images/<?php if($i>=$count) echo $mang[$default[0]];else echo $mang[$i];?>);<?php if($i>=$count) $img_m='img/uploads/images/'.$mang[$default[0]];else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list3($img_m);?>">
+				</span>
+			</a>
+					<table class="ca-icon" cellspacing="0" cellpadding="0">
+					  <tr>
+						<td class="like-icon">
+							<button class="vien-icon">
+							</button>
+							<div class="doi_tuong">
+								<img class="like" src="img/images/like-icon.png"  />
+								<p class="ca-like" style="text-decoration:none">100</p>
+							</div>
+						</td>
+						<td class="comment-icon">
+							<button class="vien-icon">
+							</button>
+							<div class="doi_tuong">
+								<img class="comment-icon" src="img/images/comment-icon.png" />
+								<p class="ca-comment">200</p>
+							</div>
+						</td>
+					  </tr>
+					</table>
 			</td>
           </tr>
         </table>
@@ -54,156 +71,206 @@ while($i<$count){
 			<td class="anh_ngang" colspan="2">
 			<a class="fancybox fancybox.iframe" href="http://localhost/place2shot-web/photos/detail">
 				<span class="anh_ngang_pt" style="background-image:url(img/uploads/images/<?php if($i>=$count) echo $mang[$default[0]];else echo $mang[$i];?>);<?php if($i>=$count) $img_m='img/uploads/images/'.$mang[$default[0]];else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list1($img_m,'ngang');?>">
+					
+				</span>
+			</a>
 					<table class="ca-icon" border="0" cellspacing="0" cellpadding="0">
 					  <tr>
-						<td class="like-icon">
-							<span class="vien-icon">
-								<img class="like" src="img/icon/like-icon.png"  />
-								<h3 class="ca-like">100</h3>
-							</span>
+						<td class="like-icon" >
+						
+							<button class="vien-icon" >
+							</button>
+							<div class="doi_tuong">
+								<img class="like" src="img/images/like-icon.png"  />
+								<p class="ca-like" style="text-decoration:none">100</p>
+							</div>
+						
 						</td>
 						<td class="comment-icon">
-							<span class="vien-icon">
-								<img class="comment-icon" src="img/icon/comment-icon.png" />
-								<h3 class="ca-comment">200</h3>
-							</span>
+							<button class="vien-icon">
+							</button>
+							<div class="doi_tuong">
+								<img class="comment-icon" src="img/images/comment-icon.png" />
+								<p class="ca-comment">200</p>
+							</div>
 						</td>
 					  </tr>
 					</table>
-				</span>
-			</a>
 			</td>
 <?php $i++;?>
 			<td class="anh_vuong" >
+			<a class="fancybox fancybox.iframe" href="http://localhost/place2shot-web/photos/detail">
 				<span class="anh_vuong_pt" style="background-image:url(img/uploads/images/<?php if($i>=$count) echo $mang[$default[1]];else echo $mang[$i];?>);<?php if($i>=$count) $img_m='img/uploads/images/'.$mang[$default[0]];else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list1($img_m,'vuong');?>">
-					<table border="0" class="ca-icon" border="0" cellspacing="0" cellpadding="0">
+
+				</span>
+			</a>
+					<table class="ca-icon" cellspacing="0" cellpadding="0">
 					  <tr>
 						<td class="like-icon">
-							<span class="vien-icon">
-								<img class="like" src="images/like-icon.png" />
-								<h3 class="ca-like">100</h3>
-							</span>
+							<button class="vien-icon">
+							</button>
+							<div class="doi_tuong">
+								<img class="like" src="img/images/like-icon.png"  />
+								<p class="ca-like" style="text-decoration:none">100</p>
+							</div>
 						</td>
 						<td class="comment-icon">
-							<span class="vien-icon">
-								<img class="comment-icon" src="images/comment-icon.png" />
-								<h3 class="ca-comment">200</h3>
-							</span>
+							<button class="vien-icon">
+							</button>
+							<div class="doi_tuong">
+								<img class="comment-icon" src="img/images/comment-icon.png" />
+								<p class="ca-comment">200</p>
+							</div>
 						</td>
 					  </tr>
 					</table>
-				</span>
 			</td>
 <?php $i++;?>
 		  </tr>
 		  <tr>
 			<td class="anh_vuong">
+			<a class="fancybox fancybox.iframe" href="http://localhost/place2shot-web/photos/detail">
 				<span class="anh_vuong_pt" style="background-image:url(img/uploads/images/<?php if($i>=$count) echo $mang[$default[2]];else echo $mang[$i];?>);<?php if($i>=$count) $img_m='img/uploads/images/'.$mang[$default[0]];else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list1($img_m,'vuong');?>">
-					<table class="ca-icon" border="0" cellspacing="0" cellpadding="0">
+
+				</span>
+			</a>
+					<table class="ca-icon" cellspacing="0" cellpadding="0">
 					  <tr>
 						<td class="like-icon">
-							<span class="vien-icon">
-								<img class="like" src="images/like-icon.png" />
-								<h3 class="ca-like">100</h3>
-							</span>
+							<button class="vien-icon">
+							</button>
+							<div class="doi_tuong">
+								<img class="like" src="img/images/like-icon.png"  />
+								<p class="ca-like" style="text-decoration:none">100</p>
+							</div>
 						</td>
 						<td class="comment-icon">
-							<span class="vien-icon">
-								<img class="comment-icon" src="images/comment-icon.png" />
-								<h3 class="ca-comment">200</h3>
-							</span>
+							<button class="vien-icon">
+							</button>
+							<div class="doi_tuong">
+								<img class="comment-icon" src="img/images/comment-icon.png" />
+								<p class="ca-comment">200</p>
+							</div>
 						</td>
 					  </tr>
 					</table>
-				</span>
 			</td>
 <?php $i++;?>
 			<td class="anh_ngang" colspan="2">
+			
+			<a class="fancybox fancybox.iframe" href="http://localhost/place2shot-web/photos/detail">
 				<span class="anh_ngang_pt" style="background-image:url(img/uploads/images/<?php if($i>=$count) echo $mang[$default[3]];else echo $mang[$i];?>);<?php if($i>=$count) $img_m='img/uploads/images/'.$mang[$default[0]];else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list1($img_m,'ngang');?>">
-					<table class="ca-icon" border="0" cellspacing="0" cellpadding="0">
+
+				</span>
+			</a>
+					<table class="ca-icon" cellspacing="0" cellpadding="0">
 					  <tr>
 						<td class="like-icon">
-							<span class="vien-icon">
-								<img class="like" src="images/like-icon.png" />
-								<h3 class="ca-like">100</h3>
-							</span>
+							<button class="vien-icon">
+							</button>
+							<div class="doi_tuong">
+								<img class="like" src="img/images/like-icon.png"  />
+								<p class="ca-like" style="text-decoration:none">100</p>
+							</div>
 						</td>
 						<td class="comment-icon">
-							<span class="vien-icon">
-								<img class="comment-icon" src="images/comment-icon.png" />
-								<h3 class="ca-comment">200</h3>
-							</span>
+							<button class="vien-icon">
+							</button>
+							<div class="doi_tuong">
+								<img class="comment-icon" src="img/images/comment-icon.png" />
+								<p class="ca-comment">200</p>
+							</div>
 						</td>
 					  </tr>
 					</table>
-				</span>
 			</td>
 <?php $i++;?>
 		  </tr>
 		  <tr>
 			<td class="anh_ngang" colspan="2">
+			<a class="fancybox fancybox.iframe" href="http://localhost/place2shot-web/photos/detail">
 				<span class="anh_ngang_pt" style="background-image:url(img/uploads/images/<?php if($i>=$count) echo $mang[$default[4]];else echo $mang[$i];?>);<?php if($i>=$count) $img_m='img/uploads/images/'.$mang[$default[0]];else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list1($img_m,'ngang');?>">
-					<table class="ca-icon" border="0" cellspacing="0" cellpadding="0">
+
+				</span>
+			</a>
+					<table class="ca-icon" cellspacing="0" cellpadding="0">
 					  <tr>
 						<td class="like-icon">
-							<span class="vien-icon">
-								<img class="like" src="images/like-icon.png" />
-								<h3 class="ca-like">100</h3>
-							</span>
+							<button class="vien-icon">
+							</button>
+							<div class="doi_tuong">
+								<img class="like" src="img/images/like-icon.png"  />
+								<p class="ca-like" style="text-decoration:none">100</p>
+							</div>
 						</td>
 						<td class="comment-icon">
-							<span class="vien-icon">
-								<img class="comment-icon" src="images/comment-icon.png" />
-								<h3 class="ca-comment">200</h3>
-							</span>
+							<button class="vien-icon">
+							</button>
+							<div class="doi_tuong">
+								<img class="comment-icon" src="img/images/comment-icon.png" />
+								<p class="ca-comment">200</p>
+							</div>
 						</td>
 					  </tr>
 					</table>
-				</span>
 			</td>
 <?php $i++;?>
 			<td class="anh_dung" rowspan="2">
+			<a class="fancybox fancybox.iframe" href="http://localhost/place2shot-web/photos/detail">
 				<span class="anh_dung_pt" style="background-image:url(img/uploads/images/<?php if($i>=$count) echo $mang[$default[5]];else echo $mang[$i];?>);<?php if($i>=$count) $img_m='img/uploads/images/'.$mang[$default[0]];else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list1($img_m,'dung');?>">
-					<table class="ca-icon" border="0" cellspacing="0" cellpadding="0">
+
+				</span>
+			</a>
+					<table class="ca-icon" cellspacing="0" cellpadding="0">
 					  <tr>
 						<td class="like-icon">
-							<span class="vien-icon">
-								<img class="like" src="images/like-icon.png" />
-								<h3 class="ca-like">100</h3>
-							</span>
+							<button class="vien-icon">
+							</button>
+							<div class="doi_tuong">
+								<img class="like" src="img/images/like-icon.png"  />
+								<p class="ca-like" style="text-decoration:none">100</p>
+							</div>
 						</td>
 						<td class="comment-icon">
-							<span class="vien-icon">
-								<img class="comment-icon" src="images/comment-icon.png" />
-								<h3 class="ca-comment">200</h3>
-							</span>
+							<button class="vien-icon">
+							</button>
+							<div class="doi_tuong">
+								<img class="comment-icon" src="img/images/comment-icon.png" />
+								<p class="ca-comment">200</p>
+							</div>
 						</td>
 					  </tr>
 					</table>
-				</span>
 			</td>
 <?php $i++;?>
 		  </tr>
 		  <tr>
 			<td class="anh_ngang" colspan="2">
+			<a class="fancybox fancybox.iframe" href="http://localhost/place2shot-web/photos/detail">
 				<span class="anh_ngang_pt" style="background-image:url(img/uploads/images/<?php if($i>=$count) echo $mang[$default[6]];else echo $mang[$i];?>);<?php if($i>=$count) $img_m='img/uploads/images/'.$mang[$default[0]];else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list1($img_m,'ngang');?>">
-					<table class="ca-icon" border="0" cellspacing="0" cellpadding="0">
+
+				</span>
+			</a>
+					<table class="ca-icon" cellspacing="0" cellpadding="0">
 					  <tr>
 						<td class="like-icon">
-							<span class="vien-icon">
-								<img class="like" src="images/like-icon.png" />
-								<h3 class="ca-like">100</h3>
-							</span>
+							<button class="vien-icon">
+							</button>
+							<div class="doi_tuong">
+								<img class="like" src="img/images/like-icon.png"  />
+								<p class="ca-like" style="text-decoration:none">100</p>
+							</div>
 						</td>
 						<td class="comment-icon">
-							<span class="vien-icon">
-								<img class="comment-icon" src="images/comment-icon.png" />
-								<h3 class="ca-comment">200</h3>
-							</span>
+							<button class="vien-icon">
+							</button>
+							<div class="doi_tuong">
+								<img class="comment-icon" src="img/images/comment-icon.png" />
+								<p class="ca-comment">200</p>
+							</div>
 						</td>
 					  </tr>
 					</table>
-				</span>
 			</td>
 <?php $i++;?>
 		  </tr>
@@ -214,23 +281,111 @@ while($i<$count){
 		<table class="photo_list_2" border="0" cellspacing="20px" cellpadding="0">
 			  <tr>
 				<td class="anh_vuong">
+				<a class="fancybox fancybox.iframe" href="http://localhost/place2shot-web/photos/detail">
 					<span class="anh_vuong_pt" style="background-image:url(img/uploads/images/<?php if($i>=$count) echo $mang[$default[7]];else echo $mang[$i];?>);<?php if($i>=$count) $img_m='img/uploads/images/'.$mang[$default[0]];else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list2($img_m,'vuong');?>"></span>
+				</a>
+					<table class="ca-icon" cellspacing="0" cellpadding="0">
+					  <tr>
+						<td class="like-icon">
+							<button class="vien-icon">
+							</button>
+							<div class="doi_tuong">
+								<img class="like" src="img/images/like-icon.png"  />
+								<p class="ca-like" style="text-decoration:none">100</p>
+							</div>
+						</td>
+						<td class="comment-icon">
+							<button class="vien-icon">
+							</button>
+							<div class="doi_tuong">
+								<img class="comment-icon" src="img/images/comment-icon.png" />
+								<p class="ca-comment">200</p>
+							</div>
+						</td>
+					  </tr>
+					</table>
 				</td>
 <?php $i++;?>
 				<td class="anh_ngang" rowspan="3">
+				<a class="fancybox fancybox.iframe" href="http://localhost/place2shot-web/photos/detail">
 					<span class="anh_ngang_pt" style="background-image:url(img/uploads/images/<?php if($i>=$count) echo $mang[$default[8]];else echo $mang[$i];?>);<?php if($i>=$count) $img_m='img/uploads/images/'.$mang[$default[0]];else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list2($img_m,'ngang');?>"></span>
+				</a>
+					<table class="ca-icon" cellspacing="0" cellpadding="0">
+					  <tr>
+						<td class="like-icon">
+							<button class="vien-icon">
+							</button>
+							<div class="doi_tuong">
+								<img class="like" src="img/images/like-icon.png"  />
+								<p class="ca-like" style="text-decoration:none">100</p>
+							</div>
+						</td>
+						<td class="comment-icon">
+							<button class="vien-icon">
+							</button>
+							<div class="doi_tuong">
+								<img class="comment-icon" src="img/images/comment-icon.png" />
+								<p class="ca-comment">200</p>
+							</div>
+						</td>
+					  </tr>
+					</table>
 				</td>
 <?php $i++;?>
 			  </tr>
 			  <tr>
 				<td class="anh_vuong">
+				<a class="fancybox fancybox.iframe" href="http://localhost/place2shot-web/photos/detail">
 					<span class="anh_vuong_pt" style="background-image:url(img/uploads/images/<?php if($i>=$count) echo $mang[$default[9]];else echo $mang[$i];?>);<?php if($i>=$count) $img_m='img/uploads/images/'.$mang[$default[0]];else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list2($img_m,'vuong');?>"></span>
+				</a>
+					<table class="ca-icon" cellspacing="0" cellpadding="0">
+					  <tr>
+						<td class="like-icon">
+							<button class="vien-icon">
+							</button>
+							<div class="doi_tuong">
+								<img class="like" src="img/images/like-icon.png"  />
+								<p class="ca-like" style="text-decoration:none">100</p>
+							</div>
+						</td>
+						<td class="comment-icon">
+							<button class="vien-icon">
+							</button>
+							<div class="doi_tuong">
+								<img class="comment-icon" src="img/images/comment-icon.png" />
+								<p class="ca-comment">200</p>
+							</div>
+						</td>
+					  </tr>
+					</table>
 				</td>
 <?php $i++;?>
 		  </tr>
 			  <tr>
 				<td class="anh_vuong">
+				<a class="fancybox fancybox.iframe" href="http://localhost/place2shot-web/photos/detail">
 					<span class="anh_vuong_pt" style="background-image:url(img/uploads/images/<?php if($i>=$count) echo $mang[$default[10]];else echo $mang[$i];?>);<?php if($i>=$count) $img_m='img/uploads/images/'.$mang[$default[0]];else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list2($img_m,'vuong');?>"></span>
+				</a>
+					<table class="ca-icon" cellspacing="0" cellpadding="0">
+					  <tr>
+						<td class="like-icon">
+							<button class="vien-icon">
+							</button>
+							<div class="doi_tuong">
+								<img class="like" src="img/images/like-icon.png"  />
+								<p class="ca-like" style="text-decoration:none">100</p>
+							</div>
+						</td>
+						<td class="comment-icon">
+							<button class="vien-icon">
+							</button>
+							<div class="doi_tuong">
+								<img class="comment-icon" src="img/images/comment-icon.png" />
+								<p class="ca-comment">200</p>
+							</div>
+						</td>
+					  </tr>
+					</table>
 				</td>
 <?php $i++;?>
 		  </tr>
