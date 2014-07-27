@@ -61,7 +61,7 @@
 					}
 			
 						echo $this->Html->link(
-					$this->Html->image('uploads/images'.'/'.$photo['img_file'], array('alt' => 'Gallery Image')),
+					$this->Html->image('uploads/images/thumb/large'.'/'.$photo['img_file'], array('alt' => 'Gallery Image')),
 					array('controller'=>'photos','action'=>'view',$photo['id']),
 					array('class' => 'image','target'=>'_blank', 'escape'=>false)
 				);

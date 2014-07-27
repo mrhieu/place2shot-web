@@ -18,22 +18,23 @@
 		  <tr>
 			<td class="choose">
 				<div id="myfileupload">
+               
 				<?php
 					echo $this->Form->create('Photo',array(
-						'inputDefaults' => array(
-							'label' => false,
-							'div' => false,
-							'id'=>'form_upload',
-							'enctype' => 'multipart/form-data'
-						)
-					));
+						//'inputDefaults' => array(
+						//	'label' => false,
+						//	'div' => false,
+						//	'id'=>'form_upload',
+							'type' => 'file'
+						//)
+					))
 				?>
 				<?php 
 					echo $this->Form->input('img_file',array(
 						'type'=>'file',
-						'id'=>'uploadfile',
-							'onchange'=>'readURL(this);'
-					));
+						//'id'=>'uploadfile',
+						//'onchange'=>'readURL(this);'
+					))
 				?>
 				</div>
 				<table class="choose_and_remove" cellpadding="20px" cellspacing="0">
@@ -57,10 +58,20 @@
 				<td class="title_prf">Location </td>
 			</tr>
 		  <tr>
+          	<td>
+            	 <?= $this->Form->input('user_id', array(
+					'label' => __d('Photo', 'User'),
+					'autocomplete' => 'off',
+					'value' => $current_user['id'],
+				//	'type' => 'hidden'
+					'type' => 'text'
+					))
+				?>
+            </td>
 			<td class="basic_title">
 			<p>Title</p>
 				<?php 
-					echo $this->Form->input('basic_title',array(
+					echo $this->Form->input('title',array(
 						'type'=>'text',
 						'id'=>false
 					));
@@ -157,7 +168,7 @@
 			<td class="basic_decription">
 				<p>Decription</p>
 				<?php
-					echo $this->Form->textarea('notes');
+					echo $this->Form->textarea('description');
 				?>
 			</td>
 		  </tr>

@@ -54,7 +54,30 @@ class PhotosController extends AppController {
             throw new NotFoundException(__('Invalid photo'));
         }
         $this->set('photo', $photo);
-      
+      //comment
+	  if ($this->request->is('post')) {
+			$this->Photo->Comment->create();
+			if ($this->Photo->Comment->save($this->data)) {
+				$this->Session->setFlash(__('The comment has been saved', true));
+				$this->redirect(array('action' => 'view', $photo['Photo']['id']));
+			} else {
+				$this->Session->setFlash(__('The comment could not be saved. Please, try again.', true));
+			}
+		}
+		
+		$users = $this->Photo->Comment->User->find('list');
+		$this->set(compact('users'));
+		
+		$photos = $this->Photo->Comment->Photo->find('list', array(
+			'conditions' => array(
+				'Photo.id' => $id
+			),
+			'recursive' => -1,
+			//'fields' => array('Photo.title')
+		));
+		
+		$this->set('photos', $photos);
+	  
 	}
 	
 	function add() {

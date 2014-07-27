@@ -120,18 +120,73 @@ class UsersController extends AppController{
 		}
 	}
 	
+	
 	public function edit($id = null) {
         $this->User->id = $id;
         if (!$this->User->exists()) {
             throw new NotFoundException(__('Invalid user'));
         }
         if ($this->request->is('post') || $this->request->is('put')) {
-            if ($this->User->save($this->request->data)) {
+            if ($this->User->saveField('name', $this->request->data['User']['name'])) {
                 $this->Session->setFlash(__('The user has been saved'));
                 return $this->redirect(array('action' => 'index'));
             }
             $this->Session->setFlash(
                 __('The user could not be saved. Please, try again.')
+            );
+        } else {
+            $this->request->data = $this->User->read(null, $id);
+            unset($this->request->data['User']['password']);
+        }
+    }
+	public function editpass($id = null) {
+        $this->User->id = $id;
+        if (!$this->User->exists()) {
+            throw new NotFoundException(__('Invalid user'));
+        }
+        if ($this->request->is('post') || $this->request->is('put')) {
+            if ($this->User->saveField('password', $this->request->data['User']['password'])) {
+                $this->Session->setFlash(__('The password has been saved'));
+                return $this->redirect(array('action' => 'index'));
+            }
+            $this->Session->setFlash(
+                __('The password could not be saved. Please, try again.')
+            );
+        } else {
+            $this->request->data = $this->User->read(null, $id);
+            unset($this->request->data['User']['password']);
+        }
+    }
+	public function editemail($id = null) {
+        $this->User->id = $id;
+        if (!$this->User->exists()) {
+            throw new NotFoundException(__('Invalid user'));
+        }
+        if ($this->request->is('post') || $this->request->is('put')) {
+            if ($this->User->saveField('email', $this->request->data['User']['email'])) {
+                $this->Session->setFlash(__('The email has been updated'));
+                return $this->redirect(array('action' => 'index'));
+            }
+            $this->Session->setFlash(
+                __('The email could not be updated. Please, try again.')
+            );
+        } else {
+            $this->request->data = $this->User->read(null, $id);
+            unset($this->request->data['User']['password']);
+        }
+    }
+	public function editavata($id = null) {
+        $this->User->id = $id;
+        if (!$this->User->exists()) {
+            throw new NotFoundException(__('Invalid user'));
+        }
+        if ($this->request->is('post') || $this->request->is('put')) {
+            if ($this->User->saveField('avata', $this->request->data['User']['avata'])) {
+                $this->Session->setFlash(__('The avata has been changed'));
+                return $this->redirect(array('action' => 'index'));
+            }
+            $this->Session->setFlash(
+                __('The avata could not be changed. Please, try again.')
             );
         } else {
             $this->request->data = $this->User->read(null, $id);
