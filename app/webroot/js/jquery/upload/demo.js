@@ -80,10 +80,6 @@
 				if(prop.description=="Pixel Height")  height_img=prop.value;
 				if(prop.description=="Pixel Width") width_img=prop.value;
 			}
-			if(width_img/height_img<1200/540){
-			$('#thumbimage').css('height', '540');
-			}
-			else $('#thumbimage').css('width', '1200');
 		}
 		if(group.description=="Exif")
 		{
