@@ -100,7 +100,7 @@ while($i<$count){
 <?php $i++;?>
 			<td class="anh_vuong" >
 			<a class="fancybox fancybox.iframe" href="http://localhost/place2shot-web/photos/detail">
-				<span class="anh_vuong_pt" style="background-image:url(img/uploads/images/<?php if($i>=$count) echo $mang[$default[1]];else echo $mang[$i];?>);<?php if($i>=$count) $img_m='img/uploads/images/'.$mang[$default[0]];else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list1($img_m,'vuong');?>">
+				<span class="anh_vuong_pt" style="background-image:url(img/uploads/images/<?php if($i>=$count) echo $mang[$default[1]];else echo $mang[$i];?>);<?php if($i>=$count) $img_m='img/uploads/images/'.$mang[$default[1]];else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list1($img_m,'vuong');?>">
 
 				</span>
 			</a>
@@ -130,7 +130,7 @@ while($i<$count){
 		  <tr>
 			<td class="anh_vuong">
 			<a class="fancybox fancybox.iframe" href="http://localhost/place2shot-web/photos/detail">
-				<span class="anh_vuong_pt" style="background-image:url(img/uploads/images/<?php if($i>=$count) echo $mang[$default[2]];else echo $mang[$i];?>);<?php if($i>=$count) $img_m='img/uploads/images/'.$mang[$default[0]];else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list1($img_m,'vuong');?>">
+				<span class="anh_vuong_pt" style="background-image:url(img/uploads/images/<?php if($i>=$count) echo $mang[$default[2]];else echo $mang[$i];?>);<?php if($i>=$count) $img_m='img/uploads/images/'.$mang[$default[2]];else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list1($img_m,'vuong');?>">
 
 				</span>
 			</a>
@@ -159,7 +159,7 @@ while($i<$count){
 			<td class="anh_ngang" colspan="2">
 			
 			<a class="fancybox fancybox.iframe" href="http://localhost/place2shot-web/photos/detail">
-				<span class="anh_ngang_pt" style="background-image:url(img/uploads/images/<?php if($i>=$count) echo $mang[$default[3]];else echo $mang[$i];?>);<?php if($i>=$count) $img_m='img/uploads/images/'.$mang[$default[0]];else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list1($img_m,'ngang');?>">
+				<span class="anh_ngang_pt" style="background-image:url(img/uploads/images/<?php if($i>=$count) echo $mang[$default[3]];else echo $mang[$i];?>);<?php if($i>=$count) $img_m='img/uploads/images/'.$mang[$default[3]];else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list1($img_m,'ngang');?>">
 
 				</span>
 			</a>
@@ -189,7 +189,7 @@ while($i<$count){
 		  <tr>
 			<td class="anh_ngang" colspan="2">
 			<a class="fancybox fancybox.iframe" href="http://localhost/place2shot-web/photos/detail">
-				<span class="anh_ngang_pt" style="background-image:url(img/uploads/images/<?php if($i>=$count) echo $mang[$default[4]];else echo $mang[$i];?>);<?php if($i>=$count) $img_m='img/uploads/images/'.$mang[$default[0]];else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list1($img_m,'ngang');?>">
+				<span class="anh_ngang_pt" style="background-image:url(img/uploads/images/<?php if($i>=$count) echo $mang[$default[4]];else echo $mang[$i];?>);<?php if($i>=$count) $img_m='img/uploads/images/'.$mang[$default[4]];else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list1($img_m,'ngang');?>">
 
 				</span>
 			</a>
@@ -217,7 +217,7 @@ while($i<$count){
 <?php $i++;?>
 			<td class="anh_dung" rowspan="2">
 			<a class="fancybox fancybox.iframe" href="http://localhost/place2shot-web/photos/detail">
-				<span class="anh_dung_pt" style="background-image:url(img/uploads/images/<?php if($i>=$count) echo $mang[$default[5]];else echo $mang[$i];?>);<?php if($i>=$count) $img_m='img/uploads/images/'.$mang[$default[0]];else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list1($img_m,'dung');?>">
+				<span class="anh_dung_pt" style="background-image:url(img/uploads/images/<?php if($i>=$count) echo $mang[$default[5]];else echo $mang[$i];?>);<?php if($i>=$count) $img_m='img/uploads/images/'.$mang[$default[5]];else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list1($img_m,'dung');?>">
 
 				</span>
 			</a>
@@ -247,7 +247,7 @@ while($i<$count){
 		  <tr>
 			<td class="anh_ngang" colspan="2">
 			<a class="fancybox fancybox.iframe" href="http://localhost/place2shot-web/photos/detail">
-				<span class="anh_ngang_pt" style="background-image:url(img/uploads/images/<?php if($i>=$count) echo $mang[$default[6]];else echo $mang[$i];?>);<?php if($i>=$count) $img_m='img/uploads/images/'.$mang[$default[0]];else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list1($img_m,'ngang');?>">
+				<span class="anh_ngang_pt" style="background-image:url(img/uploads/images/<?php if($i>=$count) echo $mang[$default[6]];else echo $mang[$i];?>);<?php if($i>=$count) $img_m='img/uploads/images/'.$mang[$default[6]];else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list1($img_m,'ngang');?>">
 
 				</span>
 			</a>
@@ -282,7 +282,7 @@ while($i<$count){
 			  <tr>
 				<td class="anh_vuong">
 				<a class="fancybox fancybox.iframe" href="http://localhost/place2shot-web/photos/detail">
-					<span class="anh_vuong_pt" style="background-image:url(img/uploads/images/<?php if($i>=$count) echo $mang[$default[7]];else echo $mang[$i];?>);<?php if($i>=$count) $img_m='img/uploads/images/'.$mang[$default[0]];else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list2($img_m,'vuong');?>"></span>
+					<span class="anh_vuong_pt" style="background-image:url(img/uploads/images/<?php if($i>=$count) echo $mang[$default[7]];else echo $mang[$i];?>);<?php if($i>=$count) $img_m='img/uploads/images/'.$mang[$default[7]];else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list2($img_m,'vuong');?>"></span>
 				</a>
 					<table class="ca-icon" cellspacing="0" cellpadding="0">
 					  <tr>
@@ -308,7 +308,7 @@ while($i<$count){
 <?php $i++;?>
 				<td class="anh_ngang" rowspan="3">
 				<a class="fancybox fancybox.iframe" href="http://localhost/place2shot-web/photos/detail">
-					<span class="anh_ngang_pt" style="background-image:url(img/uploads/images/<?php if($i>=$count) echo $mang[$default[8]];else echo $mang[$i];?>);<?php if($i>=$count) $img_m='img/uploads/images/'.$mang[$default[0]];else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list2($img_m,'ngang');?>"></span>
+					<span class="anh_ngang_pt" style="background-image:url(img/uploads/images/<?php if($i>=$count) echo $mang[$default[8]];else echo $mang[$i];?>);<?php if($i>=$count) $img_m='img/uploads/images/'.$mang[$default[8]];else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list2($img_m,'ngang');?>"></span>
 				</a>
 					<table class="ca-icon" cellspacing="0" cellpadding="0">
 					  <tr>
@@ -336,7 +336,7 @@ while($i<$count){
 			  <tr>
 				<td class="anh_vuong">
 				<a class="fancybox fancybox.iframe" href="http://localhost/place2shot-web/photos/detail">
-					<span class="anh_vuong_pt" style="background-image:url(img/uploads/images/<?php if($i>=$count) echo $mang[$default[9]];else echo $mang[$i];?>);<?php if($i>=$count) $img_m='img/uploads/images/'.$mang[$default[0]];else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list2($img_m,'vuong');?>"></span>
+					<span class="anh_vuong_pt" style="background-image:url(img/uploads/images/<?php if($i>=$count) echo $mang[$default[9]];else echo $mang[$i];?>);<?php if($i>=$count) $img_m='img/uploads/images/'.$mang[$default[9]];else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list2($img_m,'vuong');?>"></span>
 				</a>
 					<table class="ca-icon" cellspacing="0" cellpadding="0">
 					  <tr>
@@ -364,7 +364,7 @@ while($i<$count){
 			  <tr>
 				<td class="anh_vuong">
 				<a class="fancybox fancybox.iframe" href="http://localhost/place2shot-web/photos/detail">
-					<span class="anh_vuong_pt" style="background-image:url(img/uploads/images/<?php if($i>=$count) echo $mang[$default[10]];else echo $mang[$i];?>);<?php if($i>=$count) $img_m='img/uploads/images/'.$mang[$default[0]];else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list2($img_m,'vuong');?>"></span>
+					<span class="anh_vuong_pt" style="background-image:url(img/uploads/images/<?php if($i>=$count) echo $mang[$default[10]];else echo $mang[$i];?>);<?php if($i>=$count) $img_m='img/uploads/images/'.$mang[$default[10]];else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list2($img_m,'vuong');?>"></span>
 				</a>
 					<table class="ca-icon" cellspacing="0" cellpadding="0">
 					  <tr>

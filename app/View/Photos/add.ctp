@@ -4,13 +4,12 @@
 <?php echo $this->html->script("jquery/upload/demo.js"); ?>
 <?php echo $this->html->script("jquery/upload/jquery.min.js"); ?>
 <?php echo $this->html->script("jquery/upload/map.js"); ?>
-<?php echo $this->html->script("jquery/upload/choose_button.js"); ?>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 
 <div id="dropbox">
   <div id="status"></div> <!--warring: not delete !-->
 	<div id="view-photos">
-		<table id="have_image"  class="display-image" cellspacing="10px" cellpadding="0">
+		<table id="have_image" border="0" class="display-image" cellspacing="10px" cellpadding="0">
 		  <tr>
 			<td class="image_upload" >
 			<img id="thumbimage" height="540"  src="<?php echo $this->webroot; ?>img/image/winter-street-lights-portrait-beauty-girl.jpg" /></td>
@@ -21,10 +20,10 @@
                
 				<?php
 					echo $this->Form->create('Photo',array(
-						//'inputDefaults' => array(
-						//	'label' => false,
+						'inputDefaults' => array(
+							'label' => false),
 						//	'div' => false,
-						//	'id'=>'form_upload',
+							//'id'=>'form_upload',
 							'type' => 'file'
 						//)
 					))
@@ -32,18 +31,11 @@
 				<?php 
 					echo $this->Form->input('img_file',array(
 						'type'=>'file',
-						//'id'=>'uploadfile',
+						'id'=>'uploadfile'
 						//'onchange'=>'readURL(this);'
 					))
 				?>
 				</div>
-				<table class="choose_and_remove" cellpadding="20px" cellspacing="0">
-				 	<tr>
-						<td class="choose"><a href="javascript:" class="Choicefile">Choose photos</a></td>
-						<td class="remove"><a class="removeimg" href="add" >cancel</a></td>
-					<p style="clear:both"></p>
-				 	</tr>
-				 </table>
 			</td>
 			</tr>
 		</table>
@@ -57,27 +49,18 @@
 				<td class="title_prf">Exif</td>
 				<td class="title_prf">Location </td>
 			</tr>
-		  <tr>
-          	<td>
-            	 <?= $this->Form->input('user_id', array(
-					'label' => __d('Photo', 'User'),
-					'autocomplete' => 'off',
-					'value' => $current_user['id'],
-				//	'type' => 'hidden'
-					'type' => 'text'
-					))
-				?>
-            </td>
-			<td class="basic_title">
-			<p>Title</p>
-				<?php 
-					echo $this->Form->input('title',array(
-						'type'=>'text',
-						'id'=>false
-					));
-				?>
-			</td>
-			<td rowspan="2">
+			<tr>
+				<td class="gallery">
+					<p>Gallery</p>
+					<?php 
+						echo $this->Form->input('gallery_id', array(
+								//'label' => __d('Photo', 'Gallery'),
+								'autocomplete' => 'off'
+								)
+							   );
+					?>
+				</td>
+				<td rowspan="3">
 				<table class="exif" border="0" cellspacing="0" cellpadding="0">
 				  <tr>
 					<td>Camera</td>
@@ -158,17 +141,38 @@
 				  </tr>
 				</table>
 			</td>
-			<td id="map" rowspan="2" >
+			<td id="map" rowspan="3" >
 				<img id="default_map" src="../img/images/map.jpg" width=373 height=210 />
 				<input name="data[form_upload][latitude]" id="latitude" style="display:none" type="text"/>
 				<input name="data[form_upload][longtitude]" id="longtitude" style="display:none" type="text"/>
 			</td>
+			</tr>
+		  <tr>
+			<td class="basic_title">
+			<p>Title</p>
+				<?php 
+					echo $this->Form->input('title',array(
+						'type'=>'text',
+						'id'=>false
+					));
+				?>
+            	<?= $this->Form->input('user_id', array(
+					 'label' => __d('Photo', 'User'),
+					 'autocomplete' => 'off',
+					 'value' => $current_user,
+					 'type' => 'hidden'
+					// 'type' => 'text'
+					 ))
+				?>
+			</td>
+			
 		  </tr>
 		  <tr>
 			<td class="basic_decription">
 				<p>Decription</p>
 				<?php
 					echo $this->Form->textarea('description');
+					
 				?>
 			</td>
 		  </tr>

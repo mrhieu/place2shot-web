@@ -21,9 +21,12 @@ table.image_profile tr td.basic_title{
 .save_image input{
 	background:#666666;
 	cursor: pointer;
-	color:#FFFFFF;
 	width:120px;
-	border-radius:3px;
+	border:none;
+	border-radius:4px;
+	font-weight:bold;
+	font-size:17px;
+	color:#FFFFFF;
 }
 #map{
 	width:400px;
@@ -41,23 +44,30 @@ table.image_profile tr td.basic_title{
 	color:#999999;
 	font-size:15px;
 }
-table.exif tr td{
-	height:30px;
+.gallery select{
+	width:200px;
+	border:none;
+	border-radius:5px;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#999999;
+	font-size:15px;
 }
 /*exif*/
-
+table.exif tr td{
+	height:33px;
+}
 table.exif{
 	width:400px;
 	margin:auto;
 }
 /*display image upload*/
 table.display-image{
-	width:1000px;
+	width:1200px;
 	margin:auto;
 	text-align:center;
 }
 table.display-image tr td.image_upload{
-	height:450px;
+	height:540px;
 }
 /**/
 #view-photos{
@@ -76,47 +86,10 @@ table.display-image tr td.image_upload{
 	background-position:center;
 	background-repeat:no-repeat;
 }
-#default_image , #thumbimage {
+#thumbimage {
 	max-width:1200px;
 }
-table.choose_and_remove{
-	width:350px;
-	margin:auto;
+.choose{
+	height:30px;
+	text-align:center;
 }
-.Choicefile
-    {
-        display:block;
-        background:#0877D8;
-        border:1px solid #fff;
-        color:#fff;
-        width:150px;
-        text-align:center;
-        text-decoration:none;
-        cursor:pointer;
-        padding:5px 0px;
-		margin:auto;
-		border-radius:5px;
-    }
-    #uploadfile,.removeimg
-    {
-       display:none;
-    }
-    #thumbbox
-    {
-      position:relative;
-      width:100px;
-    }
-	.removeimg
-    {
-     	display:block;
-        background:#c4c4c4;
-        border:1px solid #fff;
-        color:#fff;
-        width:150px;
-        text-align:center;
-        text-decoration:none;
-        cursor:pointer;
-        padding:5px 0px;
-		border-radius:5px;
-		margin:auto;
-    }

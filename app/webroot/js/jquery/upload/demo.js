@@ -67,7 +67,24 @@
                for (var i = 0; i < groups.length; i++) {
                 group = groups[i];
 		props = new Array();
-		
+		if(group.description=="General")
+		{
+			for (prop in group.metaProps) {
+						if (group.metaProps.hasOwnProperty(prop)) {
+					props.push(group.metaProps[prop]);
+						}
+			}
+			props.sort(function (a, b) { return strComp(a.description, b.description); });
+			for (var j = 0; j < props.length; j++) {
+						prop = props[j];
+				if(prop.description=="Pixel Height")  height_img=prop.value;
+				if(prop.description=="Pixel Width") width_img=prop.value;
+			}
+			if(width_img/height_img<1200/540){
+			$('#thumbimage').css('height', '540');
+			}
+			else $('#thumbimage').css('width', '1200');
+		}
 		if(group.description=="Exif")
 		{
 			for (prop in group.metaProps) {
