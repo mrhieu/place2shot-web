@@ -208,11 +208,7 @@ width:400px;
 
 							<div class="col-sm-5"><input type="text" class="form-control" id="us3-address"/></div>
 						</div>
-						<div class="form-group">
-							<label class="col-sm-1 control-label">Radius:</label>
-
-							<div class="col-sm-2"><input type="text" class="form-control" id="us3-radius"/></div>
-						</div>
+						
 						<div id="us3" style="width: 550px; height: 400px;"></div>
 						<div class="clearfix">&nbsp;</div>
 						<div class="clearfix"></div>
@@ -252,7 +248,7 @@ width:400px;
 
       try {
         $('#file').change(function() {
-            $(this)->fileExif(someCallback);
+            $(this).fileExif(someCallback);
         });
       }
       catch (e) {
@@ -276,7 +272,7 @@ width:400px;
 		else{
 			$('#us3').locationpicker({
             location: {latitude: 21.033333, longitude: 105.85000000000002},
-            radius: 300,
+            radius: 0,
             inputBinding: {
                 latitudeInput: $('#latitude'),
                 longitudeInput: $('#longitude'),

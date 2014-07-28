@@ -33,7 +33,7 @@
 	    var props;
 	    var group;
 	    var prop;
-		if (jpeg.gps && jpeg.gps.longitude) {
+	    if (jpeg.gps && jpeg.gps.longitude) {
 		//set default
 		
 		document.getElementById("latitude").value="";
@@ -42,6 +42,7 @@
 		document.getElementById("longtitude").value=jpeg.gps.longitude;
 	    
 		}
+
 	    for (group in jpeg.metaGroups) {
                 if (jpeg.metaGroups.hasOwnProperty(group)) {
 		    groups.push(jpeg.metaGroups[group]);
@@ -67,20 +68,7 @@
                for (var i = 0; i < groups.length; i++) {
                 group = groups[i];
 		props = new Array();
-		if(group.description=="General")
-		{
-			for (prop in group.metaProps) {
-						if (group.metaProps.hasOwnProperty(prop)) {
-					props.push(group.metaProps[prop]);
-						}
-			}
-			props.sort(function (a, b) { return strComp(a.description, b.description); });
-			for (var j = 0; j < props.length; j++) {
-						prop = props[j];
-				if(prop.description=="Pixel Height")  height_img=prop.value;
-				if(prop.description=="Pixel Width") width_img=prop.value;
-			}
-		}
+		
 		if(group.description=="Exif")
 		{
 			for (prop in group.metaProps) {
@@ -112,18 +100,20 @@
 			}
 		}
 	    }
-		if(document.getElementById("latitude").value!=""&&document.getElementById("longtitude").value!="")
-			initialize();
+		//
+	    
 	}
 
 	dataurl_reader.onloadend = function() {
 	    $("thumbimage").src = this.result;
             display(atob(this.result.replace(/^.*?,/,'')), files[0]);
+			//initialize();
 	}
 
 	$("status").innerHTML = "";
 	$("thumbimage").src = "";
 	dataurl_reader.readAsDataURL(files[0]);
+	$("form_upload").reset();
     }
 
     window.onload = function() {
