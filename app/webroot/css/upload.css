@@ -4,6 +4,9 @@ body{
 	color:#999999;
 	font-size:15px;
 }
+#thumbimage{
+	/*height:540px;*/
+}
 /* image profile*/
 table.image_profile{
 	width:1200px;

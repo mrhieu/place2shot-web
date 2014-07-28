@@ -12,7 +12,7 @@
 		<table id="have_image" border="0" class="display-image" cellspacing="10px" cellpadding="0">
 		  <tr>
 			<td class="image_upload" >
-			<img id="thumbimage" height="540"  src="<?php echo $this->webroot; ?>img/image/winter-street-lights-portrait-beauty-girl.jpg" /></td>
+			<img id="thumbimage" height="540"   src="<?php echo $this->webroot; ?>img/image/winter-street-lights-portrait-beauty-girl.jpg" /></td>
 			</tr>
 		  <tr>
 			<td class="choose">
@@ -143,8 +143,20 @@
 			</td>
 			<td id="map" rowspan="3" >
 				<img id="default_map" src="../img/images/map.jpg" width=373 height=210 />
-				<input name="data[form_upload][latitude]" id="latitude" style="display:none" type="text"/>
-				<input name="data[form_upload][longtitude]" id="longtitude" style="display:none" type="text"/>
+						<?php 
+							echo $this->Form->input('latitude',array(
+								'id'=>'latitude',
+								'type'=>'hidden'
+							));
+						?>
+						<?php 
+							echo $this->Form->input('longtitude',array(
+								'id'=>'longtitude',
+								'type'=>'hidden'
+							));
+						?>
+				<!--<input name="data[Photo][latitude]" id="latitude" style="display:none" type="text"/>
+				<input name="data[Photo][longtitude]" id="longtitude" style="display:none" type="text"/>-->
 			</td>
 			</tr>
 		  <tr>
