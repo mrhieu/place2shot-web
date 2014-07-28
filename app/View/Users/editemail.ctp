@@ -28,6 +28,11 @@
 				<?php echo $this->Html->link('Setting email', array('controller'=>'users','action' => 'editemail', $current_user['id'])); ?>
 			</td>
 		  </tr>
+          <tr>
+			<td class="change_cover">
+				<?php echo $this->Html->link('Setting cover', array('controller'=>'users','action' => 'editcover', $current_user['id'])); ?>
+			</td>
+		  </tr>
 		</table>
 
 	</td>
@@ -35,16 +40,25 @@
 		<?= $this->Form->create('User',array('type' => 'file'))?>
 			<fieldset>
 				<legend><?= __d('User', 'Upgrade')?></legend>
+				<table   cellspacing="5" cellpadding="0"> 
 				<?= $this->Form->input('id')?>
-				
+				<tr>
+					<td class="name">Email</td>
+					<td>
 				<?= $this->Form->input('email', array(
-					'label' => __d('User', 'Email'),
+					//'label' => __d('User', 'Email'),
+					'label'=>false,
 					'autocomplete' => 'off'
 					)
 				)?>
-				
+				</td>
+				<tr>
+					<td colspan="2">
 				
 		<?=$this->Form->end(__('Submit'))?>
+			</td>
+				</tr>
+				</table>
 	</td>
     <td class="setting_profile">
 		<table class="edit_profile" border="1" cellspacing="0" cellpadding="0">

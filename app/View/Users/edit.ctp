@@ -27,6 +27,11 @@
 				<?php echo $this->Html->link('Setting email', array('controller'=>'users','action' => 'editemail', $current_user['id'])); ?>
 			</td>
 		  </tr>
+          <tr>
+			<td class="change_cover">
+				<?php echo $this->Html->link('Setting cover', array('controller'=>'users','action' => 'editcover', $current_user['id'])); ?>
+			</td>
+		  </tr>
 		</table>
 
 	</td>
@@ -59,7 +64,11 @@
 			<td class="edit_avatar" rowspan="5">
 				<img src="" />
 			</td>
-			<td class="edit_name">change</td>
+			<td class="edit_name">
+			<?php
+				echo $user['User']['name'];
+			?>
+			</td>
 		  </tr>
 		  <tr>
 			<td class="edit_email">change</td>
@@ -78,4 +87,3 @@
 	</td>
   </tr>
 </table>
-
