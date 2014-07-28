@@ -252,7 +252,7 @@ width:400px;
 
       try {
         $('#file').change(function() {
-            $(this)->fileExif(someCallback);
+            $(this).fileExif(someCallback);
         });
       }
       catch (e) {
