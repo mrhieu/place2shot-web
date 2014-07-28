@@ -193,7 +193,24 @@ class UsersController extends AppController{
             unset($this->request->data['User']['password']);
         }
     }
-
+	public function editcover($id = null) {
+        $this->User->id = $id;
+        if (!$this->User->exists()) {
+            throw new NotFoundException(__('Invalid user'));
+        }
+        if ($this->request->is('post') || $this->request->is('put')) {
+            if ($this->User->saveField('cover', $this->request->data['User']['cover'])) {
+                $this->Session->setFlash(__('The avata has been changed'));
+                return $this->redirect(array('action' => 'index'));
+            }
+            $this->Session->setFlash(
+                __('The avata could not be changed. Please, try again.')
+            );
+        } else {
+            $this->request->data = $this->User->read(null, $id);
+            unset($this->request->data['User']['password']);
+        }
+    }
 	public function delete($id = null) {
 		if ($this->Auth->user('roles') != 'admin') {
 			$this->redirect(array("controller" => "pages", "action" => "home"));

@@ -3,12 +3,34 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php echo $this->html->css("profile"); ?>
+<?php echo $this->html->script("jquery/fancy/lib/jquery-1.10.1.min");?>
+<?php echo $this->html->script("jquery/fancy/source/jquery.fancybox");?>
+<?php echo $this->html->css("jquery.fancybox");?>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox();
+		$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+			
+		});
+</script>
+
 <title>Profile Page</title>
 </head>
 
 <body>
 	<div id="wrapper">
-    	<div id="header">
+    	<div id="header" style=" background-image:url(<?php echo $this->webroot; ?>img/uploads/covers/<?php echo $user['User']['cover'] ?>)" >
         	<div id="top_header">
             	<div class="img_acc">
                 	<span class="acc_img" style="background-image:url(<?php echo $this->webroot; ?>img/uploads/avatas/thumb/small/<?php echo $user['User']['avata']?> );display:block;">
@@ -27,7 +49,7 @@
                         </div>
                     <?php endif; ?>
 						<?php
-							echo $this->Form->end(array('div'=>'bonus','class'=>'follow','label'=>'FOLLOW'));
+							echo $this->Html->link('Cover', array('controller'=>'users','action' => 'editcover', $user['User']['id']));
 							echo $this->Form->end(array('div'=>'bonus','class'=>'connect1','label'=>''));
 							echo $this->Form->end(array('div'=>'bonus','class'=>'connect2','label'=>''));
 							echo $this->Form->end(array('div'=>'bonus','class'=>'connect3','label'=>''));
@@ -61,13 +83,12 @@
 					}
 			
 						echo $this->Html->link(
-					$this->Html->image('uploads/images/thumb/large'.'/'.$photo['img_file'], array('alt' => 'Gallery Image')),
+					$this->Html->image('uploads/images/thumb/large/'.'/'.$photo['img_file'], array('alt' => 'Gallery Image')),
 					array('controller'=>'photos','action'=>'view',$photo['id']),
-					array('class' => 'image','target'=>'_blank', 'escape'=>false)
+					array('class' => 'fancybox fancybox.iframe','escape'=>false)
 				);
 			endforeach;
 			?>
-		
         </div>
         
         <div id="footer">
