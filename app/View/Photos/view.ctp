@@ -24,6 +24,7 @@ img{
 	<?php
 		echo $this->html->image('uploads/images'.'/'.$photo['Photo']['img_file'],array('class'=>'image'));
 	?>
+   
 </div>
 
 

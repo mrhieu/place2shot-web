@@ -143,8 +143,18 @@
 			</td>
 			<td id="map" rowspan="3" >
 				<img id="default_map" src="../img/images/map.jpg" width=373 height=210 />
-				<input name="data[form_upload][latitude]" id="latitude" style="display:none" type="text"/>
-				<input name="data[form_upload][longtitude]" id="longtitude" style="display:none" type="text"/>
+					<?php 
+                       	echo $this->Form->input('latitude',array(
+                        	'id'=>'latitude',
+                        	//'type'=>'hidden'
+                       	));
+                    ?>
+                    <?php 
+                       	echo $this->Form->input('longtitude',array(
+                        	'id'=>'longtitude',
+                        	//'type'=>'hidden'
+                       ));
+                    ?>
 			</td>
 			</tr>
 		  <tr>
@@ -161,7 +171,6 @@
 					 'autocomplete' => 'off',
 					 'value' => $current_user,
 					 'type' => 'hidden'
-					// 'type' => 'text'
 					 ))
 				?>
 			</td>
