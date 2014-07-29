@@ -1,0 +1,80 @@
+/* CSS Document */
+/*cau truc trang*/
+table.main_edit{
+	width:1200px;
+	margin:auto;
+}
+.setting_menu{
+	width:300px;
+}
+.setting_main{
+	width:450px;
+}
+table.main_edit tr td.title{
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	height:30px;
+	font-size:18px;
+	color:#00FFFF;
+}
+/*cau truc menu*/
+table.menu_edit{
+	width:200px;
+}
+table.menu_edit tr td.change_name , table.menu_edit tr td.change_pass ,table.menu_edit tr td.change_avatar ,table.menu_edit tr td.change_email,table.menu_edit tr td.change_cover  {
+	border-radius:5px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	height:30px;
+}
+table.menu_edit tr td:hover{
+	background:#EAEAEA;
+}
+table.menu_edit tr td a{
+	text-decoration:none;
+	color:#3B3B3B;
+	margin-left:10px;
+}
+/*cau truc main*/
+fieldset{
+	padding:20px 20px;
+	margin: 0 30px ;
+	border: 1px solid #999999;
+	border-radius: 10px;
+}
+legend{
+	font-size:18px;
+	font-weight:bold;
+	color:#FF3300;
+}
+.setting_main input[type='text'] ,.setting_main input[type='password']{
+	width:200px;
+	height:30px;
+	font-size:15px;
+	border-radius:5px;
+	border:1px solid #FF0000;
+}
+.setting_main input[type='submit']{
+	width:50px;
+	height:25px;
+	font-size:15px;
+	border-radius:5px;
+	color:#FFFFFF;
+	background:red;
+}
+.setting_main table{
+	text-align:center;
+}
+.setting_main table tr td.name{
+	width:70px;
+}
+/*cau truc profile*/
+table.edit_profile{
+	width:400px;
+}
+table.edit_profile tr td.edit_avatar{
+	width:150px;
+}
+table.edit_profile tr td{
+	height:40px;
+}

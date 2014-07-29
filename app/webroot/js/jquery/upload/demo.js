@@ -68,7 +68,34 @@
                for (var i = 0; i < groups.length; i++) {
                 group = groups[i];
 		props = new Array();
+<<<<<<< HEAD
 		
+=======
+		if(group.description=="General")
+		{
+			for (prop in group.metaProps) {
+						if (group.metaProps.hasOwnProperty(prop)) {
+					props.push(group.metaProps[prop]);
+						}
+			}
+			props.sort(function (a, b) { return strComp(a.description, b.description); });
+			for (var j = 0; j < props.length; j++) {
+						prop = props[j];
+				if(prop.description=="Pixel Height")  height_img=prop.value;
+				if(prop.description=="Pixel Width") width_img=prop.value;
+			}
+				if(width_img/height_img<1200/540){
+					document.getElementById('thumbimage').height = '540';
+					set_width=540*width_img/height_img;
+					document.getElementById('thumbimage').width = set_width;
+				}
+				else {
+					document.getElementById('thumbimage').width = '1200';
+					set_height=1200*height_img/width_img;
+					document.getElementById('thumbimage').height = set_height;
+				}
+		}
+>>>>>>> c24a02ba785ff4eaa0d7d41c5d88b7271a32927a
 		if(group.description=="Exif")
 		{
 			for (prop in group.metaProps) {

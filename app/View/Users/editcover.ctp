@@ -28,7 +28,7 @@
 				<?php echo $this->Html->link('Setting email', array('controller'=>'users','action' => 'editemail', $current_user['id'])); ?>
 			</td>
 		  </tr>
-          <tr>
+		  <tr>
 			<td class="change_cover">
 				<?php echo $this->Html->link('Setting cover', array('controller'=>'users','action' => 'editcover', $current_user['id'])); ?>
 			</td>
@@ -42,16 +42,13 @@
 				<legend><?= __d('User', 'Upgrade')?></legend>
 				<?= $this->Form->input('id')?>
 				
-				<?= $this->Form->input('password', array(
-					'label' => __d('User', 'Password'),
-					'autocomplete' => 'off'
-					)
-				)?>
-				<?= $this->Form->input('password_confirm', array(
+				<?= $this->Form->input('cover', array(
+					'label' => __d('User', 'Cover'),
 					'autocomplete' => 'off',
-					'type' => 'password'
+					'type' => 'file'
 					)
 				)?>
+				
 				
 		<?=$this->Form->end(__('Submit'))?>
 	</td>
