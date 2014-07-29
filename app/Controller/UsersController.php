@@ -74,24 +74,20 @@ class UsersController extends AppController{
 		if(!$this->Auth->user()){
 		
 					
-				$this->redirect(array("controller" => "photos", "action" => "index"));
+				$this->redirect(array("controller" => "pages", "action" => "home"));
 					
 			}
 		if (!$id) {
 			$this->Session->setFlash(__('View Invalid user', true));
-			$this->redirect(array('action' => 'index'));
+			$this->redirect(array('controller' => 'photos','action' => 'index'));
 		}
 		$this->set('user', $this->User->read(null, $id));
 
 	}
 	
 	public function view_relate($id = null) {
-		
-		
-		if(!$this->Auth->user()){
-		
-					
-				$this->redirect(array("controller" => "photos", "action" => "index"));
+		if(!$this->Auth->user()){		
+				$this->redirect(array("controller" => "pages", "action" => "home"));
 					
 			}
 		if (!$id) {
@@ -128,8 +124,8 @@ class UsersController extends AppController{
         }
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->User->saveField('name', $this->request->data['User']['name'])) {
-                $this->Session->setFlash(__('The user has been saved'));
-                return $this->redirect(array('action' => 'index'));
+                //$this->Session->setFlash(__('The user has been saved'));
+                return $this->redirect(array('action' => 'view', $id));
             }
             $this->Session->setFlash(
                 __('The user could not be saved. Please, try again.')
@@ -146,8 +142,8 @@ class UsersController extends AppController{
         }
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->User->saveField('password', $this->request->data['User']['password'])) {
-                $this->Session->setFlash(__('The password has been saved'));
-                return $this->redirect(array('action' => 'index'));
+                //$this->Session->setFlash(__('The password has been saved'));
+                return $this->redirect(array('action' => 'view', $id));
             }
             $this->Session->setFlash(
                 __('The password could not be saved. Please, try again.')
@@ -164,8 +160,8 @@ class UsersController extends AppController{
         }
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->User->saveField('email', $this->request->data['User']['email'])) {
-                $this->Session->setFlash(__('The email has been updated'));
-                return $this->redirect(array('action' => 'index'));
+                //$this->Session->setFlash(__('The email has been updated'));
+                return $this->redirect(array('action' => 'view', $id));
             }
             $this->Session->setFlash(
                 __('The email could not be updated. Please, try again.')
@@ -182,8 +178,8 @@ class UsersController extends AppController{
         }
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->User->saveField('avata', $this->request->data['User']['avata'])) {
-                $this->Session->setFlash(__('The avata has been changed'));
-                return $this->redirect(array('action' => 'index'));
+                //$this->Session->setFlash(__('The avata has been changed'));
+                return $this->redirect(array('action' => 'view', $id));
             }
             $this->Session->setFlash(
                 __('The avata could not be changed. Please, try again.')
@@ -200,8 +196,8 @@ class UsersController extends AppController{
         }
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->User->saveField('cover', $this->request->data['User']['cover'])) {
-                $this->Session->setFlash(__('The avata has been changed'));
-                return $this->redirect(array('action' => 'index'));
+                //$this->Session->setFlash(__('The avata has been changed'));
+                return $this->redirect(array('action' => 'view', $id));
             }
             $this->Session->setFlash(
                 __('The avata could not be changed. Please, try again.')

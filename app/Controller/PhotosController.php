@@ -90,7 +90,7 @@ class PhotosController extends AppController {
             $this->Photo->create();
             if ($this->Photo->save($this->request->data)) {
                 $this->Session->setFlash(__('Your photo has been saved.'));
-                return $this->redirect(array('action' => 'index'));
+               	$this->redirect(array('controller' => 'users', 'action' => 'view', $current_user['id']));
             }
             $this->Session->setFlash(__('Unable to add your photo.'));
         }

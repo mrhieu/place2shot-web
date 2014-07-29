@@ -34,7 +34,7 @@ class AppController extends Controller {
 	public $components = array(
 		'Session',
 		'Auth' => array(
-				'loginRedirect' => array('controller'=>'pages','action'=>'home'),	
+				'loginRedirect' => array('controller'=>'photos','action'=>'index'),	
 				'logoutRedirect' => array('controller'=>'pages','action'=>'home'),
 				'authError' => 'You can not access that page.',
 				'loginError' => 'Incorrect username/password combination.',
