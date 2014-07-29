@@ -30,6 +30,8 @@ $count=$i;
 <?php
 $i=0;
 $default=0;
+$log=-1;
+$log2=-1;
 while($i<$count){
 ?>	
 
