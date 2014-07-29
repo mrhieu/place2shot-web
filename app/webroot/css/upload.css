@@ -8,12 +8,12 @@ body{
 	/*height:540px;*/
 }
 /* image profile*/
-table.image_profile{
+table.img_profile{
 	width:1200px;
 	text-align:justify;
 	margin:auto;
 }
-table.image_profile tr td.basic_title{
+table.img_profile tr td.basic_title , table.img_profile tr td.gallery{
 	height:25px;
 }
 .title_prf{
@@ -36,10 +36,10 @@ table.image_profile tr td.basic_title{
 	height:200px;
 }
 .basic_decription textarea{
-	height:110px;
+	height:150px;
 	width:350px;
 }
-.basic_title input, #camera, #lens , #focal_length , #shutter_speed , #aperture , #iso , #taken  {
+.basic_title input, #camera_model,#latitude, #longitude, #lens , #focal_length , #shutter_speed , #aperture , #iso , #taken , input.form-control {
 	border:none;
 	height:20px;
 	width:250px;
@@ -56,10 +56,10 @@ table.image_profile tr td.basic_title{
 	font-size:15px;
 }
 /*exif*/
-table.exif tr td{
+table.detail_exif tr td{
 	height:33px;
 }
-table.exif{
+table.detail_exif{
 	width:400px;
 	margin:auto;
 }
@@ -73,7 +73,8 @@ table.display-image tr td.image_upload{
 	height:540px;
 }
 /**/
-#view-photos{
+
+#picture{
 	background:url(../img/Image/3.jpg);
 	width:100%;
 	height:600px;
@@ -89,8 +90,8 @@ table.display-image tr td.image_upload{
 	background-position:center;
 	background-repeat:no-repeat;
 }
-#thumbimage {
-	max-width:1200px;
+#img_upload {
+	border-radius:4px;
 }
 .choose{
 	height:30px;
