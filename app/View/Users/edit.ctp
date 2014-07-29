@@ -27,6 +27,11 @@
 				<?php echo $this->Html->link('Setting email', array('controller'=>'users','action' => 'editemail', $current_user['id'])); ?>
 			</td>
 		  </tr>
+          <tr>
+			<td class="change_cover">
+				<?php echo $this->Html->link('Setting cover', array('controller'=>'users','action' => 'editcover', $current_user['id'])); ?>
+			</td>
+		  </tr>
 		</table>
 
 	</td>
