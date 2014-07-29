@@ -33,7 +33,7 @@
 	    var props;
 	    var group;
 	    var prop;
-		if (jpeg.gps && jpeg.gps.longitude) {
+	    if (jpeg.gps && jpeg.gps.longitude) {
 		//set default
 		
 		document.getElementById("latitude").value="";
@@ -42,6 +42,7 @@
 		document.getElementById("longtitude").value=jpeg.gps.longitude;
 	    
 		}
+
 	    for (group in jpeg.metaGroups) {
                 if (jpeg.metaGroups.hasOwnProperty(group)) {
 		    groups.push(jpeg.metaGroups[group]);
@@ -67,6 +68,9 @@
                for (var i = 0; i < groups.length; i++) {
                 group = groups[i];
 		props = new Array();
+<<<<<<< HEAD
+		
+=======
 		if(group.description=="General")
 		{
 			for (prop in group.metaProps) {
@@ -91,6 +95,7 @@
 					document.getElementById('thumbimage').height = set_height;
 				}
 		}
+>>>>>>> c24a02ba785ff4eaa0d7d41c5d88b7271a32927a
 		if(group.description=="Exif")
 		{
 			for (prop in group.metaProps) {
@@ -122,18 +127,20 @@
 			}
 		}
 	    }
-		if(document.getElementById("latitude").value!=""&&document.getElementById("longtitude").value!="")
-			initialize();
+		//
+	    
 	}
 
 	dataurl_reader.onloadend = function() {
 	    $("thumbimage").src = this.result;
             display(atob(this.result.replace(/^.*?,/,'')), files[0]);
+			//initialize();
 	}
 
 	$("status").innerHTML = "";
 	$("thumbimage").src = "";
 	dataurl_reader.readAsDataURL(files[0]);
+	$("form_upload").reset();
     }
 
     window.onload = function() {

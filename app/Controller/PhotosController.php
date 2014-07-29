@@ -49,6 +49,7 @@ class PhotosController extends AppController {
 		//$this->set('_serialize', array('posts'));
 	}
 	function view($id = null) {
+	$this->layout='view';
 		if (!$id) {
             throw new NotFoundException(__('Invalid photo'));
         }

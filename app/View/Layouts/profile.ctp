@@ -46,10 +46,11 @@
                             <p class="detail"><?php echo $this->Html->link('Setting', array('controller'=>'users','action' => 'edit', $user['User']['id'])); ?></p>
                             <p class="detail"><?php echo $this->Html->link('Upload', array('controller'=>'photos','action' => 'add')); ?></p>
                             <p class="detail"><?php echo $this->Html->link('Manage', array('controller'=>'users','action' => 'view_relate', $user['User']['id'])); ?></p>
+							
                         </div>
                     <?php endif; ?>
 						<?php
-							echo $this->Html->link('Cover', array('controller'=>'users','action' => 'editcover', $user['User']['id']));
+							
 							echo $this->Form->end(array('div'=>'bonus','class'=>'connect1','label'=>''));
 							echo $this->Form->end(array('div'=>'bonus','class'=>'connect2','label'=>''));
 							echo $this->Form->end(array('div'=>'bonus','class'=>'connect3','label'=>''));
@@ -69,7 +70,11 @@
 					echo $this->Form->end(array('div'=>'button','class'=>'style_bt','label'=>'SETS'));
 					echo $this->Form->end(array('div'=>'button','class'=>'style_bt','label'=>'STORIES'));
 					echo $this->Form->end(array('div'=>'button','class'=>'style_bt','label'=>'STORE'));
+					
 				?>
+				 <?php if ($current_user['roles'] == 'admin' || $current_user['id'] == $user['User']['id']): ?>
+					<p class="change"><?php echo $this->Html->link('CHANGE COVER', array('controller'=>'users','action' => 'editcover', $user['User']['id'])); ?></p>
+				 <?php endif; ?>
             </div>
         </div>
     	
