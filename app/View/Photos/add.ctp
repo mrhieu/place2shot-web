@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-    <html>
-    <head>
+	<?php echo $this->Html->css("upload.css"); ?>
 	<?php echo $this->html->script("jquery/upload/jquery-1.7.1.js");?>
 	<?php echo $this->html->script("jquery/upload/jquery.exif.js");?>
 	<?php echo $this->html->script("jquery/upload/locationpicker.jquery.js");?>
@@ -37,11 +35,8 @@
 	  <style>
 	  #picture{
 	  text-align:center;
-	  }
-#img_upload{
-width:600px;
-height:400px;}	  
-#cl {
+	  }  
+#cl1 {
         height: 100px;
 		width:100px;
 		background-color:yellow;
@@ -49,51 +44,66 @@ height:400px;}
         padding: 0px
       }
 #map{
-height:500px;
+height:200px;
 width:400px;
 }
     </style>
-    </head>
 
-    <body>
-<div id='content'>
 	<div id="picture">
-	<?php
-		echo $this->html->image('images/demo.jpg',array('id'=>'img_upload'));
-	?>
-	
-		<?php
-		echo $this->Form->create('Photo',array(
-						'inputDefaults' => array(
-							'label' => false),														
-							'type' => 'file',
-			));
-		?>		
-			
-			<?php 
-					echo $this->Form->input('img_file',array(
-						'type'=>'file',
-						'id'=>'file',
-						
-					));
+		<table id="have_image" class="display-image" cellspacing="10px" cellpadding="0">
+		  <tr>
+			<td class="image_upload" id="1234">
+				<?php
+					echo $this->html->image('images/demo.jpg',array('id'=>'img_upload','height'=>'540'));
 				?>
+			</tr>
+		  <tr>
+			<td class="choose">
+				<div id="myfileupload">
+					<?php
+						echo $this->Form->create('Photo',array(
+									'inputDefaults' => array(
+										'label' => false),														
+										'type' => 'file',
+						));
+					?>		
+						
+					<?php 
+						echo $this->Form->input('img_file',array(
+							'type'=>'file',
+							'id'=>'file',
+							
+						));
+					?>
+				</div>
+			</td>
+			</tr>
+		</table>
 	</div>	
-	<div id="cl"></div>
-	<div id='info_img'>
 	
-		<table id="img_profile" border="1" cellspacing="20px" cellpadding="0">
+	
+	
+	
+	<div id='profile-photos'>
+		<table class="img_profile"  cellspacing="10px" cellpadding="0">
 			<tr>
-				<td><h4 id='basic'>BASIC</h4></td>
-				<td><h4 id='exif_file'>EXIF</h4></td>
-				<td><h4 id='location_map'>MAP</h4></td>
+				<td class="title_prf">BASIC</td>
+				<td class="title_prf">EXIF</td>
+				<td class="title_prf">MAP</td>
 			</tr>
 			<tr>
-				<td>
-				basic2
+				<td class="gallery">
+					<p>Gallery</p>
+					<?php 
+						echo $this->Form->input('gallery_id', array(
+								//'label' => __d('Photo', 'Gallery'),
+								'autocomplete' => 'off'
+								)
+							   );
+					?>
 				</td>
-				
-				<td class="exif_info">
-					<table class="detail_exif">
+				<td rowspan="3">
+					<table class="detail_exif" cellspacing="0px" cellpadding="0">
 					
 					<tr>
 						<td>Camera</td>
@@ -153,12 +163,12 @@ width:400px;
 						</td>
 					</tr>		
 					<tr>
-						<td>Shutter Peed</td>	
+						<td>Shutter Speed</td>	
 						<td>	
 							<?php 
-											echo $this->Form->input('shutter_peed',array(
+											echo $this->Form->input('shutter_speed',array(
 												'type'=>'text',
-												'id'=>'shutter_peed'
+												'id'=>'shutter_speed'
 											));
 										?>
 						</td>
@@ -201,7 +211,7 @@ width:400px;
 					</table>
 				</td>
 				
-				<td>		<!--MAP -->
+				<td rowspan="3">		<!--MAP -->
 					 <div class="form-horizontal">
 						<div class="form-group">
 							<label class="col-sm-1 control-label">Location:</label>
@@ -213,24 +223,59 @@ width:400px;
 
 							<div class="col-sm-2"><input type="text" class="form-control" id="us3-radius"/></div>
 						</div>
-						<div id="us3" style="width: 550px; height: 400px;"></div>
+						<div id="us3" style="width: 400px; height: 200px;"></div>
 						<div class="clearfix">&nbsp;</div>
 						<div class="clearfix"></div>
 					</div>
 				</td>
-			</tr>			 															
-	<div><!--END INFO IMG-->					
-				<?= $this->Form->input('user_id', array(
-					  'label' => __d('Photo', 'User'),
-					  'autocomplete' => 'off',
-					  'value' => $current_user,
-					  'type' => 'hidden'
-					  ))
+			</tr>
+			<tr>
+				<td class="basic_title">
+				<p>Title</p>
+					<?php 
+						echo $this->Form->input('title',array(
+							'type'=>'text',
+							'id'=>false
+						));
 					?>
-			<?php 
-					echo $this->Form->end('SAVE');
+					<?= $this->Form->input('user_id', array(
+						 'label' => __d('Photo', 'User'),
+						 'autocomplete' => 'off',
+						 'value' => $current_user,
+						 'type' => 'hidden'
+						// 'type' => 'text'
+						 ))
+					?>
+				</td>
+		  </tr>
+		  <tr>
+			<td class="basic_decription">
+				<p>Decription</p>
+				<?php
+					echo $this->Form->textarea('description');
+					
 				?>
+			</td>
+		  </tr>			
+<!--END INFO IMG-->	
+			<tr>
+				<td colspan="3">
+					<?= $this->Form->input('user_id', array(
+						  'label' => __d('Photo', 'User'),
+						  'autocomplete' => 'off',
+						  'value' => $current_user,
+						  'type' => 'hidden'
+						  ))
+						?>
+						<div id="cl1"></div>
+				<?php 
+						echo $this->Form->end('SAVE');
+					?>
+				</td>
+			</tr>
 		</table>
+					
+</div>
 	  <script type="text/javascript">
         var someCallback = function(exifObject) {
 
@@ -245,9 +290,27 @@ width:400px;
             // Uncomment the line below to examine the
             // EXIF object in console to read other values
             //console.log(exifObject);
-			$('#camera_model').val(exifObject.Make);
-			$('#lens').val(exifObject.Model);
-			$('#focal_length').val(exifObject.Contrast);
+			$('#camera_model').val(exifObject.Model);
+			$('#lens').val(exifObject.MaxApertureValue);
+			$('#focal_length').val(exifObject.FocalLength);
+			$('#shutter_speed').val(exifObject.ShutterSpeedValue);
+			$('#aperture').val(exifObject.ApertureValue);
+			$('#iso').val(exifObject.ISOSpeedRatings);
+			$('#taken').val(exifObject.DateTimeOriginal);
+			document.getElementById("1234").innerHTML='<img id="img_upload" src="" />';
+			var width_img=exifObject.PixelXDimension;
+			var height_img=exifObject.PixelYDimension;
+			if(width_img/height_img<1200/540){
+				wid=540*width_img/height_img;
+				document.getElementById('img_upload').width=wid;
+				document.getElementById('img_upload').height=540;
+			}
+			else {
+				hgt=1200*height_img/width_img;
+				document.getElementById('img_upload').height=hgt;
+				document.getElementById('img_upload').width=1200;
+			}
+			
         }
 
       try {
@@ -266,7 +329,7 @@ width:400px;
 	 
 	 
 	<script>
-		$("#cl").click(function(){					
+		$("#cl1").click(function(){					
 		if(document.getElementById("longitude").value !=''){
 		$(".form-group").hide();
 		$(".m-t-small").hide();
@@ -305,7 +368,7 @@ width:400px;
 					reader.onload = function (e) {
 						$('#img_upload').attr('src', e.target.result);
 					}
-
+					
 					reader.readAsDataURL(input.files[0]);
 				}
 			}
@@ -316,5 +379,3 @@ width:400px;
 		</script>
 
 </div>
-    </body>
-    </html>

@@ -59,7 +59,11 @@
 			<td class="edit_avatar" rowspan="5">
 				<img src="" />
 			</td>
-			<td class="edit_name">change</td>
+			<td class="edit_name">
+			<?php
+				echo $user['User']['name'];
+			?>
+			</td>
 		  </tr>
 		  <tr>
 			<td class="edit_email">change</td>

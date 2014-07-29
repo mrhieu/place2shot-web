@@ -29,7 +29,7 @@ $count=$i;
 
 <?php
 $i=0;
-
+$default=0;
 while($i<$count){
 ?>	
 
