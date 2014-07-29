@@ -2,6 +2,7 @@
 	$i=0;$mang=array();
 	foreach ($photos as $photo): 
 		$mang[$i]= $photo['Photo']['img_file'];
+		$mang_id[$i]= $photo['Photo']['id'];
 		$i++;
 endforeach;
 $count=$i;	
@@ -33,12 +34,12 @@ $default=0;
 while($i<$count){
 ?>	
 
-<!-- photo list 3-->	
+<!-- photo list 3-->
 	  <table class="photo_list_3" border="0" cellspacing="20px" cellpadding="0">
           <tr>
             <td class="anh_ngang">
-			<a class="fancybox fancybox.iframe" href="http://localhost/place2shot-web/photos/detail">
-				<span class="anh_ngang_pt" style="background-image:url(/place2shot-web/img/uploads/images/<?php if($i>=$count){$default=array_rand($mang);  echo $mang[$default];}else echo $mang[$i];?>);<?php if($i>=$count){$default=array_rand($mang); $img_m='img/uploads/images/'.$mang[$default];}else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list3($img_m);?>">
+			<a class="fancybox fancybox.iframe" href="/place2shot-web/photos/view/<?php if($i>=$count){$default=array_rand($mang);  echo $mang_id[$default];}else echo $mang_id[$i];?>">
+				<span class="anh_ngang_pt" style="background-image:url(/place2shot-web/img/uploads/images/<?php if($i>=$count){  echo $mang[$default];}else echo $mang[$i];?>);<?php if($i>=$count){ $img_m='img/uploads/images/'.$mang[$default];}else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list3($img_m);?>">
 				</span>
 			</a>
 					<table class="ca-icon" cellspacing="0" cellpadding="0">
@@ -69,8 +70,8 @@ while($i<$count){
 		<table class="photo_list_1" border="0" cellspacing="20px" cellpadding="0px">
 		  <tr>
 			<td class="anh_ngang" colspan="2">
-			<a class="fancybox fancybox.iframe" href="http://localhost/place2shot-web/photos/detail">
-				<span class="anh_ngang_pt" style="background-image:url(/place2shot-web/img/uploads/images/<?php if($i>=$count){$default=array_rand($mang); echo $mang[$default];}else echo $mang[$i];?>);<?php if($i>=$count){$default=array_rand($mang); $img_m='img/uploads/images/'.$mang[$default];}else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list1($img_m,'ngang');?>">
+			<a class="fancybox fancybox.iframe" href="/place2shot-web/photos/view/<?php if($i>=$count){$default=array_rand($mang);  echo $mang_id[$default];}else echo $mang_id[$i];?>">
+				<span class="anh_ngang_pt" style="background-image:url(/place2shot-web/img/uploads/images/<?php if($i>=$count){ echo $mang[$default];}else echo $mang[$i];?>);<?php if($i>=$count){ $img_m='img/uploads/images/'.$mang[$default];}else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list1($img_m,'ngang');?>">
 					
 				</span>
 			</a>
@@ -99,8 +100,8 @@ while($i<$count){
 			</td>
 <?php $i++;?>
 			<td class="anh_vuong" >
-			<a class="fancybox fancybox.iframe" href="http://localhost/place2shot-web/photos/detail">
-				<span class="anh_vuong_pt" style="background-image:url(/place2shot-web/img/uploads/images/<?php if($i>=$count){$default=array_rand($mang); echo $mang[$default];}else echo $mang[$i];?>);<?php if($i>=$count){$default=array_rand($mang); $img_m='img/uploads/images/'.$mang[$default];}else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list1($img_m,'vuong');?>">
+			<a class="fancybox fancybox.iframe" href="/place2shot-web/photos/view/<?php if($i>=$count){$default=array_rand($mang);  echo $mang_id[$default];}else echo $mang_id[$i];?>">
+				<span class="anh_vuong_pt" style="background-image:url(/place2shot-web/img/uploads/images/<?php if($i>=$count){ echo $mang[$default];}else echo $mang[$i];?>);<?php if($i>=$count){$img_m='img/uploads/images/'.$mang[$default];}else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list1($img_m,'vuong');?>">
 
 				</span>
 			</a>
@@ -129,8 +130,8 @@ while($i<$count){
 		  </tr>
 		  <tr>
 			<td class="anh_vuong">
-			<a class="fancybox fancybox.iframe" href="http://localhost/place2shot-web/photos/detail">
-				<span class="anh_vuong_pt" style="background-image:url(/place2shot-web/img/uploads/images/<?php if($i>=$count){$default=array_rand($mang); echo $mang[$default];}else echo $mang[$i];?>);<?php if($i>=$count){$default=array_rand($mang); $img_m='img/uploads/images/'.$mang[$default];}else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list1($img_m,'vuong');?>">
+			<a class="fancybox fancybox.iframe" href="/place2shot-web/photos/view/<?php if($i>=$count){$default=array_rand($mang);  echo $mang_id[$default];}else echo $mang_id[$i];?>">
+				<span class="anh_vuong_pt" style="background-image:url(/place2shot-web/img/uploads/images/<?php if($i>=$count){ echo $mang[$default];}else echo $mang[$i];?>);<?php if($i>=$count){ $img_m='img/uploads/images/'.$mang[$default];}else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list1($img_m,'vuong');?>">
 
 				</span>
 			</a>
@@ -158,8 +159,8 @@ while($i<$count){
 <?php $i++;?>
 			<td class="anh_ngang" colspan="2">
 			
-			<a class="fancybox fancybox.iframe" href="http://localhost/place2shot-web/photos/detail">
-				<span class="anh_ngang_pt" style="background-image:url(/place2shot-web/img/uploads/images/<?php if($i>=$count){$default=array_rand($mang); echo $mang[$default];}else echo $mang[$i];?>);<?php if($i>=$count){$default=array_rand($mang); $img_m='img/uploads/images/'.$mang[$default];}else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list1($img_m,'ngang');?>">
+			<a class="fancybox fancybox.iframe" href="/place2shot-web/photos/view/<?php if($i>=$count){$default=array_rand($mang);  echo $mang_id[$default];}else echo $mang_id[$i];?>">
+				<span class="anh_ngang_pt" style="background-image:url(/place2shot-web/img/uploads/images/<?php if($i>=$count){ echo $mang[$default];}else echo $mang[$i];?>);<?php if($i>=$count){ $img_m='img/uploads/images/'.$mang[$default];}else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list1($img_m,'ngang');?>">
 
 				</span>
 			</a>
@@ -188,8 +189,8 @@ while($i<$count){
 		  </tr>
 		  <tr>
 			<td class="anh_ngang" colspan="2">
-			<a class="fancybox fancybox.iframe" href="http://localhost/place2shot-web/photos/detail">
-				<span class="anh_ngang_pt" style="background-image:url(/place2shot-web/img/uploads/images/<?php if($i>=$count){$default=array_rand($mang); echo $mang[$default];}else echo $mang[$i];?>);<?php if($i>=$count){$default=array_rand($mang); $img_m='img/uploads/images/'.$mang[$default];}else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list1($img_m,'ngang');?>">
+			<a class="fancybox fancybox.iframe" href="/place2shot-web/photos/view/<?php if($i>=$count){$default=array_rand($mang);  echo $mang_id[$default];}else echo $mang_id[$i];?>">
+				<span class="anh_ngang_pt" style="background-image:url(/place2shot-web/img/uploads/images/<?php if($i>=$count){ echo $mang[$default];}else echo $mang[$i];?>);<?php if($i>=$count){ $img_m='img/uploads/images/'.$mang[$default];}else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list1($img_m,'ngang');?>">
 
 				</span>
 			</a>
@@ -216,8 +217,8 @@ while($i<$count){
 			</td>
 <?php $i++;?>
 			<td class="anh_dung" rowspan="2">
-			<a class="fancybox fancybox.iframe" href="http://localhost/place2shot-web/photos/detail">
-				<span class="anh_dung_pt" style="background-image:url(/place2shot-web/img/uploads/images/<?php if($i>=$count){$default=array_rand($mang); echo $mang[$default];}else echo $mang[$i];?>);<?php if($i>=$count){$default=array_rand($mang); $img_m='img/uploads/images/'.$mang[$default];}else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list1($img_m,'dung');?>">
+			<a class="fancybox fancybox.iframe" href="/place2shot-web/photos/view/<?php if($i>=$count){$default=array_rand($mang);  echo $mang_id[$default];}else echo $mang_id[$i];?>">
+				<span class="anh_dung_pt" style="background-image:url(/place2shot-web/img/uploads/images/<?php if($i>=$count){ echo $mang[$default];}else echo $mang[$i];?>);<?php if($i>=$count){ $img_m='img/uploads/images/'.$mang[$default];}else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list1($img_m,'dung');?>">
 
 				</span>
 			</a>
@@ -246,8 +247,8 @@ while($i<$count){
 		  </tr>
 		  <tr>
 			<td class="anh_ngang" colspan="2">
-			<a class="fancybox fancybox.iframe" href="http://localhost/place2shot-web/photos/detail">
-				<span class="anh_ngang_pt" style="background-image:url(/place2shot-web/img/uploads/images/<?php if($i>=$count){$default=array_rand($mang); echo $mang[$default];}else echo $mang[$i];?>);<?php if($i>=$count){$default=array_rand($mang); $img_m='img/uploads/images/'.$mang[$default];}else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list1($img_m,'ngang');?>">
+			<a class="fancybox fancybox.iframe" href="/place2shot-web/photos/view/<?php if($i>=$count){$default=array_rand($mang);  echo $mang_id[$default];}else echo $mang_id[$i];?>">
+				<span class="anh_ngang_pt" style="background-image:url(/place2shot-web/img/uploads/images/<?php if($i>=$count){ echo $mang[$default];}else echo $mang[$i];?>);<?php if($i>=$count){ $img_m='img/uploads/images/'.$mang[$default];}else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list1($img_m,'ngang');?>">
 
 				</span>
 			</a>
@@ -281,8 +282,8 @@ while($i<$count){
 		<table class="photo_list_2" border="0" cellspacing="20px" cellpadding="0">
 			  <tr>
 				<td class="anh_vuong">
-				<a class="fancybox fancybox.iframe" href="http://localhost/place2shot-web/photos/detail">
-					<span class="anh_vuong_pt" style="background-image:url(/place2shot-web/img/uploads/images/<?php if($i>=$count){$default=array_rand($mang); echo $mang[$default];}else echo $mang[$i];?>);<?php if($i>=$count){$default=array_rand($mang); $img_m='img/uploads/images/'.$mang[$default];}else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list2($img_m,'vuong');?>"></span>
+				<a class="fancybox fancybox.iframe" href="/place2shot-web/photos/view/<?php if($i>=$count){$default=array_rand($mang);  echo $mang_id[$default];}else echo $mang_id[$i];?>">
+					<span class="anh_vuong_pt" style="background-image:url(/place2shot-web/img/uploads/images/<?php if($i>=$count){ echo $mang[$default];}else echo $mang[$i];?>);<?php if($i>=$count){ $img_m='img/uploads/images/'.$mang[$default];}else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list2($img_m,'vuong');?>"></span>
 				</a>
 					<table class="ca-icon" cellspacing="0" cellpadding="0">
 					  <tr>
@@ -307,8 +308,8 @@ while($i<$count){
 				</td>
 <?php $i++;?>
 				<td class="anh_ngang" rowspan="3">
-				<a class="fancybox fancybox.iframe" href="http://localhost/place2shot-web/photos/detail">
-					<span class="anh_ngang_pt" style="background-image:url(/place2shot-web/img/uploads/images/<?php if($i>=$count){$default=array_rand($mang); echo $mang[$default];}else echo $mang[$i];?>);<?php if($i>=$count){$default=array_rand($mang); $img_m='img/uploads/images/'.$mang[$default];}else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list2($img_m,'ngang');?>"></span>
+				<a class="fancybox fancybox.iframe" href="/place2shot-web/photos/view/<?php if($i>=$count){$default=array_rand($mang);  echo $mang_id[$default];}else echo $mang_id[$i];?>">
+					<span class="anh_ngang_pt" style="background-image:url(/place2shot-web/img/uploads/images/<?php if($i>=$count){ echo $mang[$default];}else echo $mang[$i];?>);<?php if($i>=$count){ $img_m='img/uploads/images/'.$mang[$default];}else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list2($img_m,'ngang');?>"></span>
 				</a>
 					<table class="ca-icon" cellspacing="0" cellpadding="0">
 					  <tr>
@@ -335,8 +336,8 @@ while($i<$count){
 			  </tr>
 			  <tr>
 				<td class="anh_vuong">
-				<a class="fancybox fancybox.iframe" href="http://localhost/place2shot-web/photos/detail">
-					<span class="anh_vuong_pt" style="background-image:url(/place2shot-web/img/uploads/images/<?php if($i>=$count){$default=array_rand($mang); echo $mang[$default];}else echo $mang[$i];?>);<?php if($i>=$count){$default=array_rand($mang); $img_m='img/uploads/images/'.$mang[$default];}else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list2($img_m,'vuong');?>"></span>
+				<a class="fancybox fancybox.iframe" href="/place2shot-web/photos/view/<?php if($i>=$count){$default=array_rand($mang);  echo $mang_id[$default];}else echo $mang_id[$i];?>">
+					<span class="anh_vuong_pt" style="background-image:url(/place2shot-web/img/uploads/images/<?php if($i>=$count){ echo $mang[$default];}else echo $mang[$i];?>);<?php if($i>=$count){ $img_m='img/uploads/images/'.$mang[$default];}else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list2($img_m,'vuong');?>"></span>
 				</a>
 					<table class="ca-icon" cellspacing="0" cellpadding="0">
 					  <tr>
@@ -363,8 +364,8 @@ while($i<$count){
 		  </tr>
 			  <tr>
 				<td class="anh_vuong">
-				<a class="fancybox fancybox.iframe" href="http://localhost/place2shot-web/photos/detail">
-					<span class="anh_vuong_pt" style="background-image:url(/place2shot-web/img/uploads/images/<?php if($i>=$count){$default=array_rand($mang); echo $mang[$default];}else echo $mang[$i];?>);<?php if($i>=$count){$default=array_rand($mang); $img_m='img/uploads/images/'.$mang[$default];}else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list2($img_m,'vuong');?>"></span>
+				<a class="fancybox fancybox.iframe" href="/place2shot-web/photos/view/<?php if($i>=$count){$default=array_rand($mang);  echo $mang_id[$default];}else echo $mang_id[$i];?>">
+					<span class="anh_vuong_pt" style="background-image:url(/place2shot-web/img/uploads/images/<?php if($i>=$count){ echo $mang[$default];}else echo $mang[$i];?>);<?php if($i>=$count){ $img_m='img/uploads/images/'.$mang[$default];}else $img_m='img/uploads/images/'.$mang[$i]; echo background_size_list2($img_m,'vuong');?>"></span>
 				</a>
 					<table class="ca-icon" cellspacing="0" cellpadding="0">
 					  <tr>

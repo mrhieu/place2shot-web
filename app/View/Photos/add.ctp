@@ -33,20 +33,6 @@
 		
 
 	  <style>
-	  #picture{
-	  text-align:center;
-	  }  
-#cl1 {
-        height: 100px;
-		width:100px;
-		background-color:yellow;
-        margin: 0px;
-        padding: 0px
-      }
-#map{
-height:200px;
-width:400px;
-}
     </style>
 
 	<div id="picture">
@@ -54,7 +40,7 @@ width:400px;
 		  <tr>
 			<td class="image_upload" id="1234">
 				<?php
-					echo $this->html->image('images/demo.jpg',array('id'=>'img_upload','height'=>'540'));
+					echo $this->html->image('image/winter-street-lights-portrait-beauty-girl.jpg',array('id'=>'img_upload','height'=>'540'));
 				?>
 			</tr>
 		  <tr>
@@ -267,10 +253,23 @@ width:400px;
 						  'type' => 'hidden'
 						  ))
 						?>
-						<div id="cl1"></div>
-				<?php 
-						echo $this->Form->end('SAVE');
-					?>
+				<div class="class_button" >
+				<table   class="load_and_save" cellpadding="0" cellspacing="5">
+					<tr>
+						<td>
+						<button id="cl1" type="button">continue</button>
+						</td>
+						<td>
+							<?php 
+							echo $this->Form->end('SAVE');
+							?>
+						</td>
+						<?php
+							echo $this->html->image('icon/warring.png',array('id'=>'clik_map'));
+						?>
+					</tr>
+				</table>
+				</div>
 				</td>
 			</tr>
 		</table>
@@ -331,6 +330,7 @@ width:400px;
 	<script>
 		$("#cl1").click(function(){					
 		if(document.getElementById("longitude").value !=''){
+		$('#clik_map').hide();
 		$(".form-group").hide();
 		$(".m-t-small").hide();
 		initialize();
@@ -369,6 +369,7 @@ width:400px;
 						$('#img_upload').attr('src', e.target.result);
 					}
 					
+			$('#clik_map').show();
 					reader.readAsDataURL(input.files[0]);
 				}
 			}

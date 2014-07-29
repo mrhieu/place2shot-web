@@ -30,7 +30,6 @@
 	padding:0px;
 }
 
-
 </style>
 </head>
 <body>
@@ -64,7 +63,7 @@
 						<?php
 							echo $this->Html->link(
 								$this->Html->image('icon/upload.png').' Upload',
-								array('controller'=>'photos','action'=>'add',$current_user['id']),
+								array('controller'=>'photos','action'=>'add'),
 								array('escape' => false)
 							);
 						?>
@@ -100,8 +99,16 @@
 				  <tr>
 					<?php if($logged_in):?>
 						<?php echo '<td class="prfile">';?>
+						<table class="prfile_tb" cellspacing="5" cellpadding="0">
+							<tr>
+								<td>
 								<?php  echo $this->Html->image('uploads/avatas/thumb/small'.'/'.$current_user['avata'], array('alt' => 'Gallery Image', 'height'=>30, 'width'=>30));?>
+								</td>
+								<td>
 								<?php echo $this->Html->link($current_user['name'], array('controller'=>'users','action' => 'view', $current_user['id'])); ?>
+								</td>
+							</tr>
+						</table>
 						<?php echo '</td>';?>
 						<?php echo '<td class="logout">';?>
 							<?php echo $this->Html->link('Logout', array('controller'=>'users','action'=>'logout'));?>
