@@ -24,7 +24,9 @@
 		</script>	
 <div id="account">
 	<table class="acc_info" cellpadding="10" cellspacing="10">
-		<td	class="avar" cellpadding="20" cellspacing="20">			
+		<td	class="avar" >
+			<div class="avar_acc" style="background-image:url(<?php echo $this->webroot; ?>img/uploads/avatas/thumb/small/<?php echo $user['User']['avata']?> );display:block;">
+			</div>
 		</td>
 		
 		<td class="name_acc">
@@ -67,7 +69,7 @@
 					</td>
 					<td>
 						<?php
-							
+							echo  $photo['Gallery']['name'];
 						?>
 					</td>
 				</tr>
@@ -243,6 +245,7 @@
 		google.maps.event.addDomListener(window, 'load', initialize);	
 		}
 	</script>
+	
 </div>
 
 
