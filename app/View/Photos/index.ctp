@@ -4,7 +4,7 @@
 		$mang[$i]= $photo['Photo']['img_file'];
 		$i++;
 endforeach;
-$count=$i;echo $i;	
+$count=$i;	
 ?>
 <?php echo $this->html->css("khung_anh_trangchu.css"); ?>
 <?php echo $this->html->css("likeandcmt.css"); ?>
@@ -30,8 +30,6 @@ $count=$i;echo $i;
 <?php
 $i=0;
 $default=0;
-$log=-1;
-$log2=-1;
 while($i<$count){
 ?>	
 
