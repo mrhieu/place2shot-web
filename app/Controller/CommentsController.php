@@ -6,10 +6,20 @@ class CommentsController extends AppController {
 	var $name = 'Comments';
 	var $components = array('RequestHandler');
 	function index() {
+		if ($this->Auth->user('roles') != 'admin') 
+		{
+			//$this->Session->setFlash(__('Invalid user', true));
+			$this->redirect(array("controller" => "photos", "action" => "index"));
+		}
 		$this->Comment->recursive = 0;
 		$this->set('comments', $this->paginate());
 	}
 	function getcomments(){
+		if ($this->Auth->user('roles') != 'admin') 
+		{
+			//$this->Session->setFlash(__('Invalid user', true));
+			$this->redirect(array("controller" => "photos", "action" => "index"));
+		}
 		$this->set('comments', $this->Comment->find('all'));
 		//$this->set('_serialize', array('comments'));
 	}
