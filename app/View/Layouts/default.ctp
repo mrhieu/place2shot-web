@@ -64,7 +64,7 @@
 						<?php
 							echo $this->Html->link(
 								$this->Html->image('icon/upload.png').' Upload',
-								array('controller'=>'photos','action'=>'add'),
+								array('controller'=>'photos','action'=>'add',$current_user['id']),
 								array('escape' => false)
 							);
 						?>
