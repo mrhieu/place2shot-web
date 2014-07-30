@@ -55,7 +55,7 @@ float:right;
 	padding-bottom:100px;
 	}
 #info{
-color:#CCC;
+color:#6b6c6e;
 
 font-size:15px;
 float:left;
@@ -67,13 +67,12 @@ font-family:Times New Roman;
 }
 .text1{
 	font-size:15px;
-	color:#949393;
+	color:#6b6c6e;
 	font-family:Times New Roman;
-	font-weight:bold;
 }
 .text{
 	font-size:15px;
-	color:#949393;
+	color:#6b6c6e;
 	font-family:Times New Roman;
 }
 img{
@@ -88,6 +87,10 @@ img{
 }
 	.img_acc {
 		width:70px;
+		height:70px;
+		background-position:center;
+		background-repeat:no-repeat;
+		background-size:70px 70px;
 		float:left;
 		border-radius:4px 4px;
 	}
@@ -108,35 +111,40 @@ img{
 		border-radius:4px 4px;
 	}
 	.related{
-		width:1000px;
 		float:left;
 		margin-left:40px;
 	}
 	.content_cmt{
-	background-color:#e1fdff;
-	width:900px;
+	width:700px;
+	height:70px;
 	float:left;
 	
 	}	
 	.info_cmt{
-	
 	width:150px;
 	padding-left:20px;
 	}
 	.link_user a{
 		font-size:20px;
-		color:#000000;
+		color:#022356;
 		text-decoration: none;
 	}
 	.link_user a:hover{
-		color:#254df5;
+		color:#10a7f5;
 	}
 	.time{
-		font-size:12px;
-		color:#0ef1ff;
+		font-size:14px;
+		color:#626668;
 	}
-	.fix{
-	width:500px;}
 	.text_cmt{
-	width:300px;
+	font-size:20px;
+	}
+	
+	.submit input{
+		font-weight:bold;
+		width:100px;
+		height:30px;
+		border:none;
+		background-color:#adadad;
+		border-radius:5px 5px;
 	}

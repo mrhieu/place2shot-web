@@ -2,6 +2,7 @@
 <?php
 	echo $this->html->css("view_detail");
 ?>
+
 	<script>
 		 function initialize() {
 				
@@ -70,7 +71,7 @@
 					</td>
 					<td class="text">
 						<?php
-							echo $this->Html->link($photo['Gallery']['name'], array('controller' => 'galleries', 'action' => 'view', $photo['Gallery']['id'] ));	
+							echo $this->Html->link($photo['Gallery']['name'], array('controller' => 'galleries', 'action' => 'view', $photo['Gallery']['id'] ),array('target'=>'blank'));	
 						?>
 					</td>
 				</tr>
@@ -185,17 +186,17 @@
                     $class = ' class="altrow"';
                 }
         ?>
-		<table cellpadding = "5" cellspacing = "10" class="content_cmt" border="1">
+		<table cellpadding = "0" cellspacing = "5" class="content_cmt" border="0">
 			<tr>
 					<td class="img_acc" style="background-image:url(<?php echo $this->webroot; ?>img/uploads/avatas/thumb/small/<?php echo $comment['User']['avata']?> );display:block;">
 							
 					</td>
 					
-					<td class="info_cmt">
-						<table cellpadding="0" cellspacing="15" border="0">
+					<td class="info_cmt" >
+						<table cellpadding="0" cellspacing="10" border="0">
 						<tr>
-							<td class="link_user">
-								<?php echo $this->Html->link($comment['User']['name'], array('controller' => 'users', 'action' => 'view', $comment['User']['id'])); ?>
+							<td valign="top" class="link_user">
+								<?php echo $this->Html->link($comment['User']['name'], array('controller' => 'users', 'action' => 'view', $comment['User']['id']),array('target'=>'blank')); ?>
 							</td>
 						</tr>
 						<tr>
@@ -206,11 +207,11 @@
 						</table>
 					</td>
 				
-							<td class="text_cmt">
+							<td valign="top" class="text_cmt">
 								<?php echo $comment['Comment']['comment'];?>
 							</td>
 						
-				</tr>
+			</tr>
 		<tr>
 			<td colspan="3">
 			<hr /><br/>
