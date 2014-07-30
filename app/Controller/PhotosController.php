@@ -79,7 +79,7 @@ class PhotosController extends AppController {
 
 		
 		$this->set('photos', $photos);
-	  
+	  	
 	  //list comment
 	  
 	 

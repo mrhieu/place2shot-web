@@ -70,7 +70,7 @@
 					</td>
 					<td class="text">
 						<?php
-							echo $photo['Gallery']['name'];	
+							echo $this->Html->link($photo['Gallery']['name'], array('controller' => 'galleries', 'action' => 'view', $photo['Gallery']['id'] ));	
 						?>
 					</td>
 				</tr>

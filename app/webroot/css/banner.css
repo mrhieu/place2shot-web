@@ -75,3 +75,6 @@ td.logo_search input{
 table.prfile_tb{
 	margin:auto;
 }
+.prfile_tb img{
+	border-radius:3px;
+}
