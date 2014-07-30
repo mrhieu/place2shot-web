@@ -72,3 +72,6 @@ td.logo_search input{
 	border-top-right-radius:3px;
 	border-bottom-right-radius:3px;
 }
+table.prfile_tb{
+	margin:auto;
+}

@@ -97,3 +97,44 @@ table.display-image tr td.image_upload{
 	height:30px;
 	text-align:center;
 }
+#clik_map{
+	height:40px;
+	top:32px;
+	left:60px;
+	position:absolute;
+	display:none;
+}
+div.class_button{
+	width:300px;
+	height:40px;
+	position:relative;
+}
+table.load_and_save {
+	width:300px;
+}
+
+table.load_and_save tr td {
+	width:150px;
+	height:30px;
+}
+table.load_and_save tr td button {
+	width:150px;
+	height:30px;
+	font-size:17px;
+	font-weight:bold;
+	color:#FFFFFF;
+	background:#00CC00;
+	border:none;
+	border-radius:3px;
+}
+
+ table.load_and_save tr td input{
+ 	width:150px;
+	height:30px;
+	border:none;
+	border-radius:3px;
+	font-size:17px;
+	font-weight:bold;
+	color:#FFFFFF;
+	background:#00FFFF;
+}

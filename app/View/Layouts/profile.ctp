@@ -44,7 +44,7 @@
                     <?php if ($current_user['roles'] == 'admin' || $current_user['id'] == $user['User']['id']): ?>
                         <div class="details">
                             <p class="detail"><?php echo $this->Html->link('Setting', array('controller'=>'users','action' => 'edit', $user['User']['id'])); ?></p>
-                            <p class="detail"><?php echo $this->Html->link('Upload', array('controller'=>'photos','action' => 'add')); ?></p>
+                            <p class="detail"><?php echo $this->Html->link('Upload', array('controller'=>'photos','action' => 'add', $user['User']['id'])); ?></p>
                             <p class="detail"><?php echo $this->Html->link('Manage', array('controller'=>'users','action' => 'view_relate', $user['User']['id'])); ?></p>
 							
                         </div>

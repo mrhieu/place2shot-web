@@ -55,7 +55,7 @@
 					<?= 
 						$this->Form->postLink(
 							__('Delete'), 
-							array('controller' =>'photos','action' => 'delete', $photo['id']),
+							array('controller' =>'photos','action' => 'delete', $photo['id'], $current_user['id']),
 							array('class' => 'btn btn-danger btn-small'),
 							__('Are you sure you want to delete # %s?', $photo['id'])
 						)
