@@ -10,7 +10,7 @@
 					var l2=document.getElementById("longitude").value;
 					var myLatlng = new google.maps.LatLng(l1,l2);
 					var mapOptions = {
-					zoom: 14,
+					zoom: 7,
 					center: myLatlng
 					}
 				  var map = new google.maps.Map(document.getElementById('map'), mapOptions);
