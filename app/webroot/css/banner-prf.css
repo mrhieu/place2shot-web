@@ -1,6 +1,5 @@
 /* PHAN BANNER*/
 table.banner_tool{
-	margin:auto;
 	width:1100px;
 }
 table.banner_tool tr td.menu_banner, table.banner_tool tr td.search{
@@ -46,7 +45,7 @@ table.menu_banner a, table.user a{
 	color:#CCCCCC;
 }
 table.menu_banner tr td:hover , table.user tr td:hover {
-	background:#333333;
+	background:#999999;
 	color:#FFFFFF;
 }
 table.menu_banner tr td:hover a, table.user tr td:hover a{

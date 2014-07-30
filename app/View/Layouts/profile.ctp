@@ -6,7 +6,7 @@
 <?php echo $this->html->script("jquery/fancy/lib/jquery-1.10.1.min");?>
 <?php echo $this->html->script("jquery/fancy/source/jquery.fancybox");?>
 <?php echo $this->html->css("jquery.fancybox");?>
-
+<?php echo $this->html->css("banner-prf"); ?>
 <script type="text/javascript">
 	$(document).ready(function() {
 			/*
@@ -31,6 +31,102 @@
 <body>
 	<div id="wrapper">
     	<div id="header" style=" background-image:url(<?php echo $this->webroot; ?>img/uploads/covers/<?php echo $user['User']['cover'] ?>)" >
+		
+		<!-- start banner-->
+		<table align="center" class="banner_tool" cellspacing="0" cellpadding="0">
+		  <tr>
+			<td class="menu_banner">
+				<table class="menu_banner"  cellspacing="0" cellpadding="0">
+				  <tr>
+					<td class="logo">
+						<?php
+							echo $this->Html->link(
+								$this->Html->image('icon/logo.png', array('class' => 'logo')),
+								array('controller'=>'photos','action'=>'index'),
+								array('escape' => false)
+							);
+						?>
+					</td>
+					<td class="discover">
+						<?php
+							echo $this->Html->link(
+								$this->Html->image('icon/discover.png').' Discover',
+								array('controller'=>'photos','action'=>'index'),
+								array('escape' => false)
+							);
+						?>
+					</td>
+					<td class="upload">
+						<?php
+							echo $this->Html->link(
+								$this->Html->image('icon/upload.png').' Upload',
+								array('controller'=>'photos','action'=>'add'),
+								array('escape' => false)
+							);
+						?>
+					</td>
+				  </tr>
+				</table>
+			</td>
+			<td class="search">
+				<table class="search"  cellspacing="0" cellpadding="0">
+					<?php
+						echo $this->Form->create('form_search',array(
+							'inputDefaults' => array(
+								'label' => false,
+								'div' => false
+							)
+							));
+					?>
+				  <tr>
+					<td class="text_search">
+						<input name="data[form_search][search_text]" value="search..." id="search_text" type="text" onfocus="if(this.value=='search...') this.value='';" onblur="if(this.value=='') this.value='search...';"/>
+					</td>
+					<td class="logo_search">
+						<?php
+							echo $this->Form->end('Search');
+						?>
+					</td>
+				  </tr>
+				</form>
+				</table>
+			</td>
+			<td class="user">
+				<table class="user" width="200"  cellspacing="0" cellpadding="0">
+				  <tr>
+					<?php if($logged_in):?>
+						<?php echo '<td class="prfile">';?>
+						<table class="prfile_tb" cellspacing="5" cellpadding="0">
+							<tr>
+								<td>
+								<?php  echo $this->Html->image('uploads/avatas/thumb/small'.'/'.$current_user['avata'], array('alt' => 'Gallery Image', 'height'=>30, 'width'=>30));?>
+								</td>
+								<td>
+								<?php echo $this->Html->link($current_user['name'], array('controller'=>'users','action' => 'view', $current_user['id'])); ?>
+								</td>
+							</tr>
+						</table>
+						<?php echo '</td>';?>
+						<?php echo '<td class="logout">';?>
+							<?php echo $this->Html->link('Logout', array('controller'=>'users','action'=>'logout'));?>
+						<?php echo '</td>';?>
+					<?php else: ?>
+						<?php echo '<td class="register">';?>
+								<?php echo $this->Html->link('Register', array('controller'=>'users','action'=>'add'));?>
+						<?php echo '</td>';?>
+						<?php echo '<td class="Login">';?>
+							<?php echo $this->Html->link('Login', array('controller'=>'users','action'=>'login'));?>
+						<?php echo '</td>';?>
+					<?php endif; ?>
+				  </tr>
+				</table>
+
+			</td>
+		  </tr>
+		</table>
+		<!-- End banner-->
+		
+		<div class="menu-profile">
         	<div id="top_header">
             	<div class="img_acc">
                 	<span class="acc_img" style="background-image:url(<?php echo $this->webroot; ?>img/uploads/avatas/thumb/small/<?php echo $user['User']['avata']?> );display:block;">
@@ -76,7 +172,9 @@
 					<p class="change"><?php echo $this->Html->link('CHANGE COVER', array('controller'=>'users','action' => 'editcover', $user['User']['id'])); ?></p>
 				 <?php endif; ?>
             </div>
-        </div>
+        </div> 
+		
+		</div><!--END HEADER-->
     	
         <div id="content">
 			<?php
