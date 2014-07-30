@@ -1,3 +1,5 @@
+
+
 	<?php
 	$i=0;$mang=array();
 	foreach ($photos as $photo): 

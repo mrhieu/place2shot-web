@@ -1,8 +1,8 @@
 <?php    
         //tao form tim kiem
-    echo $this->Form->create('Photo');
+    /*echo $this->Form->create('Photo');
     echo $this->Form->input('title', array('label'=>'Title'));
-    echo $this->Form->end('Search');
+    echo $this->Form->end('Search');*/
  
         //xuat ket qua tim kiem 
     if(!empty($photos)){

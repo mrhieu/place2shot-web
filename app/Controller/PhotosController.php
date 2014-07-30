@@ -36,7 +36,10 @@ class PhotosController extends AppController {
 		if(!$this->Auth->user()){
 				$this->redirect(array("controller" => "pages", "action" => "home"));
 		}
-		$this->Photo->recursive = 0;
+		$this->Photo->find('list', array(
+		   'order' => array('Photo.id' => 'DESC'),
+		   'recursive' => 0
+		  ));
 		$this->set('photos', $this->paginate());
 		
 		/*if ($this->Auth->user('roles') != 'admin'){
@@ -184,13 +187,23 @@ class PhotosController extends AppController {
 		$this->Session->setFlash(__('Photo was not deleted', true));
 		$this->redirect(array('controller' => 'users', 'action'=>'view', $user_id));
 	}
-	function search(){
+	
+//=============================================================================================================================
+	function searchbytitle(){
     //checking data
+	//$url['action'] = 'results'; 
     if(!empty($this->data)&&$this->data['Photo']['title']!=null){
-       
+       	
         $photos =$this->Photo->find('all',array('conditions'=>array('title LIKE '=>'%'.$this->data['Photo']['title'].'%')));
         //post data -> C to V
         $this->set('photos',$photos);
+		//
    	 	}
+		
+	}
+
+	function searchbydistance(){
+	
+	
 	}
 }
