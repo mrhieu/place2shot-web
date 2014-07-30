@@ -39,9 +39,9 @@ class PagesController extends AppController {
 	
 	public function beforeFilter(){
 		parent::beforeFilter();
-		
+			
 			$this->Auth->allow('display');
-		
+			
 		// if($this->action == 'add' || $this->action =='edit'){
 		// 	$this->Auth->authenticate = $this->User;
 		// }
