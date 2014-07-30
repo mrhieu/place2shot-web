@@ -24,7 +24,8 @@
 		</script>	
 <div id="account">
 	<table class="acc_info" cellpadding="10" cellspacing="10">
-		<td	class="avar" cellpadding="20" cellspacing="20" style="background-image:url(<?php echo $this->webroot; ?>img/uploads/avatas/thumb/small/<?php echo $photo['User']['avata']?> );display:block;">			
+		<td	class="img_acc" cellpadding="20" cellspacing="20" style="background-image:url(<?php echo $this->webroot; ?>img/uploads/avatas/thumb/small/<?php echo $photo['User']['avata']?> );display:block;">			
+			
 		</td>
 		
 		<td class="name_acc">
@@ -36,7 +37,7 @@
 				</tr>
 				<tr>
 					<td class="title_name">
-						<?php echo $this->Html->link($photo['User']['name'], array('controller' => 'users', 'action' => 'view', $photo['User']['id'				]),array('class'=>'link'));?>
+						<?php echo $this->Html->link($photo['User']['name'], array('controller' => 'users', 'action' => 'view', $photo['User']['id']),array('class'=>'link'));?>
 					</td>
 				</tr>
 			</table>

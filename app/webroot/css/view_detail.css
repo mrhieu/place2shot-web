@@ -1,4 +1,4 @@
-*{marging:0px;padding:0px;}
+
 #account{
 float:left;
 margin-bottom:40px;
@@ -11,6 +11,9 @@ width:100%;
  }
 	.name-acc{
 		float:left;
+	}
+	.title1{
+	font-size:50px;
 	}
 #details{
 width:100%;
@@ -31,6 +34,9 @@ float:right;
 	margin-top:20px;
 	min-height:1000px;
 	}
+	 .name-acc   .title1{
+		font-size:50px;
+	 }
 #info{
 float:left;
 margin-right:300px;
@@ -52,7 +58,6 @@ img{
 		width:70px;
 		height:70px;
 		float:left;
-		background-color:#CCC;
 		border-radius:4px 4px;
 	}
 	#post_cmt{
@@ -83,6 +88,5 @@ img{
 	}	
 	.info_cmt{
 	width:150px;
-	
 	padding-left:20px;
 	}
