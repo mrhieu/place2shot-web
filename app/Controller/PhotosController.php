@@ -64,7 +64,7 @@ class PhotosController extends AppController {
 	  if ($this->request->is('post')) {
 			$this->Photo->Comment->create();
 			if ($this->Photo->Comment->save($this->data)) {
-				$this->Session->setFlash(__('The comment has been saved', true));
+				
 				$this->redirect(array('action' => 'view', $photo['Photo']['id']));
 			} else {
 				$this->Session->setFlash(__('The comment could not be saved. Please, try again.', true));
@@ -89,7 +89,7 @@ class PhotosController extends AppController {
 		  if ($this->request->is('post')) {
             $this->Photo->create();
             if ($this->Photo->save($this->request->data)) {
-                $this->Session->setFlash(__('Your photo has been saved.'));
+               
                	$this->redirect(array('controller' => 'users', 'action' => 'view', $id));
             }
             $this->Session->setFlash(__('Unable to add your photo.'));
@@ -133,7 +133,7 @@ class PhotosController extends AppController {
 	    if ($this->request->is(array('post', 'put'))) {
 	        $this->Photo->id = $id;
 	        if ($this->Photo->save($this->request->data)) {
-	            $this->Session->setFlash(__('Your photo has been updated.'));
+	           
 	            return $this->redirect(array('action' => 'index'));
 	        }
 	        $this->Session->setFlash(__('Unable to update your photo.'));
@@ -184,5 +184,13 @@ class PhotosController extends AppController {
 		$this->Session->setFlash(__('Photo was not deleted', true));
 		$this->redirect(array('controller' => 'users', 'action'=>'view', $user_id));
 	}
-	
+	function search(){
+    //checking data
+    if(!empty($this->data)&&$this->data['Photo']['title']!=null){
+       
+        $photos =$this->Photo->find('all',array('conditions'=>array('title LIKE '=>'%'.$this->data['Photo']['title'].'%')));
+        //post data -> C to V
+        $this->set('photos',$photos);
+   	 	}
+	}
 }
