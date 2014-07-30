@@ -1,22 +1,41 @@
+*{
+margin:0px;
+padding:0px;
+}
+#cont{
+background-color:#222222;
 
+}
 #account{
 float:left;
-margin-bottom:40px;
+margin-bottom:30px;
 width:100%;
 }
- .avar{
+.avarta_acc{
 	width:60px;
 	height:60px;
-	
- }
-	.name-acc{
-		float:left;
+	border-radius:4px 4px;
+}
+	.name_acc{
+	width:1000px;}
+	.title{
+		font-size:1em;
+		text-transform:uppercase;
+		color:#FFF;
+		font-weight:bold;
 	}
-	.title1{
-	font-size:50px;
+	.title_name a{
+	margin-top:5px;
+	font-size:20px;
+	color:#CCC;
+	text-decoration: none;
+	}
+	.title_name a:hover{
+		color:#ffffff;
+			
 	}
 #details{
-width:100%;
+	width:100%;
 	margin-top:80px;
 	border-top: 1px solid#CCC;
 }
@@ -32,17 +51,30 @@ float:right;
 #photo{
 	text-align:center;
 	margin-top:20px;
-	min-height:1000px;
+	min-height:300px;
+	padding-bottom:100px;
 	}
-	 .name-acc   .title1{
-		font-size:50px;
-	 }
 #info{
+color:#CCC;
+
+font-size:15px;
 float:left;
 margin-right:300px;
-font-family:Georgia, "Times New Roman", Times, serif;
+font-family:Times New Roman;
 	font-size:12px;
 	color:#999;
+	
+}
+.text1{
+	font-size:15px;
+	color:#949393;
+	font-family:Times New Roman;
+	font-weight:bold;
+}
+.text{
+	font-size:15px;
+	color:#949393;
+	font-family:Times New Roman;
 }
 img{
 	max-width:1100px;
@@ -54,9 +86,8 @@ img{
 	height:70px;
 	margin-left:40px;
 }
-	.img_acc{
+	.img_acc {
 		width:70px;
-		height:70px;
 		float:left;
 		border-radius:4px 4px;
 	}
@@ -77,16 +108,35 @@ img{
 		border-radius:4px 4px;
 	}
 	.related{
-		margin-top:50px;
+		width:1000px;
 		float:left;
 		margin-left:40px;
 	}
 	.content_cmt{
-	width:700px;
-	height:70px;
+	background-color:#e1fdff;
+	width:900px;
 	float:left;
+	
 	}	
 	.info_cmt{
+	
 	width:150px;
 	padding-left:20px;
+	}
+	.link_user a{
+		font-size:20px;
+		color:#000000;
+		text-decoration: none;
+	}
+	.link_user a:hover{
+		color:#254df5;
+	}
+	.time{
+		font-size:12px;
+		color:#0ef1ff;
+	}
+	.fix{
+	width:500px;}
+	.text_cmt{
+	width:300px;
 	}

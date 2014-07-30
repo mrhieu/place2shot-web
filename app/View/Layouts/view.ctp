@@ -22,9 +22,10 @@
 				}
 				
 		</script>	
+<div id="cont">		
 <div id="account">
-	<table class="acc_info" cellpadding="10" cellspacing="10">
-		<td	class="img_acc" cellpadding="20" cellspacing="20" style="background-image:url(<?php echo $this->webroot; ?>img/uploads/avatas/thumb/small/<?php echo $photo['User']['avata']?> );display:block;">			
+	<table class="acc_info" cellpadding="10" cellspacing="10" border="0">
+		<td	class="avarta_acc" cellpadding="20" cellspacing="20" style="background-image:url(<?php echo $this->webroot; ?>img/uploads/avatas/thumb/small/<?php echo $photo['User']['avata']?> );display:block;">			
 			
 		</td>
 		
@@ -32,12 +33,12 @@
 			<table>
 				<tr>
 					<td>
-						<h4 class="title"><?php echo $photo['Photo']['title'];?></h4>
+						<p class="title"><?php echo $photo['Photo']['title'];?></p>
 					</td>
 				</tr>
 				<tr>
 					<td class="title_name">
-						<?php echo $this->Html->link($photo['User']['name'], array('controller' => 'users', 'action' => 'view', $photo['User']['id']),array('class'=>'link'));?>
+						<?php echo $this->Html->link($photo['User']['name'], array('controller' => 'users', 'action' => 'view', $photo['User']['id']),array('class'=>'link','target'=>'top'));?>
 					</td>
 				</tr>
 			</table>
@@ -52,6 +53,7 @@
 
   
 </div>
+</div>
 <div id="details">
 	<table class="details_img" cellpadding="10" cellspacing="25" border="0">
 	<tr>
@@ -63,70 +65,70 @@
 					<h3>DETAIL</h3>
 				</tr>
 				<tr>
-					<td>
+					<td class="text1">
 						Category
 					</td>
-					<td>
+					<td class="text">
 						<?php
 							echo $photo['Gallery']['name'];	
 						?>
 					</td>
 				</tr>
 				<tr>
-					<td>
+					<td class="text1">
 						Camera
 					</td>
-					<td>
+					<td class="text">
 						<?php
 							echo $photo['Photo']['camera'];
 						?>
 					</td>
 				</tr>
 				<tr>
-					<td>
+					<td class="text1">
 						Lens
 					</td>
-					<td>
+					<td class="text">
 						<?php
 						echo $photo['Photo']['lens'];
 						?>
 					</td>
 				</tr>
 				<tr>
-					<td>
+					<td class="text1">
 						Focal Length
 					</td>
-					<td>
+					<td class="text">
 						<?php
 						echo $photo['Photo']['focal_length'];
 						?>
 					</td>
 				</tr>
 				<tr>
-					<td>
+					<td class="text1">
 						Shutter Peed
 					</td>
-					<td>
+					<td class="text">
 						<?php
 						echo $photo['Photo']['shutter_peed'];
 						?>
 					</td>
 				</tr>
 				<tr>
-					<td>
+					<td class="text1">
 						Aperture
 					</td>
-					<td>
+					<td class="text">
 						<?php
 						echo $photo['Photo']['aperture'];
 						?>
 					</td>
 				</tr>
 				<tr>
-					<td>
+					<td class="text1">
 					ISO
 					</td>
-					<td>
+					<td class="text">
 						<?php
 							echo $photo['Photo']['iso'];
 						?>
@@ -183,29 +185,37 @@
                     $class = ' class="altrow"';
                 }
         ?>
-		<table cellpadding = "0" cellspacing = "0" class="content_cmt">
-			<td class="img_acc" style="background-image:url(<?php echo $this->webroot; ?>img/uploads/avatas/thumb/small/<?php echo $comment['User']['avata']?> );display:block;">
-					
-			</td>
-			
-			<td class="info_cmt">
-				<table>
-				<tr>
-					<td>
-						<?php echo $this->Html->link($comment['User']['name'], array('controller' => 'users', 'action' => 'view', $comment['User']['id'])); ?>
+		<table cellpadding = "5" cellspacing = "10" class="content_cmt" border="1">
+			<tr>
+					<td class="img_acc" style="background-image:url(<?php echo $this->webroot; ?>img/uploads/avatas/thumb/small/<?php echo $comment['User']['avata']?> );display:block;">
+							
 					</td>
+					
+					<td class="info_cmt">
+						<table cellpadding="0" cellspacing="15" border="0">
+						<tr>
+							<td class="link_user">
+								<?php echo $this->Html->link($comment['User']['name'], array('controller' => 'users', 'action' => 'view', $comment['User']['id'])); ?>
+							</td>
+						</tr>
+						<tr>
+							<td class="time">
+								<?php echo $comment['Comment']['created'];?>
+							</td>					
+						</tr>
+						</table>
+					</td>
+				
+							<td class="text_cmt">
+								<?php echo $comment['Comment']['comment'];?>
+							</td>
+						
 				</tr>
-				<tr>
-					<td>
-						<?php echo $comment['Comment']['created'];?>
-					</td>					
-				</tr>
-				</table>
+		<tr>
+			<td colspan="3">
+			<hr /><br/>
 			</td>
-		<td	class="text_cmt">
-			<?php echo $comment['Comment']['comment'];?>
-		</td>	
-		
+		</tr>
 		</table>
 		<?php endforeach; ?>
 		<?php endif; ?>
