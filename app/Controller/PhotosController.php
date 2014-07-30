@@ -74,20 +74,15 @@ class PhotosController extends AppController {
 		$users = $this->Photo->Comment->User->find('list');
 		$this->set(compact('users'));
 		
-		$photos = $this->Photo->Comment->Photo->find('list', array(
-			'conditions' => array(
-				'Photo.id' => $id
-			),
-			'recursive' => -1,
-			
-		));
+		$sql = "SELECT User.*, Photo.*,Comment.* FROM users as User,photos as Photo ,comments as Comment WHERE Comment.photo_id = $id and Photo.id=$id and Comment.user_id=User.id";
+		$photos = $this->Photo->query($sql);
+
 		
 		$this->set('photos', $photos);
 	  
 	  //list comment
 	  
-	  $comments = $this->Photo->Comment->recursive = 0;
-		$this->set('comments', $this->paginate());
+	 
 	}
 	
 	function add($id = null) {
