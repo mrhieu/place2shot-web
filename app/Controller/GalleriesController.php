@@ -7,6 +7,11 @@ class GalleriesController extends AppController {
 	function index() {
 		$this->Gallery->recursive = 0;
 		$this->set('galleries', $this->paginate());
+		if ($this->Auth->user('roles') != 'admin') 
+		{
+			//$this->Session->setFlash(__('Invalid user', true));
+			$this->redirect(array("controller" => "photos", "action" => "index"));
+		}
 	}
 
 	function view($id = null) {
@@ -21,6 +26,11 @@ class GalleriesController extends AppController {
 		//$this->set('_serialize', array('comments'));
 	}
 	function add() {
+		if ($this->Auth->user('roles') != 'admin') 
+		{
+			//$this->Session->setFlash(__('Invalid user', true));
+			$this->redirect(array("controller" => "photos", "action" => "index"));
+		}
 		if (!empty($this->data)) {
 			$this->Gallery->create();
 			if ($this->Gallery->save($this->data)) {
@@ -33,6 +43,11 @@ class GalleriesController extends AppController {
 	}
 
 	function edit($id = null) {
+		if ($this->Auth->user('roles') != 'admin') 
+		{
+			//$this->Session->setFlash(__('Invalid user', true));
+			$this->redirect(array("controller" => "photos", "action" => "index"));
+		}
 		if (!$id && empty($this->data)) {
 			$this->Session->setFlash(__('Invalid gallery', true));
 			$this->redirect(array('action' => 'index'));
@@ -51,6 +66,11 @@ class GalleriesController extends AppController {
 	}
 
 	function delete($id = null) {
+		if ($this->Auth->user('roles') != 'admin') 
+		{
+			//$this->Session->setFlash(__('Invalid user', true));
+			$this->redirect(array("controller" => "photos", "action" => "index"));
+		}
 		if (!$id) {
 			$this->Session->setFlash(__('Invalid id for gallery', true));
 			$this->redirect(array('action'=>'index'));
