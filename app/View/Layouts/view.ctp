@@ -24,21 +24,19 @@
 		</script>	
 <div id="account">
 	<table class="acc_info" cellpadding="10" cellspacing="10">
-		<td	class="avar" >
-			<div class="avar_acc" style="background-image:url(<?php echo $this->webroot; ?>img/uploads/avatas/thumb/small/<?php echo $user['User']['avata']?> );display:block;">
-			</div>
+		<td	class="avar" cellpadding="20" cellspacing="20" style="background-image:url(<?php echo $this->webroot; ?>img/uploads/avatas/thumb/small/<?php echo $photo['User']['avata']?> );display:block;">			
 		</td>
 		
 		<td class="name_acc">
 			<table>
 				<tr>
 					<td>
-						Pictrue's Title
+						<h4 class="title"><?php echo $photo['Photo']['title'];?></h4>
 					</td>
 				</tr>
 				<tr>
-					<td>
-						Name acc
+					<td class="title_name">
+						<?php echo $this->Html->link($photo['User']['name'], array('controller' => 'users', 'action' => 'view', $photo['User']['id'				]),array('class'=>'link'));?>
 					</td>
 				</tr>
 			</table>
@@ -69,7 +67,7 @@
 					</td>
 					<td>
 						<?php
-							echo  $photo['Gallery']['name'];
+							echo $photo['Gallery']['name'];	
 						?>
 					</td>
 				</tr>
@@ -156,8 +154,8 @@
 			echo $this->Form->input('Comment.user_id', array('class'=>"user_id",'type' => 'hidden', 'value' => $current_user));
 			echo $this->Form->input('Comment.photo_id', array('class'=>'photo_id','type' => 'hidden', 'value' => $photo['Photo']['id']));
 		?>
-		<div class="img_acc">
-		
+		<div class="img_acc" style="background-image:url(<?php echo $this->webroot; ?>img/uploads/avatas/thumb/small/<?php echo $current_user['avata']?> );display:block;">
+        
 		</div>
 		<div id="comment_text">		
 			<?php	
@@ -176,6 +174,7 @@
 <div class="related">
 	<?php echo $this->Form->create('Comment');?>
 	<?php if (!empty($photo['Comment'])):?>
+    
 		<table cellpadding = "0" cellspacing = "0" class="content_cmt">
 			<td class="img_acc">
 				
@@ -185,18 +184,18 @@
 				<table>
 				<tr>
 					<td>
-						User name
+						<?php echo $this->Html->link($comment['user_id'], array('controller' => 'users', 'action' => 'view', $comment['user_id'])); ?>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						Thoi gian
+						<?php echo $comment['created'];?>
 					</td>					
 				</tr>
 				</table>
 			</td>
 		<td	class="text_cmt">
-			Noi dung cmt
+			<?php echo $comment['comment'];?>
 		</td>	
 			<!--
 			<tr>
@@ -245,7 +244,6 @@
 		google.maps.event.addDomListener(window, 'load', initialize);	
 		}
 	</script>
-	
 </div>
 
 
