@@ -67,7 +67,7 @@
 					</td>
 					<td>
 						<?php
-							echo $photo['Gallery']['name'];	
+							echo $this->Html->link($photo['Gallery']['name'], array('controller' => 'galleries', 'action' => 'view', $photo['Gallery']['id'] ));	
 						?>
 					</td>
 				</tr>
@@ -173,67 +173,40 @@
 
 <div class="related">
 	<?php echo $this->Form->create('Comment');?>
-	<?php if (!empty($photo['Comment'])):?>
-    
+	<?php if (!empty($photos)):?>
+		<?php
+            $i = 0;
+            foreach ($photos as $comment):
+                $class = null;
+                if ($i++ % 2 == 0) {
+                    $class = ' class="altrow"';
+                }
+        ?>
 		<table cellpadding = "0" cellspacing = "0" class="content_cmt">
-			<td class="img_acc">
-				
+			<td class="img_acc" style="background-image:url(<?php echo $this->webroot; ?>img/uploads/avatas/thumb/small/<?php echo $comment['User']['avata']?> );display:block;">
+					
 			</td>
 			
 			<td class="info_cmt">
 				<table>
 				<tr>
 					<td>
-						<?php echo $this->Html->link($comment['user_id'], array('controller' => 'users', 'action' => 'view', $comment['user_id'])); ?>
+						<?php echo $this->Html->link($comment['User']['name'], array('controller' => 'users', 'action' => 'view', $comment['User']['id'])); ?>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<?php echo $comment['created'];?>
+						<?php echo $comment['Comment']['created'];?>
 					</td>					
 				</tr>
 				</table>
 			</td>
 		<td	class="text_cmt">
-			<?php echo $comment['comment'];?>
+			<?php echo $comment['Comment']['comment'];?>
 		</td>	
-			<!--
-			<tr>
-				<?php if($current_user['roles' ] == 'admin'): ?>
-					<th>Id</th>
-				<?php endif; ?>
-                	<th>User</th>
-					<th>Comment</th>
-					<th>Created</th>
-					<th>Modified</th>
-					<th class="actions">Actions</th>
-			</tr>
-	<?php
-		$i = 0;
-		foreach ($photo['Comment'] as $comment):
-			$class = null;
-			if ($i++ % 2 == 0) {
-				$class = ' class="altrow"';
-			}
-	?>
-		<tr<?php echo $class;?>>
-			<?php if($current_user['roles' ] == 'admin'): ?>
-				<td><?php echo $comment['id'];?></td>
-			<?php endif; ?>
-            	<td><?php echo $this->Html->link($comment['user_id'], array('controller' => 'users', 'action' => 'view', $comment['user_id'])); ?>
-		</td>
-				<td><?php echo $comment['comment'];?></td>
-				<td><?php echo $comment['created'];?></td>
-				<td><?php echo $comment['modified'];?></td>
-				<td class="actions">
-					<?php echo $this->Html->link(__('View', true), array('controller' => 'comments', 'action' => 'view', $comment['id'])); ?>
-					<?php echo $this->Html->link(__('Edit', true), array('controller' => 'comments', 'action' => 'edit', $comment['id'])); ?>
-					<?php echo $this->Html->link(__('Delete', true), array('controller' => 'comments', 'action' => 'delete', $comment['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $comment['id'])); ?>
-				</td>
-		</tr>
-		<?php endforeach; ?> -->
-		</table>
 		
+		</table>
+		<?php endforeach; ?>
 		<?php endif; ?>
 	<?php echo $this->Form->end();?>
 	

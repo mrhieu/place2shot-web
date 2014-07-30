@@ -6,10 +6,20 @@ class CommentsController extends AppController {
 	var $name = 'Comments';
 	var $components = array('RequestHandler');
 	function index() {
+		if ($this->Auth->user('roles') != 'admin') 
+		{
+			//$this->Session->setFlash(__('Invalid user', true));
+			$this->redirect(array("controller" => "photos", "action" => "index"));
+		}
 		$this->Comment->recursive = 0;
 		$this->set('comments', $this->paginate());
 	}
 	function getcomments(){
+		if ($this->Auth->user('roles') != 'admin') 
+		{
+			//$this->Session->setFlash(__('Invalid user', true));
+			$this->redirect(array("controller" => "photos", "action" => "index"));
+		}
 		$this->set('comments', $this->Comment->find('all'));
 		//$this->set('_serialize', array('comments'));
 	}
@@ -21,7 +31,7 @@ class CommentsController extends AppController {
 		$this->set('comment', $this->Comment->read(null, $id));
 	}
 
-	function add() {
+	/*function add() {
 		
 		if (!empty($this->data)) {
 			$this->Comment->create();
@@ -32,28 +42,15 @@ class CommentsController extends AppController {
 				$this->Session->setFlash(__('The comment could not be saved. Please, try again.', true));
 			}
 		}
-		 //$sql = "SELECT users.username FROM users,comments WHERE comments.user_id=users.id";
-		//$users = $this->Comment->User->query($sql);
+		
 		
 		$users = $this->Comment->User->find('list');
 		$this->set(compact('users'));
-		// $post = $this->Comment->find('first', array(
-		//         'conditions' => array(	
-		// 								//'Comment.id' => $id,
-		// 		 						'Comment.post_id' => $this->Post->$post['Post']['id'],
-										
- 	// 								),
-		//         'recursive'  => -1
-		//     ));
-		//debug($this->request->url);
 		
-		//$post_id = $this->request->query('id');
-		
-		//$post_id = $this->request->params['url']['id'];
 		$photos = $this->Comment->Photo->find('list');
 		$this->set('photos', $photos);
 		
-	}
+	}*/
 
 	function edit($id = null) {
 		//check Post.user_id against session User.id to prevent editing posts not posted by the current user

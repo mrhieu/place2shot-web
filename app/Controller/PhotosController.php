@@ -59,7 +59,8 @@ class PhotosController extends AppController {
             throw new NotFoundException(__('Invalid photo'));
         }
         $this->set('photo', $photo);
-      //comment
+     
+	 //comment
 	  if ($this->request->is('post')) {
 			$this->Photo->Comment->create();
 			if ($this->Photo->Comment->save($this->data)) {
@@ -73,16 +74,15 @@ class PhotosController extends AppController {
 		$users = $this->Photo->Comment->User->find('list');
 		$this->set(compact('users'));
 		
-		$photos = $this->Photo->Comment->Photo->find('list', array(
-			'conditions' => array(
-				'Photo.id' => $id
-			),
-			'recursive' => -1,
-			
-		));
+		$sql = "SELECT User.*, Photo.*,Comment.* FROM users as User,photos as Photo ,comments as Comment WHERE Comment.photo_id = $id and Photo.id=$id and Comment.user_id=User.id";
+		$photos = $this->Photo->query($sql);
+
 		
 		$this->set('photos', $photos);
+	  	
+	  //list comment
 	  
+	 
 	}
 	
 	function add($id = null) {
@@ -148,13 +148,18 @@ class PhotosController extends AppController {
 		$this->set(compact('galleries'));
 	}
 
-	function delete($id = null) {
+	function delete($id = null, $user_id = null) {
 		//check Post.user_id against session User.id to prevent deleting posts not posted by the current user
 		$photo = $this->Photo->find('first', array(
 		        'conditions' => array('Photo.id' => $id, 'Photo.user_id' => $this->Auth->user('id')),
 		        'recursive'  => -1
 		    ));
 		;
+		$users = $this->Photo->User->find('list', array(
+			'conditions' => array(
+				'User.id' => $user_id ),
+				'recursive' => -1
+		));
 		$this->set(compact('users'));
 	    if (!$photo) 
 		{
@@ -170,14 +175,14 @@ class PhotosController extends AppController {
 		if (!$id) 
 		{
 			$this->Session->setFlash(__('Invalid id for photo', true));
-			$this->redirect(array('action'=>'index'));
+			$this->redirect(array('controller' => 'users', 'action'=>'view', $user_id));
 		}
 		if ($this->Photo->delete($id)) {
 			$this->Session->setFlash(__('Photo deleted', true));
-			$this->redirect(array('action'=>'index'));
+			$this->redirect(array('controller' => 'users', 'action'=>'view', $user_id));
 		}
 		$this->Session->setFlash(__('Photo was not deleted', true));
-		$this->redirect(array('action' => 'index'));
+		$this->redirect(array('controller' => 'users', 'action'=>'view', $user_id));
 	}
 	
 }
