@@ -71,9 +71,7 @@ class UsersController extends AppController{
 	public function view($id = null) {
 		$this->layout = 'profile';
 		
-		if(!$this->Auth->user()){
-		
-					
+		if(!$this->Auth->user()){		
 				$this->redirect(array("controller" => "pages", "action" => "home"));
 					
 			}
@@ -82,6 +80,7 @@ class UsersController extends AppController{
 			$this->redirect(array('controller' => 'photos','action' => 'index'));
 		}
 		$this->set('user', $this->User->read(null, $id));
+		
 
 	}
 	

@@ -74,17 +74,15 @@
 			<td class="search">
 				<table class="search"  cellspacing="0" cellpadding="0">
 					<?php
-						echo $this->Form->create('form_search',array(
-							'inputDefaults' => array(
-								'label' => false,
-								'div' => false
-							)
+						echo $this->Form->create('Photo',array(
+							'action' => 'searchbytitle'
 							));
+						
+ 						
 					?>
 				  <tr>
 					<td class="text_search">
-						<input name="data[form_search][search_text]" value="search..." id="search_text" type="text" onfocus="if(this.value=='search...') this.value='';" onblur="if(this.value=='') this.value='search...';"/>
-					</td>
+						<?php echo $this->Form->input('title', array('div'=>'search_text', 'label' => false)); ?>
 					<td class="logo_search">
 						<?php
 							echo $this->Form->end('Search');

@@ -37,10 +37,16 @@ class PhotosController extends AppController {
 				$this->redirect(array("controller" => "pages", "action" => "home"));
 		}
 		$this->Photo->find('list', array(
+<<<<<<< HEAD
 		   'order' => array('Photo.id desc'),
 		   'recursive' => 0
 		  ));
 		  
+=======
+		   'order' => array('Photo.id' => 'DESC'),
+		   'recursive' => 0
+		  ));
+>>>>>>> 688224d211ed16d702c8d73ef8ab3d1007c1716c
 		$this->set('photos', $this->paginate());
 
 		/*if ($this->Auth->user('roles') != 'admin'){
@@ -68,7 +74,7 @@ class PhotosController extends AppController {
 	  if ($this->request->is('post')) {
 			$this->Photo->Comment->create();
 			if ($this->Photo->Comment->save($this->data)) {
-				$this->Session->setFlash(__('The comment has been saved', true));
+				
 				$this->redirect(array('action' => 'view', $photo['Photo']['id']));
 			} else {
 				$this->Session->setFlash(__('The comment could not be saved. Please, try again.', true));
@@ -93,7 +99,7 @@ class PhotosController extends AppController {
 		  if ($this->request->is('post')) {
             $this->Photo->create();
             if ($this->Photo->save($this->request->data)) {
-                $this->Session->setFlash(__('Your photo has been saved.'));
+               
                	$this->redirect(array('controller' => 'users', 'action' => 'view', $id));
             }
             $this->Session->setFlash(__('Unable to add your photo.'));
@@ -137,7 +143,7 @@ class PhotosController extends AppController {
 	    if ($this->request->is(array('post', 'put'))) {
 	        $this->Photo->id = $id;
 	        if ($this->Photo->save($this->request->data)) {
-	            $this->Session->setFlash(__('Your photo has been updated.'));
+	           
 	            return $this->redirect(array('action' => 'index'));
 	        }
 	        $this->Session->setFlash(__('Unable to update your photo.'));
@@ -189,4 +195,22 @@ class PhotosController extends AppController {
 		$this->redirect(array('controller' => 'users', 'action'=>'view', $user_id));
 	}
 	
+//=============================================================================================================================
+	function searchbytitle(){
+    //checking data
+	//$url['action'] = 'results'; 
+    if(!empty($this->data)&&$this->data['Photo']['title']!=null){
+       	
+        $photos =$this->Photo->find('all',array('conditions'=>array('title LIKE '=>'%'.$this->data['Photo']['title'].'%')));
+        //post data -> C to V
+        $this->set('photos',$photos);
+		//
+   	 	}
+		
+	}
+
+	function searchbydistance(){
+	
+	
+	}
 }
