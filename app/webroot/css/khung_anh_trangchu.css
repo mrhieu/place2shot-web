@@ -1,5 +1,8 @@
 /* CSS Document */
 /* view*/
+.cont{
+	margin-top:20px;
+}
 table.photo_list_1 tr td:hover ,table.photo_list_2 tr td:hover ,table.photo_list_3 tr td:hover{
 opacity:1;
 filter:alpha(opacity=60); /* For IE8 and earlier */
@@ -16,6 +19,7 @@ td.anh_ngang, td.anh_dung , td.anh_vuong{
 table.photo_list_1{
 	margin:auto;
 	width:1200px;
+	margin-top:-20px;
 }
 table.photo_list_1 .anh_ngang{
 	width:880px;
@@ -53,6 +57,7 @@ table.photo_list_1 .anh_vuong_pt{
 table.photo_list_2{
 	margin:auto;
 	width:1200px;
+	margin-top:-20px;
 }
 table.photo_list_2 .anh_vuong{
 	width:180px;
@@ -82,6 +87,7 @@ table.photo_list_2 .anh_vuong_pt{
 table.photo_list_3{
 	margin:auto;
 	width:1200px;
+	margin-top:-20px;
 }
 table.photo_list_3 .anh_ngang{
 	width:1200px;
@@ -100,47 +106,4 @@ table.photo_list_3 .anh_ngang_pt{
 }
 .fancybox-custom .fancybox-skin {
 			box-shadow: 0 0 50px #222;
-}
-/** Paging **/
-.paging {
-	background:#fff;
-	color: #ccc;
-	margin-top: 1em;
-	clear:both;
-}
-.paging .current,
-.paging .disabled,
-.paging a {
-	text-decoration: none;
-	padding: 5px 8px;
-	display: inline-block
-}
-.paging > span {
-	display: inline-block;
-	border: 1px solid #ccc;
-	border-left: 0;
-}
-.paging > span:hover {
-	background: #efefef;
-}
-.paging .prev {
-	border-left: 1px solid #ccc;
-	-moz-border-radius: 4px 0 0 4px;
-	-webkit-border-radius: 4px 0 0 4px;
-	border-radius: 4px 0 0 4px;
-}
-.paging .next {
-	-moz-border-radius: 0 4px 4px 0;
-	-webkit-border-radius: 0 4px 4px 0;
-	border-radius: 0 4px 4px 0;
-}
-.paging .disabled {
-	color: #ddd;
-}
-.paging .disabled:hover {
-	background: transparent;
-}
-.paging .current {
-	background: #efefef;
-	color: #c73e14;
-}
+		}

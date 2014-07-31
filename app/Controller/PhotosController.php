@@ -36,9 +36,13 @@ class PhotosController extends AppController {
 		if(!$this->Auth->user()){
 				$this->redirect(array("controller" => "pages", "action" => "home"));
 		}
-		$this->Photo->recursive = 0;
+		$this->Photo->find('list', array(
+		   'order' => array('Photo.id desc'),
+		   'recursive' => 0
+		  ));
+		  
 		$this->set('photos', $this->paginate());
-		
+
 		/*if ($this->Auth->user('roles') != 'admin'){
 		$this->set('posts', $this->Post->find('all', array('conditions' => array('user_id' => $this->Auth->user('id')))));
 		}*/
