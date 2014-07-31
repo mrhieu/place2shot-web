@@ -13,7 +13,6 @@
 		 
 		 <script>
 		 function initialize() {
-				
 					var l1=document.getElementById("latitude").value;
 					var l2=document.getElementById("longitude").value;
 					var myLatlng = new google.maps.LatLng(l1,l2);

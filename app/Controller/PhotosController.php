@@ -37,16 +37,10 @@ class PhotosController extends AppController {
 				$this->redirect(array("controller" => "pages", "action" => "home"));
 		}
 		$this->Photo->find('list', array(
-<<<<<<< HEAD
 		   'order' => array('Photo.id desc'),
 		   'recursive' => 0
 		  ));
 		  
-=======
-		   'order' => array('Photo.id' => 'DESC'),
-		   'recursive' => 0
-		  ));
->>>>>>> 688224d211ed16d702c8d73ef8ab3d1007c1716c
 		$this->set('photos', $this->paginate());
 
 		/*if ($this->Auth->user('roles') != 'admin'){
