@@ -4,7 +4,7 @@
 		<div class="profile_border">
 		<table class="profile"  cellspacing="0" cellpadding="0">
 	  	<?php
-			echo $this->Form->create('user',array(
+			echo $this->Form->create('User',array(
 				'inputDefaults' => array(
 					'label' => false,
 					'div' => false

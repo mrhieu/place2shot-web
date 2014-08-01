@@ -190,7 +190,7 @@
 					jQuery(window).load(function() {
 					$('#goi_y').slideUp(100);
 					$('#goi_y').show();
-					
+					}
 					</script>
 
 </html>

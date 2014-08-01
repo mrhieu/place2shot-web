@@ -177,32 +177,62 @@
 		</div><!--END HEADER-->
     	
         <div id="content">
-		<?php
-					$i=0;$mang=array();
+			<?php 
+				$i=0;$mang=array();
 					$diachi=array();
 					foreach ($user['Photo'] as $photo): 
 						$mang[$i]= $photo['img_file'];
 						$diachi[$i]=$photo['id'];
 						$ten[$i]=$photo['title'];
 						$i++;
-				endforeach;?>
-			<div class="anh">
+					
+				endforeach;
+				?>
 			<?php
 				for($j=$i;$j--;$j>=0)
 				{
-					echo $this->Html->link(
-					$this->Html->image('uploads/images/thumb/large/'.'/'.$mang[$j], array('alt' => 'Gallery Image')),
-					array('controller'=>'photos','action'=>'view',$diachi[$j]),
-					array('class' => 'fancybox fancybox.iframe','escape'=>false)
-				);
-				
-			}
-			?>
-				<div id="thong_tin">
-					
-				</div>	
+				?>
+				<table class="anh" border="0" cellpadding="0" cellspacing="0" >
+				<tr>
+					<td class="anh1"  cellpadding="0" cellspacing="0">
+						<?php echo $this->Html->link(
+						$this->Html->image('uploads/images/thumb/large/'.'/'.$mang[$j], array('alt' => 'Gallery Image')),
+						array('controller'=>'photos','action'=>'view',$diachi[$j]),
+						array('class' => 'fancybox fancybox.iframe','escape'=>false)
+						);
+						?>
+							<?php if ($current_user['roles'] == 'admin' || $current_user['id'] == $user['User']['id']): ?>						
+								<table class="thong_tin" border="0">
+									<tr>
+									<td class="edit">
+									<?php echo $this->Html->link(
+										$this->Html->image('icon/edit.png', array('alt' => 'btn')),
+										array('controller' =>'photos','action' => 'edit', $photo['id']),
+										array('class' => 'btn','escape'=>false)	
+									);
+									?>
+									</td>
+									<td class="delete">
+									<?php	echo $this->Form->postLink(
+										$this->Html->image('icon/delete.png', array('alt' => 'btn')),
+										array('controller' =>'photos','action' => 'delete', $photo['id'], $current_user['id']),
+										array('class' => 'btn','escape'=>false),
+										__('Are you sure you want to delete # %s?', $photo['id'])
+									)
+									?>
+									</td>
+									</tr>
+								</table>
+							<?php endif; ?>
 						
-			</div>
+					</td>
+				</tr>	
+				</table>			
+			
+			
+			<?php	
+				}	
+			?>			
 			
         </div>
         

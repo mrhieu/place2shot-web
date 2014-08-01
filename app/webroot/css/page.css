@@ -1,0 +1,128 @@
+*{margin:0px;padding:0px;}
+#cover_page{
+width:100%;
+min-height:700px;
+background-position:center;
+background-repeat:no-repeat;
+background-size:100% auto;
+float:left;
+
+}
+/* PHAN BANNER*/
+/* PHAN BANNER*/
+table.banner_tool{
+	margin:auto;
+	width:1100px;
+}
+table.banner_tool tr td.menu_banner, table.banner_tool tr td.search{
+	width:400px;
+}
+td.logo img.logo {
+	height:70px;
+}
+td.discover img , td.upload img{
+	height:20px;
+}
+table.khung{
+	width:100%;
+}
+table tr.banner{
+	height:70px;
+	background-color:#222222;
+}
+table tr.footer{
+	height:80px;
+}
+table.menu_banner ,table.user{
+	height:70px;
+	width:400px;
+	font-weight:bold;
+	color:#CCCCCC;
+}
+
+table.search{
+	width:300px;
+}
+table.search tr td.text_search{
+	width:90%;
+}
+table.user{
+	width:300px;
+}
+table.user{
+	text-align:center;
+}
+table.menu_banner a, table.user a{
+	text-decoration:none;
+	color:#ffffff;
+}
+table.menu_banner tr td:hover , table.user tr td:hover {
+
+	color:#CCCCCC;
+	opacity:0.7;
+}
+table.menu_banner tr td:hover a, table.user tr td:hover a{
+	color:#FFFFFF;
+}
+#search_text{
+	width:270px;
+	height:30px;
+	border:0px;
+	background:#ffffff;
+	font-size:18px;
+	border-top-left-radius:3px;
+	border-bottom-left-radius:3px;
+}
+td.logo_search input{
+	border:#00afdd 2px solid;
+	height:30px;
+	background:#D83C3C;
+	border:none;
+	font-weight:bold;
+	color:#FFFFFF;
+	padding:5px;
+	border-top-right-radius:3px;
+	border-bottom-right-radius:3px;
+}
+table.prfile_tb{
+	margin:auto;
+}
+.prfile_tb img{
+	border-radius:3px;
+}
+
+/* search banner*/
+
+#goi_y {
+	width:270px;
+	height:210px;
+	position:absolute;
+	z-index:99;
+	display:none;
+}
+#goi_y table{
+	width:270px;
+}
+#goi_y table td{
+	width:270px;
+	
+}
+td.text_search{
+	position:relative;
+}
+.goi_y_title{
+	height:20px;
+	background:#FFFFFF;
+	color:#999999;
+	font-weight:bold;
+}
+#goi_y table td button{
+	width:267px;
+	height:25px;
+	background:#FFFFFF;
+	border-radius:3px;
+	border:none;
+	padding:10px;
+	text-align:left;
+	color:#999999;
+}

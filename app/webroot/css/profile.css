@@ -21,7 +21,8 @@
 	}
 #content{
 	width:1200px;
-	margin:40px auto;
+	margin:45px auto;
+	padding-left:10px;
 	}
 #top_header{
 	padding-top:350px;
@@ -215,11 +216,8 @@ background-image:url(../img/icon/mail.png);
 }
 .fancybox img{
 float:left;
-	margin-left:20px;
-	margin-top:20px;
+	margin-left:15px;
 	margin-bottom:20px;
-	width:280px;
-	height:280px;
 	width:280px;
 	height:280px;
 	background-position:center;
@@ -231,23 +229,56 @@ float:left;
 }
 
 /*banner*/
-#thong_tin{
-	TOP:4PX;
+
+table.thong_tin{
+	padding-left:20px;
 	position:absolute;
-	left:50%;
-	margin-left:-550px;
+	display:none;
+	width:280px;
+	height:50px;
+	padding-top:5px;
 }
-#anh{
-position:relative;
+table.thong_tin td{
+position:absolute;
+}
+table.anh{
+float:left;
 display:block;
+margin-left:5px;
 }
-#anh:hover #thong_tin{
-	opacity: 1;
+table.anh td.anh1{
+position:relative;
+
+}
+
+table.thong_tin tr td.edit img {
+	display:block;
+	width:30px;
+	height:30px;
+	text-align:center;
+	background-position:center;
+	background-size:30px 30px;
+	opacity: 0.5;
+}
+table.thong_tin tr td.delete{
+	float:left;
+	margin-left:230px;
+	text-align:center;
+}
+table.thong_tin tr td.delete img {
+	display:block;
+	width:30px;
+	height:30px;
+	text-align:center;
+	background-position:center;
+	background-size:30px 30px;
+	opacity: 0.5;
+}
+table.anh td:hover table.thong_tin{
 	display:block;
 	-webkit-animation: moveFromTop 500ms ease-in-out;
     -moz-animation: moveFromTop 500ms ease-in-out;
     -ms-animation: moveFromTop 500ms ease-in-out;
-	
 }
 table.banner_tool{
 	display:none;
