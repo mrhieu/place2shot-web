@@ -177,21 +177,33 @@
 		</div><!--END HEADER-->
     	
         <div id="content">
+		<?php
+					$i=0;$mang=array();
+					$diachi=array();
+					foreach ($user['Photo'] as $photo): 
+						$mang[$i]= $photo['img_file'];
+						$diachi[$i]=$photo['id'];
+						$ten[$i]=$photo['title'];
+						$i++;
+				endforeach;?>
+			<div class="anh">
 			<?php
-				$i = 0;
-				foreach ($user['Photo'] as $photo):
-					$class = null;
-					if ($i++ % 2 == 0) {
-						$class = ' class="altrow"';
-					}
-			
-						echo $this->Html->link(
-					$this->Html->image('uploads/images/thumb/large/'.'/'.$photo['img_file'], array('alt' => 'Gallery Image')),
-					array('controller'=>'photos','action'=>'view',$photo['id']),
+				for($j=$i;$j--;$j>=0)
+				{
+					echo $this->Html->link(
+					$this->Html->image('uploads/images/thumb/large/'.'/'.$mang[$j], array('alt' => 'Gallery Image')),
+					array('controller'=>'photos','action'=>'view',$diachi[$j]),
 					array('class' => 'fancybox fancybox.iframe','escape'=>false)
 				);
-			endforeach;
+				
+			}
 			?>
+				<div id="thong_tin">
+					
+				</div>	
+						
+			</div>
+			
         </div>
         
         <div id="footer">

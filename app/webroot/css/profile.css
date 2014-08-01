@@ -226,9 +226,29 @@ float:left;
 	background-repeat:no-repeat;
 	display:block;
 	background-size:280px 280px;
+	border-radius:5px 5px;
+	box-shadow:5px 5px 5px #CCC;
 }
 
 /*banner*/
+#thong_tin{
+	TOP:4PX;
+	position:absolute;
+	left:50%;
+	margin-left:-550px;
+}
+#anh{
+position:relative;
+display:block;
+}
+#anh:hover #thong_tin{
+	opacity: 1;
+	display:block;
+	-webkit-animation: moveFromTop 500ms ease-in-out;
+    -moz-animation: moveFromTop 500ms ease-in-out;
+    -ms-animation: moveFromTop 500ms ease-in-out;
+	
+}
 table.banner_tool{
 	display:none;
 	position:absolute;

@@ -33,12 +33,14 @@ class PhotosController extends AppController {
     return parent::isAuthorized($user);
 }
 	function index() {
-		if(!$this->Auth->user()){
-				$this->redirect(array("controller" => "pages", "action" => "home"));
-		}
-		$this->Photo->recursive = 0;
-		$this->set('photos', $this->paginate());
-		
+		  if(!$this->Auth->user()){
+    $this->redirect(array("controller" => "pages", "action" => "home"));
+  }
+  $this->Photo->recursive = 0;
+  $photos = $this->Photo->find('all', array(
+   'order' => 'Photo.id desc'
+  ));
+  $this->set('photos' , $photos);
 		/*if ($this->Auth->user('roles') != 'admin'){
 		$this->set('posts', $this->Post->find('all', array('conditions' => array('user_id' => $this->Auth->user('id')))));
 		}*/
