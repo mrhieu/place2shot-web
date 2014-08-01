@@ -186,13 +186,23 @@ class PhotosController extends AppController {
 		$this->Session->setFlash(__('Photo was not deleted', true));
 		$this->redirect(array('controller' => 'users', 'action'=>'view', $user_id));
 	}
-	function search(){
+	
+//=============================================================================================================================
+	function searchbytitle(){
     //checking data
+	//$url['action'] = 'results'; 
     if(!empty($this->data)&&$this->data['Photo']['title']!=null){
-       
+       	
         $photos =$this->Photo->find('all',array('conditions'=>array('title LIKE '=>'%'.$this->data['Photo']['title'].'%')));
         //post data -> C to V
         $this->set('photos',$photos);
+		//
    	 	}
+		
+	}
+
+	function searchbydistance(){
+	
+	
 	}
 }

@@ -22,6 +22,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php echo $this->html->css("banner"); ?>
+<?php echo $this->html->script("jquery/search_banner"); ?>
 <title>Untitled Document</title>
 <style type="text/css">
 /*	RESET CSS	*/
@@ -74,17 +75,50 @@
 			<td class="search">
 				<table class="search"  cellspacing="0" cellpadding="0">
 					<?php
-						echo $this->Form->create('form_search',array(
-							'inputDefaults' => array(
-								'label' => false,
-								'div' => false
-							)
+						echo $this->Form->create('Photo',array(
+							'action' => 'searchbytitle'
 							));
+						
+ 						
 					?>
 				  <tr>
 					<td class="text_search">
-						<input name="data[form_search][search_text]" value="search..." id="search_text" type="text" onfocus="if(this.value=='search...') this.value='';" onblur="if(this.value=='') this.value='search...';"/>
-					</td>
+						<?php echo $this->Form->input('title', array(
+									'div'=>'search_text',
+									'label' => false,
+									'id'=>'search_text',
+									'onclick'=>'help_s()',
+									'onblur'=>'help_h()',
+									'onDblclick'=>'help_s()',
+									'placeholder'=>'Search...',
+									'autocomplete'=>'off'
+									)); 
+						?>
+						<div id="goi_y">
+							<table border="0" cellspacing="2" cellpadding="0">
+								<tr>
+									<td class="goi_y_title">tìm kiếm tên ảnh</td>
+								</tr>
+								<tr>
+									<td class="goi_y_val"><button type="button" onclick="get_gy(1)">.....</button></td>
+								</tr>
+								<tr>
+									<td class="goi_y_val"><button type="button" onclick="get_gy(2)">.....</button></td>
+								</tr>
+								<tr>
+									<td class="goi_y_val"><button type="button" onclick="get_gy(3)">.....</button></td>
+								</tr>
+								<tr>
+									<td class="goi_y_val"><button type="button" onclick="get_gy(4)">.....</button></td>
+								</tr>
+								<tr>
+									<td class="goi_y_val"><button type="button" onclick="get_gy(5)">.....</button></td>
+								</tr>
+								<tr>
+									<td class="goi_y_val"><button type="button" onclick="get_gy(6)">.....</button></td>
+								</tr>
+							</table>
+						</div>
 					<td class="logo_search">
 						<?php
 							echo $this->Form->end('Search');
@@ -152,4 +186,11 @@
 </table>
 <?php //echo $this->element('sql_dump'); ?>
 </body>
+					<script> 
+					jQuery(window).load(function() {
+					$('#goi_y').slideUp(100);
+					$('#goi_y').show();
+					
+					</script>
+
 </html>

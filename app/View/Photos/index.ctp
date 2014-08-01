@@ -1,3 +1,5 @@
+
+
 	<?php
 	$i=0;$mang=array();
 	foreach ($photos as $photo): 
@@ -33,7 +35,7 @@ $i=0;
 $default=0;
 while($i<$count){
 ?>	
-
+<div class="cont">
 <!-- photo list 3-->
 	  <table class="photo_list_3" border="0" cellspacing="20px" cellpadding="0">
           <tr>
@@ -53,12 +55,14 @@ while($i<$count){
 							</div>
 						</td>
 						<td class="comment-icon">
+						<a class="fancybox fancybox.iframe" href="/place2shot-web/photos/view/<?php if($i>=$count){  echo $mang_id[$default];}else echo $mang_id[$i];?>">
 							<button class="vien-icon">
 							</button>
 							<div class="doi_tuong">
 								<img class="comment-icon" src="/place2shot-web/img/images/comment-icon.png" />
 								<p class="ca-comment">200</p>
 							</div>
+						</a>
 						</td>
 					  </tr>
 					</table>
@@ -408,6 +412,7 @@ while($i<$count){
 		echo $this->Paginator->next(__('next') . ' >', array(), null, array('class' => 'next disabled'));
 	?>
 	</div>
+</div>
 <?php
 function background_size_list1($image,$size){
 	switch($size){

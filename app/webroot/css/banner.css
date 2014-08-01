@@ -78,3 +78,39 @@ table.prfile_tb{
 .prfile_tb img{
 	border-radius:3px;
 }
+
+/* search banner*/
+
+#goi_y {
+	width:270px;
+	height:210px;
+	position:absolute;
+	z-index:99;
+	display:none;
+}
+#goi_y table{
+	width:270px;
+}
+#goi_y table td{
+	width:270px;
+	
+}
+td.text_search{
+	position:relative;
+}
+.goi_y_title{
+	height:15px;
+	background:#FFFFFF;
+	color:#999999;
+	font-weight:bold;
+}
+#goi_y table td button{
+	width:267px;
+	height:25px;
+	background:#FFFFFF;
+	border-radius:3px;
+	border:none;
+	padding:10px;
+	text-align:left;
+	color:#999999;
+}

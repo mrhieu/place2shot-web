@@ -1,21 +1,41 @@
 /* CSS Document */
 /*cau truc trang*/
 table.main_edit{
-	width:1200px;
-	margin:auto;
+	width:1100px;
+	margin: auto;
 }
 .setting_menu{
-	width:300px;
+	width:250px;
 }
 .setting_main{
-	width:450px;
+	width:850px;
 }
 table.main_edit tr td.title{
 	font-family:Arial, Helvetica, sans-serif;
 	font-weight:bold;
 	height:30px;
 	font-size:18px;
-	color:#00FFFF;
+	text-align:center;
+}
+table.menu_title{
+	width:200px;
+}
+table.menu_title tr td{
+	width:200px;
+	border-radius:5px;
+	font-weight:bold;
+	height:30px;
+	background:#333333;
+}
+table.menu_title tr td a{
+	text-decoration:none;
+	color:#FFFFFF;
+}
+.phan_cach{
+	width:1px;
+	height:100px;
+	background:#666666;
+	
 }
 /*cau truc menu*/
 table.menu_edit{
@@ -27,8 +47,11 @@ table.menu_edit tr td.change_name , table.menu_edit tr td.change_pass ,table.men
 	font-weight:bold;
 	height:30px;
 }
-table.menu_edit tr td:hover{
-	background:#EAEAEA;
+table.menu_edit tr td:hover ,table.menu_edit tr td:focus{
+	background:#333333;
+}
+table.menu_edit tr td:hover a{
+	color:#FFFFFF;
 }
 table.menu_edit tr td a{
 	text-decoration:none;
@@ -36,37 +59,56 @@ table.menu_edit tr td a{
 	margin-left:10px;
 }
 /*cau truc main*/
+.name{
+	font-size:18px;
+	color:#666666;
+	font-weight:bold;
+}
+.nd_set{
+	width:400px;
+}
 fieldset{
 	padding:20px 20px;
 	margin: 0 30px ;
 	border: 1px solid #999999;
 	border-radius: 10px;
+	background:#FFFFFF;
 }
 legend{
 	font-size:18px;
 	font-weight:bold;
 	color:#FF3300;
 }
-.setting_main input[type='text'] ,.setting_main input[type='password']{
-	width:200px;
-	height:30px;
-	font-size:15px;
+.setting_main input[type='text'] ,.setting_main input[type='password'],.setting_main input[type='email']{
+	width:300px;
+	height:40px;
+	font-size:18px;
 	border-radius:5px;
-	border:1px solid #FF0000;
+	border:none;
+	color:#666666;
+	font-weight:bold;
+	box-shadow: 5px 5px 5px #888888;
+	font-style:italic;
 }
 .setting_main input[type='submit']{
-	width:50px;
-	height:25px;
-	font-size:15px;
+	width:70px;
+	height:30px;
+	font-size:18px;
+	font-weight:bold;
 	border-radius:5px;
 	color:#FFFFFF;
 	background:red;
+	border:none;
+	box-shadow: 5px 5px 5px #888888;
 }
 .setting_main table{
-	text-align:center;
+	text-align:left;
+}
+.button_sm{
+	text-align:right;
 }
 .setting_main table tr td.name{
-	width:70px;
+	width:150px;
 }
 /*cau truc profile*/
 table.edit_profile{
@@ -77,4 +119,10 @@ table.edit_profile tr td.edit_avatar{
 }
 table.edit_profile tr td{
 	height:40px;
+}
+#bgr_edit{
+	width:100%;
+	height:480px;
+	background:#F7F8FA;
+	margin: 50px auto;
 }
