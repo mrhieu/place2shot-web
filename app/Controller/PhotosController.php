@@ -76,7 +76,7 @@ class PhotosController extends AppController {
 		$users = $this->Photo->Comment->User->find('list');
 		$this->set(compact('users'));
 		
-		$sql = "SELECT User.*, Photo.*,Comment.* FROM users as User,photos as Photo ,comments as Comment WHERE Comment.photo_id = $id and Photo.id=$id and Comment.user_id=User.id";
+		$sql = "SELECT User.*, Photo.*,Comment.* FROM users as User,photos as Photo ,comments as Comment WHERE Comment.photo_id = $id and Photo.id=$id and Comment.user_id=User.id ORDER BY Comment.id desc";
 		$photos = $this->Photo->query($sql);
 
 		

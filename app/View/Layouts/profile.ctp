@@ -7,6 +7,7 @@
 <?php echo $this->html->script("jquery/fancy/source/jquery.fancybox");?>
 <?php echo $this->html->css("jquery.fancybox");?>
 <?php echo $this->html->css("banner-prf"); ?>
+<?php echo $this->html->script("jquery/search_banner"); ?>
 <script type="text/javascript">
 	$(document).ready(function() {
 			/*
@@ -33,7 +34,7 @@
     	<div id="header" style=" background-image:url(<?php echo $this->webroot; ?>img/uploads/covers/<?php echo $user['User']['cover'] ?>)" >
 		
 		<!-- start banner-->
-		<table align="center" class="banner_tool" cellspacing="0" cellpadding="0">
+		<table align="center" border="0" class="banner_tool" cellspacing="0" cellpadding="0">
 		  <tr>
 			<td class="menu_banner">
 				<table class="menu_banner"  cellspacing="0" cellpadding="0">
@@ -80,7 +81,17 @@
 					?>
 				  <tr>
 					<td class="text_search">
-						<input name="data[form_search][search_text]" value="search..." id="search_text" type="text" onfocus="if(this.value=='search...') this.value='';" onblur="if(this.value=='') this.value='search...';"/>
+						<?php echo $this->Form->input('title', array(
+									'div'=>'search_text',
+									'label' => false,
+									'id'=>'search_text',
+									'onclick'=>'help_s()',
+									'onblur'=>'help_h()',
+									'onDblclick'=>'help_s()',
+									'placeholder'=>'Search...',
+									'autocomplete'=>'off'
+									)); 
+						?>
 					</td>
 					<td class="logo_search">
 						<?php
@@ -122,6 +133,37 @@
 				</table>
 
 			</td>
+		  </tr>
+		  <tr>
+			<td></td>
+			<td>
+				<div id="goi_y">
+					<table border="0" cellspacing="2" cellpadding="0">
+						<tr>
+							<td class="goi_y_title">tìm kiếm tên ảnh</td>
+						</tr>
+						<tr>
+							<td class="goi_y_val"><button type="button" onclick="get_gy(1)">Biển Đông</button></td>
+						</tr>
+						<tr>
+							<td class="goi_y_val"><button type="button" onclick="get_gy(2)">Cao Nguyên</button></td>
+						</tr>
+						<tr>
+							<td class="goi_y_val"><button type="button" onclick="get_gy(3)">Bãi cỏ</button></td>
+						</tr>
+						<tr>
+							<td class="goi_y_val"><button type="button" onclick="get_gy(4)">Bình minh</button></td>
+						</tr>
+						<tr>
+							<td class="goi_y_val"><button type="button" onclick="get_gy(5)">Suối</button></td>
+						</tr>
+						<tr>
+							<td class="goi_y_val"><button type="button" onclick="get_gy(6)">.....</button></td>
+						</tr>
+					</table>
+				</div>
+			</td>
+			<td></td>
 		  </tr>
 		</table>
 		<!-- End banner-->
@@ -246,4 +288,10 @@
         </div>
     </div>
 </body>
+<script> 
+					jQuery(window).load(function() {
+					$('#goi_y').slideUp(100);
+					$('#goi_y').show();
+					}
+					</script>
 </html>

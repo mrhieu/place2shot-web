@@ -100,19 +100,19 @@
 									<td class="goi_y_title">tìm kiếm tên ảnh</td>
 								</tr>
 								<tr>
-									<td class="goi_y_val"><button type="button" onclick="get_gy(1)">.....</button></td>
+									<td class="goi_y_val"><button type="button" onclick="get_gy(1)">Biển Đông</button></td>
 								</tr>
 								<tr>
-									<td class="goi_y_val"><button type="button" onclick="get_gy(2)">.....</button></td>
+									<td class="goi_y_val"><button type="button" onclick="get_gy(2)">Cao Nguyên</button></td>
 								</tr>
 								<tr>
-									<td class="goi_y_val"><button type="button" onclick="get_gy(3)">.....</button></td>
+									<td class="goi_y_val"><button type="button" onclick="get_gy(3)">Bãi cỏ</button></td>
 								</tr>
 								<tr>
-									<td class="goi_y_val"><button type="button" onclick="get_gy(4)">.....</button></td>
+									<td class="goi_y_val"><button type="button" onclick="get_gy(4)">Bình minh</button></td>
 								</tr>
 								<tr>
-									<td class="goi_y_val"><button type="button" onclick="get_gy(5)">.....</button></td>
+									<td class="goi_y_val"><button type="button" onclick="get_gy(5)">Suối</button></td>
 								</tr>
 								<tr>
 									<td class="goi_y_val"><button type="button" onclick="get_gy(6)">.....</button></td>
@@ -175,12 +175,7 @@
   </tr>
   <tr class="footer">
     <td>
-		<?php echo $this->Html->link(
-					$this->Html->image('cake.power.gif', array('alt'=> __('CakePHP: the rapid development php framework', true), 'border' => '0')),
-					'http://www.cakephp.org/',
-					array('target' => '_blank', 'escape' => false)
-				);
-			?>
+		<p>Designed by Lifetime Technology</p>
 	</td>
   </tr>
 </table>
