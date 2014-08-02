@@ -78,6 +78,12 @@ table.prfile_tb{
 .prfile_tb img{
 	border-radius:3px;
 }
+tr.footer td p{
+	font-size:10px;
+	color:#999999;
+	padding:20px;
+	
+}
 
 /* search banner*/
 
