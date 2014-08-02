@@ -17,7 +17,7 @@
 					var l2=document.getElementById("longitude").value;
 					var myLatlng = new google.maps.LatLng(l1,l2);
 					var mapOptions = {
-					zoom: 14,
+					zoom: 8,
 					center: myLatlng
 					}
 				  var map = new google.maps.Map(document.getElementById('us3'), mapOptions);
@@ -101,30 +101,7 @@
 										?>
 						</td>
 					</tr>
-					<tr>
-						<td>Latitude</td>
-						<td>
-						<?php 
-							echo $this->Form->input('latitude',array(
-								'type'=>'text',
-								'id'=>'latitude'
-							));
-						?>
-						</td>
 					
-					</tr>
-					<tr>
-						<td>Longitude</td>
-							
-						<td>
-							<?php 
-									echo $this->Form->input('longitude',array(
-										'type'=>'text',
-										'id'=>'longitude'
-									));
-								?>
-						</td>
-					</tr>
 					<tr>
 						<td>Len</td>
 						<td>
@@ -193,6 +170,30 @@
 								?>	
 							</td>
 						</tr>
+						<tr>
+						<td></td>
+						<td>
+						<?php 
+							echo $this->Form->input('latitude',array(
+								'type'=>'hidden',
+								'id'=>'latitude'
+							));
+						?>
+						</td>
+					
+					</tr>
+					<tr>
+						<td></td>
+							
+						<td>
+							<?php 
+									echo $this->Form->input('longitude',array(
+										'type'=>'hidden',
+										'id'=>'longitude'
+									));
+								?>
+						</td>
+					</tr>
 					</table>
 				</td>
 				
@@ -204,7 +205,7 @@
 							<div class="col-sm-5"><input type="text" class="form-control" id="us3-address"/></div>
 						</div>
 						
-						<div id="us3" style="width: 400px; height: 200px;"></div>
+						<div id="us3" style="width: 450px; height: 300px;margin-top:10px;"></div>
 						<div class="clearfix">&nbsp;</div>
 						<div class="clearfix"></div>
 					</div>

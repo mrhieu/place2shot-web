@@ -118,7 +118,7 @@ class PhotosController extends AppController {
 			{
 	        	//$this->cakeError('error404');
 				$this->Session->setFlash(__('You do no have the ability to edit this photo.', true));
-				$this->redirect(array('action' => 'index'));
+				$this->redirect(array('action' => 'view',$id));
 			}
 			
 	    }
@@ -131,12 +131,12 @@ class PhotosController extends AppController {
 	    if (!$photo) {
 	        throw new NotFoundException(__('Invalid photo'));
 	    }
-
+		  $this->set('photo', $photo);
 	    if ($this->request->is(array('post', 'put'))) {
 	        $this->Photo->id = $id;
 	        if ($this->Photo->save($this->request->data)) {
 	           
-	            return $this->redirect(array('action' => 'index'));
+	            return $this->redirect(array('action' => 'view',$id));
 	        }
 	        $this->Session->setFlash(__('Unable to update your photo.'));
 	    }
@@ -148,6 +148,7 @@ class PhotosController extends AppController {
 		$this->set(compact('users'));
 		$galleries = $this->Photo->Gallery->find('list');
 		$this->set(compact('galleries'));
+		
 	}
 
 	function delete($id = null, $user_id = null) {

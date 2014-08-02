@@ -30,7 +30,17 @@
 
 <body>
 	<div id="wrapper">
-    	<div id="header" style=" background-image:url(<?php echo $this->webroot; ?>img/uploads/covers/<?php echo $user['User']['cover'] ?>)" >
+    	<div id="header" style=" background-image:url(
+		<?php
+			if($user['User']['cover'] !=''){
+				echo $this->webroot.'img/uploads/covers/'.$user['User']['cover'];
+			}
+			else 
+			echo $this->webroot.'img/image/cover1.jpg';
+			?>
+			
+		
+		)" >
 		
 		<!-- start banner-->
 		<table align="center" class="banner_tool" cellspacing="0" cellpadding="0">
@@ -207,7 +217,7 @@
 									<td class="edit">
 									<?php echo $this->Html->link(
 										$this->Html->image('icon/edit.png', array('alt' => 'btn')),
-										array('controller' =>'photos','action' => 'edit', $photo['id']),
+										array('controller' =>'photos','action' => 'edit', $diachi[$j]),
 										array('class' => 'btn','escape'=>false)	
 									);
 									?>
@@ -215,9 +225,9 @@
 									<td class="delete">
 									<?php	echo $this->Form->postLink(
 										$this->Html->image('icon/delete.png', array('alt' => 'btn')),
-										array('controller' =>'photos','action' => 'delete', $photo['id'], $current_user['id']),
+										array('controller' =>'photos','action' => 'delete', $diachi[$j], $current_user['id']),
 										array('class' => 'btn','escape'=>false),
-										__('Are you sure you want to delete # %s?', $photo['id'])
+										__('Are you sure you want to delete: %s?', $ten[$j].' '.$diachi[$j])
 									)
 									?>
 									</td>
