@@ -12,7 +12,7 @@
 	.ca-comment , .ca-like{
 		font-size:11px;
 		margin:auto;
-		color:#000000;
+		color:#ffffff;
 		font-weight:bold;
 	}
 	.ca-icon tr td img{
@@ -27,6 +27,7 @@
 	.ca-icon tr td:hover button.vien-icon{
 		background:#FF0000;
 		opacity: 0.7;
+		cursor:pointer;
 	}
 	table.ca-icon tr td button.vien-icon{
 		width:50px;
@@ -45,6 +46,7 @@
 		position:absolute;
 		top:0px;
 		margin-left:15px;
+		cursor:pointer;
 	}
 	.photo_list_1 tr td:hover .ca-icon,.photo_list_2 tr td:hover .ca-icon,.photo_list_3 tr td:hover .ca-icon{
 	opacity: 1;

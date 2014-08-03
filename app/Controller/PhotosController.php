@@ -206,4 +206,8 @@ class PhotosController extends AppController {
 	
 	
 	}
+	function rating(){
+	
+	
+	}
 }
