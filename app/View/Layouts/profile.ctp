@@ -82,12 +82,10 @@
 			<td class="search">
 				<table class="search"  cellspacing="0" cellpadding="0">
 					<?php
-						echo $this->Form->create('form_search',array(
-							'inputDefaults' => array(
-								'label' => false,
-								'div' => false
+						echo $this->Form->create('Photo',array(
+							'action' => 'searchbytitle'
 							)
-							));
+							);
 					?>
 				  <tr>
 					<td class="text_search">

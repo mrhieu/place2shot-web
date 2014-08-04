@@ -12,7 +12,10 @@ class CommentsController extends AppController {
 			$this->redirect(array("controller" => "photos", "action" => "index"));
 		}
 		$this->Comment->recursive = 0;
-		$this->set('comments', $this->paginate());
+ 			$comments = $this->Comment->find('all', array(
+			   'order' => 'Comment.id desc'
+			));
+  			$this->set('comments' , $comments);
 	}
 	function getcomments(){
 		if ($this->Auth->user('roles') != 'admin') 
@@ -24,6 +27,11 @@ class CommentsController extends AppController {
 		//$this->set('_serialize', array('comments'));
 	}
 	function view($id = null) {
+		if ($this->Auth->user('roles') != 'admin') 
+		{
+			//$this->Session->setFlash(__('Invalid user', true));
+			$this->redirect(array("controller" => "photos", "action" => "index"));
+		}
 		if (!$id) {
 			$this->Session->setFlash(__('Invalid comment', true));
 			$this->redirect(array('action' => 'index'));

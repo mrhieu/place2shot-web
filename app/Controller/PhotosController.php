@@ -203,7 +203,25 @@ class PhotosController extends AppController {
 	}
 
 	function searchbydistance(){
-	
+		$radius = $this->data['Photo']['distance'];
+		$lat = $this->data['Photo']['latitude'];
+		$long = $this->data['Photo']['longitude'];
+		if(!empty($this->data)&&$radius!=null){
+       		$sql = "SELECT *
+					FROM photos as Photo
+					WHERE 1.609344*60*1.1515*180/3.14*(acos(sin(3.14/180*($lat))*sin(3.14/180*(latitude)) + cos(3.14/180*($lat))*cos(3.14/180*(latitude))*cos(3.14/180*($long- longitude)) )) <= $radius";
+			$photos = $this->Photo->query($sql);
+			
+		//$photos =$this->Photo->find('all',array('conditions'=>array('1.609344*60*1.1515*180/3.14*(acos(sin(3.14/180*(21.033333))*sin(3.14/180*Photo.latitude) + cos(3.14/180*(21.033333))*cos(3.14/180*Photo.latitude)*cos(3.14/180*(105.85000000000002 - Photo.longitude )) )) <=' => $radius)));
+        //post data -> C to V
+        if($photos != null){
+				$this->set('photos',$photos);
+				}
+			//
+			else{
+				$this->Session->setFlash(__('No photo', true));
+			}
+   	 	}
 	
 	}
 	function rating(){

@@ -32,7 +32,7 @@ class UsersController extends AppController{
 		if(!$this->Auth->user()){
 			if($this->request->is('post')){
 				if($this->Auth->login()){
-					$this->Session->setFlash('Login seccess!');
+					//$this->Session->setFlash('Login seccess!');
 					$this->redirect(array("controller" => "photos", "action" => "index"));
 				}
 				else{
@@ -51,8 +51,12 @@ class UsersController extends AppController{
 	}
 
 	public function index() {
+		
 		$this->User->recursive = 0;
-		$this->set('users', $this->paginate());
+ 			$users = $this->User->find('all', array(
+			   'order' => 'User.id desc'
+			));
+  			$this->set('users' , $users);
 		if ($this->Auth->user('roles') != 'admin') 
 		{
 			//$this->Session->setFlash(__('Invalid user', true));
@@ -106,11 +110,13 @@ class UsersController extends AppController{
 			}
 		if ($this->request->is('post')) {
 			if($this->User->save($this->request->data)){
-				$this->Session->setFlash('The user has been save');
+				
+				//$this->Session->setFlash('The user has been save');
 				$this->redirect(array('action' => 'index'));
+				$this->login();
 			}
 			else{
-				$this->Session->setFlash('The user could not be save');
+				//$this->Session->setFlash('The user could not be save');
 			}
 		}
 	}
@@ -126,9 +132,9 @@ class UsersController extends AppController{
                 //$this->Session->setFlash(__('The user has been saved'));
                 return $this->redirect(array('action' => 'view', $id));
             }
-            $this->Session->setFlash(
+            /*$this->Session->setFlash(
                 __('The user could not be saved. Please, try again.')
-            );
+            );*/
         } else {
             $this->request->data = $this->User->read(null, $id);
             unset($this->request->data['User']['password']);
@@ -144,9 +150,9 @@ class UsersController extends AppController{
                 //$this->Session->setFlash(__('The password has been saved'));
                 return $this->redirect(array('action' => 'view', $id));
             }
-            $this->Session->setFlash(
+            /*$this->Session->setFlash(
                 __('The password could not be saved. Please, try again.')
-            );
+            );*/
         } else {
             $this->request->data = $this->User->read(null, $id);
             unset($this->request->data['User']['password']);
@@ -162,9 +168,9 @@ class UsersController extends AppController{
                 //$this->Session->setFlash(__('The email has been updated'));
                 return $this->redirect(array('action' => 'view', $id));
             }
-            $this->Session->setFlash(
+            /*$this->Session->setFlash(
                 __('The email could not be updated. Please, try again.')
-            );
+            );*/
         } else {
             $this->request->data = $this->User->read(null, $id);
             unset($this->request->data['User']['password']);
@@ -180,9 +186,9 @@ class UsersController extends AppController{
                 //$this->Session->setFlash(__('The avata has been changed'));
                 return $this->redirect(array('action' => 'view', $id));
             }
-            $this->Session->setFlash(
+           /* $this->Session->setFlash(
                 __('The avata could not be changed. Please, try again.')
-            );
+            );*/
         } else {
             $this->request->data = $this->User->read(null, $id);
             unset($this->request->data['User']['password']);
@@ -198,10 +204,10 @@ class UsersController extends AppController{
                 //$this->Session->setFlash(__('The avata has been changed'));
                 return $this->redirect(array('action' => 'view', $id));
             }
-            $this->Session->setFlash(
+            /*$this->Session->setFlash(
                 __('The avata could not be changed. Please, try again.')
             );
-        } else {
+*/        } else {
             $this->request->data = $this->User->read(null, $id);
             unset($this->request->data['User']['password']);
         }
@@ -212,10 +218,10 @@ class UsersController extends AppController{
 		}
 		else{
 			if ($this->User->delete($id)) {
-				$this->Session->setFlash(__('User deleted', true));
+				//$this->Session->setFlash(__('User deleted', true));
 				$this->redirect(array('action'=>'index'));
 			}
-				$this->Session->setFlash(__('User was not deleted', true));
+				//$this->Session->setFlash(__('User was not deleted', true));
 				$this->redirect(array('action' => 'index'));
 		}
 		// if (!$id) {
