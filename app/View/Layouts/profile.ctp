@@ -166,7 +166,7 @@
 							<td class="goi_y_val"><button type="button" onclick="get_gy(5)">Suối</button></td>
 						</tr>
 						<tr>
-							<td class="goi_y_val"><button type="button" onclick="get_gy(6)">.....</button></td>
+							<td class="goi_y_kc"><button  type="button" onclick="get_gy(6)">Tìm kiếm theo khoảng cách...</button></td>
 						</tr>
 					</table>
 				</div>

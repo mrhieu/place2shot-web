@@ -132,7 +132,7 @@ while($i<$count){
 								<?php
 								}
 							?>
-								<p class="ca-like" style="text-decoration:none">100</p>
+								<p class="ca-like" style="text-decoration:none"><?php if($i>=$count){  $id_img=$mang_id[$default];}else $id_img=$mang_id[$i]; echo count_like($id_img);?></p>
 							</div>
 							</div>
 						
@@ -176,7 +176,7 @@ while($i<$count){
 								<?php
 								}
 							?>
-								<p class="ca-like" style="text-decoration:none">100</p>
+								<p class="ca-like" style="text-decoration:none"><?php if($i>=$count){  $id_img=$mang_id[$default];}else $id_img=$mang_id[$i]; echo count_like($id_img);?></p>
 							</div>
 							</div>
 						</td>
@@ -221,7 +221,7 @@ while($i<$count){
 								<?php
 								}
 							?>
-								<p class="ca-like" style="text-decoration:none">100</p>
+								<p class="ca-like" style="text-decoration:none"><?php if($i>=$count){  $id_img=$mang_id[$default];}else $id_img=$mang_id[$i]; echo count_like($id_img);?></p>
 							</div>
 							</div>
 						</td>
@@ -265,7 +265,7 @@ while($i<$count){
 								<?php
 								}
 							?>
-								<p class="ca-like" style="text-decoration:none">100</p>
+								<p class="ca-like" style="text-decoration:none"><?php if($i>=$count){  $id_img=$mang_id[$default];}else $id_img=$mang_id[$i]; echo count_like($id_img);?></p>
 							</div>
 							</div>
 						</td>
@@ -310,7 +310,7 @@ while($i<$count){
 								<?php
 								}
 							?>
-								<p class="ca-like" style="text-decoration:none">100</p>
+								<p class="ca-like" style="text-decoration:none"><?php if($i>=$count){  $id_img=$mang_id[$default];}else $id_img=$mang_id[$i]; echo count_like($id_img);?></p>
 							</div>
 							</div>
 						</td>
@@ -353,7 +353,7 @@ while($i<$count){
 								<?php
 								}
 							?>
-								<p class="ca-like" style="text-decoration:none">100</p>
+								<p class="ca-like" style="text-decoration:none"><?php if($i>=$count){  $id_img=$mang_id[$default];}else $id_img=$mang_id[$i]; echo count_like($id_img);?></p>
 							</div>
 							</div>
 						</td>
@@ -398,7 +398,7 @@ while($i<$count){
 								<?php
 								}
 							?>
-								<p class="ca-like" style="text-decoration:none">100</p>
+								<p class="ca-like" style="text-decoration:none"><?php if($i>=$count){  $id_img=$mang_id[$default];}else $id_img=$mang_id[$i]; echo count_like($id_img);?></p>
 							</div>
 							</div>
 						</td>
@@ -446,7 +446,7 @@ while($i<$count){
 								<?php
 								}
 							?>
-								<p class="ca-like" style="text-decoration:none">100</p>
+								<p class="ca-like" style="text-decoration:none"><?php if($i>=$count){  $id_img=$mang_id[$default];}else $id_img=$mang_id[$i]; echo count_like($id_img);?></p>
 							</div>
 							</div>
 						</td>
@@ -487,7 +487,7 @@ while($i<$count){
 								<?php
 								}
 							?>
-								<p class="ca-like" style="text-decoration:none">100</p>
+								<p class="ca-like" style="text-decoration:none"><?php if($i>=$count){  $id_img=$mang_id[$default];}else $id_img=$mang_id[$i]; echo count_like($id_img);?></p>
 							</div>
 							</div>
 						</td>
@@ -530,7 +530,7 @@ while($i<$count){
 								<?php
 								}
 							?>
-								<p class="ca-like" style="text-decoration:none">100</p>
+								<p class="ca-like" style="text-decoration:none"><?php if($i>=$count){  $id_img=$mang_id[$default];}else $id_img=$mang_id[$i]; echo count_like($id_img);?></p>
 							</div>
 							</div>
 						</td>
@@ -573,7 +573,7 @@ while($i<$count){
 								<?php
 								}
 							?>
-								<p class="ca-like" style="text-decoration:none">100</p>
+								<p class="ca-like" style="text-decoration:none"><?php if($i>=$count){  $id_img=$mang_id[$default];}else $id_img=$mang_id[$i]; echo count_like($id_img);?></p>
 							</div>
 							</div>
 						</td>

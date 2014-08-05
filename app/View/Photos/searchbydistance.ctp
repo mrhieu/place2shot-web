@@ -1,4 +1,8 @@
-<div onload="initialize()">					
+<?php echo $this->html->css("searchbydistance"); ?>
+<div onload="initialize()">	
+<table class="search_ds" border="1" cellspacing="0" cellpadding="0">
+  <tr>
+    <td colspan="4">
 					<?php
 						echo $this->Form->create('Photo',array(
 							'action' => 'searchbydistance'
@@ -6,7 +10,7 @@
 						
  						
 					?>
-					<?php echo $this->Form->input('title', array(
+					<?php echo $this->Form->input('distance', array(
 									'div'=>'search_text',
 									'label' => false,
 									'id'=>'search_dis',
@@ -23,16 +27,28 @@
 					  <option value="100km">
 					</datalist>
 					<?php echo $this->Form->input('latitude', array(
-									'id'=>'latitude'
+									'id'=>'latitude',
+									'type'=>'hidden'
 									)); 
 					?>
 					<?php echo $this->Form->input('longitude', array(
-									'id'=>'longitude'
+									'id'=>'longitude',
+									'type'=>'hidden'
 									)); 
 					?>
 					<?php
-							echo $this->Form->end('Search');
+							//echo $this->Form->end('Search');
 					?>
+					</form>
+	</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
 </div>
 <script type="text/javascript"> 
   var geocoder;

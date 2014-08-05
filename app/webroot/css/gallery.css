@@ -1,0 +1,89 @@
+/* CSS Document */
+table.all_gr{
+	width:800px;
+	margin:30px auto;
+	padding:20px;
+}
+table.all_gr td.view_gr{
+	text-transform:capitalize;
+	text-align:center;
+	font-size:18px;
+	font-weight:bold;
+}
+table.all_gr td.menu{
+	width:150px;
+}
+table.all_gr td.hr{
+	width:1px;
+	background:#999999;
+}
+
+table.all_gr td.menu table{
+	width:130px;
+}
+table.all_gr a{
+	text-decoration:none;
+	color:#3B3B3B;
+	margin-left:10px;
+	font-weight:bold;
+}
+table.all_gr a:hover{
+	color:red;
+}
+table.all_gr td.menu table td{
+	height:30px;
+	border-radius:5px;
+}
+table.all_gr td.menu table td:hover{
+	background:#333333;
+}
+
+div.galleries{
+	width:1000px;
+	min-height:450px;
+	border:solid #999999;
+	border-radius:5px;
+	margin:30px auto;
+}
+table.gallery{
+	width:500px;
+	margin:auto;
+	border:solid #999999;
+	border-radius:5px;
+}
+table.gallery tr td.id_gr{
+	width:50px;
+}
+table.gallery tr td.name_gr{
+	width:300px;
+}
+table.gallery tr td.action_gr{
+	width:150px;
+}
+table.gallery td.title{
+	text-align:center;
+	font-size:18px;
+	color:#333333;
+	font-weight:bold;
+}
+.add_gr{
+	text-align:center;
+}
+.add_gr input{
+	width:250px;
+	height:30px;
+	font-size:16px;
+	font-style:italic;
+}
+.add_gr input[type='submit']{
+	width:70px;
+	height:25px;
+	font-size:16px;
+	font-style:italic;
+}
+.hr_ng{
+	height:30px;
+}
+table.tb_gr{
+	border-collapse: collapse;
+}

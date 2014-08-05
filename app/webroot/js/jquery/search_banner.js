@@ -18,7 +18,7 @@ function get_gy(n){
 		case 3: document.getElementById('search_text').value='Bãi cỏ'; break;	
 		case 4: document.getElementById('search_text').value='Bình minh'; break;	
 		case 5: document.getElementById('search_text').value='Suối'; break;	
-		case 6: document.getElementById('search_text').value='Con đường tơ lụa'; break;	
+		case 6: location.href = '/place2shot-web/photos/searchbydistance'; break;	
 	}
 	
 }

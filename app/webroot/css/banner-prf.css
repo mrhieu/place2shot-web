@@ -103,6 +103,7 @@ td.text_search{
 	color:#999999;
 	font-weight:bold;
 }
+
 #goi_y table td button{
 	width:267px;
 	height:25px;
@@ -112,4 +113,11 @@ td.text_search{
 	padding:10px;
 	text-align:left;
 	color:#999999;
+}
+.goi_y_kc button{
+	height:25px;
+	background:#FFFFFF;
+	color:#000000;
+	font-weight:bold;
+	font-size:15px;
 }
